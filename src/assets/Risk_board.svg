@@ -2210,80 +2210,33 @@
         d="M 253.37151,214.74788 C 253.37151,214.74788 253.49651,214.87288 253.99651,216.37288 C 254.49651,217.87288 254.87151,218.87288 255.99651,220.87288 C 257.12151,222.87288 256.12151,228.87288 256.12151,228.87288 L 258.12151,231.62288 C 258.12151,231.62288 259.74651,232.37288 260.37151,232.49788 C 260.99651,232.62288 260.74651,235.74788 260.62151,236.99788 C 260.49651,238.24788 258.99651,237.62288 258.12151,237.87288 C 257.24651,238.12288 256.99651,240.24788 256.87151,241.49788 C 256.74651,242.74788 254.5,242.25 254.5,242.25 C 255.125,243.5 256.375,243.625 256.875,245.875 C 257.375,248.125 257.125,247.375 257.75,248.25 C 258.375,249.125 259.5,249.25 259.75,251.25 C 260,253.25 260,252.125 261.375,254.75 C 262.75,257.375 261.5,258.5 261.75,260.875 C 262,263.25 263.25,262.375 264.125,263.625 L 264.49651,264.99788 L 312.49651,264.87288 L 316.49651,216.49788 C 316.49651,216.49788 253.62151,214.74788 253.37151,214.74788 z"
         sodipodi:nodetypes="cssccsssscsssssc" />
     
-   <text xlink:href="#eastern_australia" x = "865" y = "540" style="font-size: 22px; fill: black;"> 10 </text>
-<!--    
-    <text transform="translate(-3,-10)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#indonesia" style="position: relative; left: 5px;" startOffset="67%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#new_guinea" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(28,2)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#alaska" style="position: relative; left: 5px;" startOffset="47%" text-anchor="middle">9</textPath>
-    </text>
-    <text transform="translate(15,-20)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#ontario" style="position: relative; left: 5px;" startOffset="38.06%" text-anchor="middle">10</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#northwest_territory" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#venezuela" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#madagascar" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#north_africa" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#greenland" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#iceland" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#great_britain" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#scandinavia" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#japan" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#yakursk" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#kamchatka" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-   <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#siberia" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-   <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#ural" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-   <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#afghanistan" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-   <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#middle_east" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#india" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#siam" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#china" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#mongolia" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
-        <textPath xlink:href="#irkutsk" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
+   <text xlink:href="#eastern_australia" x = "860" y = "540" style="font-size: 22px; fill: black;"> 10 </text> 
+   <text xlink:href="#indonesia" x="776" y="490" style="font-size: 22px; fill: black;"> 10 </text>
+   <text xlink:href="#new_guinea" x="841" y="475" style="font-size: 22px; fill: black;"> 10 </text>
+   <text xlink:href="#alaska" x="220" y="208" style="font-size: 22px; fill: black;"> 10 </text>
+   
+   <text xlink:href="#ontario" x="430" y="342" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#northwest_territory" x="280" y="342" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#venezuela" x="380" y="622" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#madagascar" x="630" y="722" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#north_africa" x="530" y="622" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#greenland" x="230" y="122" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#iceland" x="330" y="122" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#great_britain" x="430" y="122" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#scandinavia" x="530" y="122" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#japan" x="1080" y="222" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#yakursk" x="1180" y="172" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#kamchatka" x="1280" y="222" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#siberia" x="1030" y="52" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#ural" x="880" y="52" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#afghanistan" x="830" y="122" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#middle_east" x="730" y="172" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#india" x="880" y="222" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#siam" x="980" y="272" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#china" x="1030" y="272" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#mongolia" x="1130" y="222" style="font-size: 22px; fill: black;"> 5 </text>
+   <text xlink:href="#irkutsk" x="1180" y="322" style="font-size: 22px; fill: black;"> 5 </text>
+   <!--
     <text transform="translate(0,0)" style="font-size: 22px; fill: black;">
         <textPath xlink:href="#ukraine" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
     </text>
