@@ -32,7 +32,10 @@ export default function Navbar(){
                                 <li className="nav-item">
                                 <a className="nav-link mx-2" href="#">Pricing</a>
                                 </li>
-                                <li className="nav-item dropdown">
+                                <li className="nav-item">
+                                <a className="nav-link mx-2" href="#">About us</a>
+                                </li>
+                                {/* <li className="nav-item dropdown">
                                 <a className="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Company
                                 </a>
@@ -41,7 +44,7 @@ export default function Navbar(){
                                     <li><a className="dropdown-item" href="#">About Us</a></li>
                                     <li><a className="dropdown-item" href="#">Contact us</a></li>
                                 </ul>
-                                </li>
+                                </li> */}
                             </ul>
                             </div>
                         </div>
