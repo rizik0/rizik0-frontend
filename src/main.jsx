@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import Navbar from './components/Navbar/Navbar.jsx'
+import '../src/scss/stlyes.scss'
+import Carousel from './components/Carousel/Carousel.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <Navbar />
+    <Carousel />
   </React.StrictMode>,
 )
