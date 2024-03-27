@@ -7,7 +7,7 @@ import * as bootstrap from 'bootstrap'
 export default function Carousel() {
 
     return(
-        <>
+        <section id='Carousel'>
             <div>
                 <div id="carouselLanding" className="carousel slide" data-bs-ride="false">
                     <div className="carousel-indicators">
@@ -55,7 +55,7 @@ export default function Carousel() {
         
         
         
-        </>
+        </section>
 
     )
 
