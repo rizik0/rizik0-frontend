@@ -1,5 +1,32 @@
-	@media screen and (min-width:992px) {
-	    .nav-item {
-	        line-height: 80px;
-	    }
+@media screen and (min-width:992px) {
+	.nav-item {
+		line-height: 80px;
 	}
+}
+
+#headerNav{
+	background-color: #151F2B;
+}
+
+#logoNav{
+	cursor: pointer;
+}
+
+.nav-item {
+	font-size: 2.25vh;
+	padding-left: 2.5vh;
+	padding-right: 2.5vh;
+}
+
+.navElem {
+	cursor: pointer;
+}
+
+.navLinkActive {
+	color: white !important;
+	border-bottom: 3px solid #FEFDE8 !important;
+}
+
+.navElem:hover {
+	border-bottom: 3px solid #FEFDE8;
+}

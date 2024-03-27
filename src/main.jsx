@@ -4,9 +4,10 @@ import Navbar from './components/Navbar/Navbar.jsx'
 import '../src/scss/stlyes.scss'
 import Carousel from './components/Carousel/Carousel.jsx'
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Navbar />
-    <Carousel />
+    <Navbar id="Navbar"/>
+    <Carousel id="Carousel"/>
   </React.StrictMode>,
 )
