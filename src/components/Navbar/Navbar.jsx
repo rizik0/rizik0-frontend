@@ -1,5 +1,5 @@
 import './Navbar.scss'
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/logo_circle.png'
 
 
 export default function Navbar(){
@@ -7,49 +7,48 @@ export default function Navbar(){
     return(
         <>
             <div>
-                <nav className="navbar navbar-expand-lg navbar-dark p-3 bg-danger" id="headerNav">
-                        <div className="container-fluid">
-                            <a className="navbar-brand d-block d-lg-none" href="#">
+                <nav className="navbar navbar-expand-lg navbar-dark p-3" id="headerNav">
+                    <div className="container-fluid">
+                        <a className="navbar-brand d-block d-lg-none" href="#">
+                            <img src={logo} height="80" />
+                        </a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                        </button>
+                    
+                        <div className=" collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul className="navbar-nav mx-auto align-items-center">
+                            <li className="navElem nav-item">
+                                <a className="nav-link mx-2 active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li className="long navElem nav-item">
+                                <a className="nav-link mx-2" href="#">Products</a>
+                            </li>
+                            <li className="nav-item d-none d-lg-block">
+                                <a className="nav-link mx-2" href="#">
                                 <img src={logo} height="80" />
                             </a>
-                            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                            </button>
-                        
-                            <div className=" collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul className="navbar-nav mx-auto ">
-                                <li className="nav-item">
-                                <a className="nav-link mx-2 active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li className="nav-item">
-                                <a className="nav-link mx-2" href="#">Products</a>
-                                </li>
-                                <li className="nav-item d-none d-lg-block">
-                                <a className="nav-link mx-2" href="#">
-                                    <img src={logo} height="80" />
-                                </a>
-                                </li>
-                                <li className="nav-item">
+                            </li>
+                            <li className="navElem nav-item">
                                 <a className="nav-link mx-2" href="#">Pricing</a>
-                                </li>
-                                <li className="nav-item">
+                            </li>
+                            <li className="long navElem nav-item">
                                 <a className="nav-link mx-2" href="#">About us</a>
-                                </li>
-                                {/* <li className="nav-item dropdown">
-                                <a className="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Company
-                                </a>
-                                <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a className="dropdown-item" href="#">Blog</a></li>
-                                    <li><a className="dropdown-item" href="#">About Us</a></li>
-                                    <li><a className="dropdown-item" href="#">Contact us</a></li>
-                                </ul>
-                                </li> */}
+                            </li>
+                            {/* <li className="nav-item dropdown">
+                            <a className="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Company
+                            </a>
+                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a className="dropdown-item" href="#">Blog</a></li>
+                                <li><a className="dropdown-item" href="#">About Us</a></li>
+                                <li><a className="dropdown-item" href="#">Contact us</a></li>
                             </ul>
-                            </div>
+                            </li> */}
+                        </ul>
                         </div>
-                        </nav>
-
+                    </div>
+                </nav>
             </div>
         </>
     )

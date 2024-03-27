@@ -3,3 +3,49 @@
 	        line-height: 80px;
 	    }
 	}
+
+#headerNav{
+	background-color: #151F2B;
+}
+
+.nav-item{
+	font-size: 2.25vh;
+	padding-left: 2.5vh;
+	padding-right: 2.5vh;
+}
+
+.navElem::after {
+	content: "";
+	height: 2px;
+	background-color: #f69ec4;
+	width: 0;
+	position: fixed;
+	transform: translateY(-2vh);
+	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+.navElem:hover {
+	color: #f69ec4;
+}
+
+.navElem:hover::after {
+	width: 5%;
+}
+
+.long::after {
+	content: "";
+	height: 2px;
+	background-color: #f69ec4;
+	width: 0;
+	position: fixed;
+	transform: translateY(-2vh);
+	transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
+}
+
+.long:hover {
+	color: #f69ec4;
+}
+
+.long:hover::after {
+	width: 6%;
+}
