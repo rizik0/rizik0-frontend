@@ -22,7 +22,7 @@
     inkscape:export-xdpi="90"
     inkscape:export-ydpi="90"
     style="enable-background:new">
-
+   
    <!-- classe css per stile board -->
    <style>
       .board-region {
@@ -2229,13 +2229,13 @@
    <text xlink:href="#ontario" x="330" y="258" class="board-region"> 10 </text>
    <text xlink:href="#northwest_territory" x="295" y="210" class="board-region"> 10 </text>
    <text xlink:href="#venezuela" x="335" y="410" class="board-region"> 10 </text>
-   <text xlink:href="#madagascar" x="635" y="570" class="board-region"> 10 </text>
+   <text xlink:href="#madagascar" x="655" y="570" class="board-region"> 10 </text>
    <text xlink:href="#north_africa" x="505" y="440" class="board-region"> 10 </text>
    <text xlink:href="#greenland" x="420" y="185" class="board-region"> 10 </text>
-   <text xlink:href="#iceland" x="485" y="230" class="board-region"> 10 </text>
+   <text xlink:href="#iceland" x="485" y="208" class="board-region"> 10 </text>
    <text xlink:href="#great_britain" x="480" y="295" class="board-region"> 10 </text>
    <text xlink:href="#scandinavia" x="530" y="240" class="board-region"> 10 </text>
-   <text xlink:href="#japan" x="845" y="310" class="board-region"> 10 </text>
+   <text xlink:href="#japan" x="860" y="310" class="board-region"> 10 </text>
    <text xlink:href="#yakutsk" x="760" y="200" class="board-region"> 10 </text>
    <text xlink:href="#kamchatka" x="830" y="205" class="board-region"> 10 </text>
    <text xlink:href="#siberia" x="715" y="220" class="board-region"> 10 </text>
@@ -2245,26 +2245,25 @@
    <text xlink:href="#india" x="700" y="390" class="board-region"> 10 </text>
    <text xlink:href="#siam" x="770" y="420" class="board-region"> 10 </text>
    <text xlink:href="#china" x="750" y="350" class="board-region"> 10 </text>
-   
-   <text xlink:href="#mongolia" x="1130" y="222" class="board-region"> 5 </text>
-   <text xlink:href="#irkutsk" x="1180" y="322" class="board-region"> 5 </text>
-   <text xlink:href="#ukraine" class="board-region"> 5 </text>
-   <text xlink:href="#southern_europe" class="board-region"> 5 </text>
-   <text xlink:href="#western_europe" class="board-region"> 5 </text>  
-   <text xlink:href="#northern_europe" class="board-region"> 5 </text>
-   <text xlink:href="#egypt" class="board-region"> 5 </text>
-   <text xlink:href="#east_africa" class="board-region"> 5 </text>
-   <text xlink:href="#congo" class="board-region"> 5 </text>
-   <text xlink:href="#south_africa" class="board-region"> 5 </text>
-   <text xlink:href="#brazil" class="board-region"> 5 </text>
-   <text xlink:href="#argentina" class="board-region"> 5 </text>
-   <text xlink:href="#eastern_united_states" class="board-region"> 5 </text>
-   <text xlink:href="#western_united_states" class="board-region"> 5 </text> 
-   <text xlink:href="#quebec" class="board-region"> 5 </text>
-   <text xlink:href="#central_america" class="board-region"> 5 </text>
-   <text xlink:href="#peru" class="board-region"> 5 </text>
-   <text xlink:href="#western_australia" class="board-region"> 5 </text>
-   <text xlink:href="#western_united_states" class="board-region"> 5</text>
+   <text xlink:href="#mongolia" x="770" y="305" class="board-region"> 10 </text>
+   <text xlink:href="#irkutsk" x="757" y="260" class="board-region"> 10 </text>
+   <text xlink:href="#ukraine" x="595" y="280" class="board-region"> 10 </text>
+   <text xlink:href="#southern_europe" x="545" y="340" class="board-region"> 10 </text>
+   <text xlink:href="#western_europe" x="477" y="365" class="board-region"> 10 </text>  
+   <text xlink:href="#northern_europe" x="535" y="300" class="board-region"> 10 </text>
+   <text xlink:href="#egypt" x="570" y="415" class="board-region"> 10 </text>
+   <text xlink:href="#east_africa" x="595" y="460" class="board-region"> 10 </text>
+   <text xlink:href="#congo" x="565" y="500" class="board-region"> 10 </text>
+   <text xlink:href="#south_africa" x="575" y="570" class="board-region"> 10 </text>
+   <text xlink:href="#brazil" x="405" y="460" class="board-region"> 10 </text>
+   <text xlink:href="#argentina" x="350" y="530" class="board-region"> 10 </text>
+   <text xlink:href="#eastern_united_states" x="335" y="320" class="board-region"> 10 </text>
+   <text xlink:href="#western_united_states" x="280" y="300" class="board-region"> 10 </text> 
+   <text xlink:href="#quebec" x="380" y="255" class="board-region"> 10 </text>
+   <text xlink:href="#central_america" x="275" y="347" class="board-region"> 10 </text>
+   <text xlink:href="#peru" x="350" y="475" class="board-region"> 10 </text>
+   <text xlink:href="#western_australia" x="800" y="570" class="board-region"> 10 </text>
+   <text xlink:href="#alberta" x="280" y="250" class="board-region"> 10 </text>
    </g>
    
  </svg>
