@@ -27,7 +27,7 @@ export default function Navbar(){
                         </li>
                         <li className="nav-item d-none d-lg-block">
                             <Link id='logoNav' className="nav-link mx-2" to='Carousel'>
-                                <img src={logo} height="80" />
+                                <img src={logo} height="100" />
                             </Link>
                         </li>
                         <li className="navElem nav-item">
