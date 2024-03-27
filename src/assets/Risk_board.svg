@@ -23,11 +23,13 @@
     inkscape:export-ydpi="90"
     style="enable-background:new">
 
+   <!-- classe css per stile board -->
    <style>
       .board-region {
          font-size: 22px;
          fill: black;
-
+         font-weight: bold;
+         font-family: "Times New Roman";
       }
    </style>
 
@@ -2225,7 +2227,7 @@
    <text xlink:href="#new_guinea" x="841" y="475" class="board-region"> 10 </text>
    <text xlink:href="#alaska" x="220" y="208" class="board-region"> 10 </text>
    <text xlink:href="#ontario" x="330" y="258" class="board-region"> 10 </text>
-   <text xlink:href="#northwest_territory" x="280" y="342" class="board-region"> 5 </text>
+   <text xlink:href="#northwest_territory" x="295" y="210" class="board-region"> 10 </text>
    <text xlink:href="#venezuela" x="335" y="410" class="board-region"> 10 </text>
    <text xlink:href="#madagascar" x="635" y="570" class="board-region"> 10 </text>
    <text xlink:href="#north_africa" x="505" y="440" class="board-region"> 10 </text>
@@ -2242,61 +2244,27 @@
    <text xlink:href="#middle_east" x="620" y="380" class="board-region"> 10 </text>
    <text xlink:href="#india" x="700" y="390" class="board-region"> 10 </text>
    <text xlink:href="#siam" x="770" y="420" class="board-region"> 10 </text>
-   <text xlink:href="#china" x="1030" y="272" class="board-region"> 5 </text>
+   <text xlink:href="#china" x="750" y="350" class="board-region"> 10 </text>
+   
    <text xlink:href="#mongolia" x="1130" y="222" class="board-region"> 5 </text>
    <text xlink:href="#irkutsk" x="1180" y="322" class="board-region"> 5 </text>
-   <!--
-    <text transform="translate(0,0)" class="board-region">
-        <textPath xlink:href="#ukraine" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" class="board-region">
-        <textPath xlink:href="#southern_europe" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(22,0)" class="board-region">
-        <textPath xlink:href="#western_europe" style="position: relative; left: 5px;" startOffset="61%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" class="board-region">
-        <textPath xlink:href="#northern_europe" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" class="board-region">
-        <textPath xlink:href="#egypt" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" class="board-region">
-        <textPath xlink:href="#east_africa" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-   <text transform="translate(0,0)" class="board-region">
-        <textPath xlink:href="#congo" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" class="board-region">
-        <textPath xlink:href="#south_africa" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" class="board-region">
-        <textPath xlink:href="#brazil" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" class="board-region">
-        <textPath xlink:href="#argentina" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(0,0)" class="board-region">
-        <textPath xlink:href="#eastern_united_states" style="position: relative; left: 5px;" startOffset="0%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(7,40)" class="board-region">
-        <textPath xlink:href="#western_united_states" style="position: relative; left: 5px;" startOffset="81%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(7,40)" class="board-region">
-        <textPath xlink:href="#quebec" style="position: relative; left: 5px;" startOffset="81%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(7,40)" class="board-region">
-        <textPath xlink:href="#central_america" style="position: relative; left: 5px;" startOffset="81%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(7,40)" class="board-region">
-        <textPath xlink:href="#peru" style="position: relative; left: 5px;" startOffset="81%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(-25,-10)" class="board-region">
-        <textPath xlink:href="#western_australia" style="position: relative; left: 5px;" startOffset="81%" text-anchor="middle">5</textPath>
-    </text>
-    <text transform="translate(7,40)" class="board-region">
-        <textPath xlink:href="#western_united_states" style="position: relative; left: 5px;" startOffset="81%" text-anchor="middle">5</textPath>
-    </text> -->
-    </g>
+   <text xlink:href="#ukraine" class="board-region"> 5 </text>
+   <text xlink:href="#southern_europe" class="board-region"> 5 </text>
+   <text xlink:href="#western_europe" class="board-region"> 5 </text>  
+   <text xlink:href="#northern_europe" class="board-region"> 5 </text>
+   <text xlink:href="#egypt" class="board-region"> 5 </text>
+   <text xlink:href="#east_africa" class="board-region"> 5 </text>
+   <text xlink:href="#congo" class="board-region"> 5 </text>
+   <text xlink:href="#south_africa" class="board-region"> 5 </text>
+   <text xlink:href="#brazil" class="board-region"> 5 </text>
+   <text xlink:href="#argentina" class="board-region"> 5 </text>
+   <text xlink:href="#eastern_united_states" class="board-region"> 5 </text>
+   <text xlink:href="#western_united_states" class="board-region"> 5 </text> 
+   <text xlink:href="#quebec" class="board-region"> 5 </text>
+   <text xlink:href="#central_america" class="board-region"> 5 </text>
+   <text xlink:href="#peru" class="board-region"> 5 </text>
+   <text xlink:href="#western_australia" class="board-region"> 5 </text>
+   <text xlink:href="#western_united_states" class="board-region"> 5</text>
+   </g>
    
  </svg>
