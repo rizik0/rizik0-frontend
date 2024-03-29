@@ -7,6 +7,7 @@ export default function LobbyPage(){
         <>
             <Navbar id="Navbar"/>
 
+            
         </>
     )
 }
