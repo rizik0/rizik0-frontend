@@ -19,9 +19,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
-        gamepage: path.resolve(__dirname, 'src/pages/gamepage.html'),
-        lobbypage: path.resolve(__dirname, 'src/pages/lobbypage.html'),
-        techpage: path.resolve(__dirname, 'src/pages/techpage.html')
       }
     }
   }
