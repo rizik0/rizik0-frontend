@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/game",
-    element:  <GamePage />,
+    element:  <GamePage UserColor="red" />,
     errorElement: <ErrorPage />,
   },
   {
