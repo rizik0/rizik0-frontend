@@ -5,12 +5,14 @@ export default function ErrorPage() {
   console.error(error);
 
   return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Ci scusiamo, errore.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
+    <div style={{backgroundColor:'#151F2B',height:'100vh'}}>
+        <div id="error-page" style={{color:'white',textAlign:'center',paddingTop:'10em'}}>
+            <h1>Oops!</h1>
+            <p>Ci scusiamo, errore.</p>
+            <p>
+                <i>{error.statusText || error.message}</i>
+            </p>
+        </div>
     </div>
   );
 }
