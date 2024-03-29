@@ -7,10 +7,10 @@ export default function GamePage(){
         <>
             <div class="container" style={{marginTop:'10em',textAlign:'center'}}>
                 <div class = "row">
-                        <Navbar id="Navbar"/>
+                    <Navbar id="Navbar"/>
                 </div>
-                <div class = "row" style={{textAlign:'center'}}>
-                        <RiskBoard id="RiskBoard"/>
+                <div class = "row" style={{marginLeft:'14em'}}>
+                    <RiskBoard id="RiskBoard"/>
                 </div>
             </div>
             
