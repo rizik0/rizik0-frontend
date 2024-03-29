@@ -23,7 +23,6 @@
     inkscape:export-ydpi="90"
     style="enable-background:new">
    
-   <!-- classe css per stile board -->
    <style>
       .board-region {
          font-size: 22px;
