@@ -5,8 +5,9 @@ import '../src/scss/stlyes.scss'
 import Carousel from './components/Carousel/Carousel.jsx'
 import Root from "./routes/root";
 import GamePage from "./routes/gamepage";
-
-
+import LobbyPage from "./routes/lobbypage";
+import TechPage from "./routes/techpage";
+import ErrorPage from "./routes/error-page"
 
 import {
   createBrowserRouter,
@@ -16,11 +17,23 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element:  <Root />
+    element:  <Root />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/game",
-    element:  <GamePage />
+    element:  <GamePage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/lobby",
+    element:  <LobbyPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/tech",
+    element:  <TechPage />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
