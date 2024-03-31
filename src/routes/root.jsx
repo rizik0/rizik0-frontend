@@ -3,6 +3,7 @@ import '../scss/stlyes.scss'
 import Carousel from '../components/Carousel/Carousel.jsx'
 import PlayNow from '../components/PlayNow/PlayNow.jsx'
 import Leaderboard from '../components/Leaderboard/Leaderboard.jsx'
+import PlayNow from '../components/PlayNow/PlayNow.jsx'
 
 export default function Root(){
     return(
