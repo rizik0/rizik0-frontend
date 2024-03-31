@@ -3,6 +3,7 @@ import "./Leaderboard.scss";
 import soldier from "../../assets/soldier.png";
 
 export default function Leaderboard({ powName, firstLeader, firstPoints , secondLeader, secondPoints, thirdLeader, thirdPoints, playerLeaderFourth, playerFourthPoints, playerLeaderFifth, playerFithPoints}) {
+
     
     const x_pos = 368;
     const y_pos = 120;
@@ -36,7 +37,6 @@ export default function Leaderboard({ powName, firstLeader, firstPoints , second
                         <text x="50%" y="42%" className="thirdLeader" dominantBaseline="middle" textAnchor="middle">3.{thirdLeader}.......{thirdPoints}</text>    
                         <text x="50%" y="50%" className="playerLeader" dominantBaseline="middle" textAnchor="middle">4.{playerLeaderFourth}.......{playerFourthPoints}</text>    
                         <text x="50%" y="58%" className="playerLeader" dominantBaseline="middle" textAnchor="middle">5.{playerLeaderFifth}.......{playerFithPoints}</text>    
-
                         <rect x="213" y="297" width="38" height="92" fill="#151F2B"/>
                         <rect x="150" y="372" width="165" height="34" rx="17" fill="#151F2B"/>
                         </svg>
