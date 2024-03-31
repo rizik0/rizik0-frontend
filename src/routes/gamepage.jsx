@@ -52,9 +52,13 @@ export default function GamePage({UserColor}){
         {"name": "eastern_australia", "troops": 0, "owner": null, "continent": "oceania", "neighbours": ["new_guinea", "western_australia"], "color": null}
     ]});
 
+    const [status, setStatus] = useState("")
+
+    const userColor = localStorage.getItem('player_color')
+
     useEffect(() => {
         const abortController = new AbortController()
-        const fetchData = async() => await fetch('http://localhost:3000/api/game/396d339f/maps', {
+        const fetchData = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/maps`, {
             method: "GET",
             headers: { 'Content-Type': 'application/json' }
         })
@@ -62,12 +66,21 @@ export default function GamePage({UserColor}){
                 .then(data => ({data: data, status: res.status})))
             .then(ob => {setData(ob.data)})
 
-        fetchData()   
+        const fetchStatus = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/status`, {
+            method: "GET",
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(res => res.json()
+                .then(data => ({data: data, status: res.status})))
+            .then(ob => {setStatus(ob.data.status); console.log(status)})
+
+        fetchData()  
+        fetchStatus() 
         
         return () => {
             abortController.abort()
         }
-    }, [data]);
+    }, [data, status]);
 
     return(
         <div style={{backgroundColor:'#151F2B',height:'100vh'}}>  
@@ -77,20 +90,20 @@ export default function GamePage({UserColor}){
                 </div>
                 <div class = "row">
                     <div class = "col" style={{textAlign:'center',color:UserColor}}>
-                        Turno di:   $USER
+                        Turno di: {status}
                     </div>
-                    <div class = "col" style={{textAlign:'center',color:UserColor}}>
+                    <div class = "col" style={{textAlign:'center',color:userColor}}>
                         10:25
                     </div>
                 </div>
                 <div class="row" >
                     <RiskBoard maps={data.maps} />
                 </div>
-                <div class="row" style={{textAlign:'center',color:UserColor}}>
+                <div class="row" style={{textAlign:'center',color:userColor}}>
                     OBIETTIVO
                 </div>
                 <div class="row">
-                    <button type="button" class="btn btn-primary" id="end-turn-button" style={{backgroundColor:UserColor}}>
+                    <button type="button" class="btn btn-primary" id="end-turn-button" style={{backgroundColor:userColor}}>
                         Termino Attacchi
                     </button>
                 </div>
