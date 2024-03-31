@@ -1,0 +1,19 @@
+@import '../../scss/stlyes.scss';
+
+@font-face {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    src: url('https: //fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+}
+
+.svgText{
+  
+    font-family: "Press Start 2P", system-ui !important;
+    font-size: 2vh;
+    fill: #FFE500;
+}
+
+.Test{
+    font-family: $font;
+}
