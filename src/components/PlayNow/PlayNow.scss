@@ -22,17 +22,12 @@
     border-radius: 30px;
     padding-top: 1vh;
     height: 40vh;   
+    margin-bottom: 45vh;
 }
 
 .playLogo {
     height: 45vh;
     width: 45vh;
-}
-
-.playLogoContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 5vh;
 }
 
 .playDescription {
@@ -55,4 +50,12 @@
 .playMargin{
     margin-left: 2vh;
     margin-right: 2vh;
+}
+
+.sectionDivider{
+    width: 70%;
+    height: 2vh;
+    background-color: #005E7A;
+    border-radius: 20px;
+    margin: auto auto 10vh auto;
 }

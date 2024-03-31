@@ -135,7 +135,8 @@ export default function PlayNow(){
                     </div>
                 </div>
             </div>
-        
+
+            <div className='sectionDivider'></div>
         </section>
 
     )
