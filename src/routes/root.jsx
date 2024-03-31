@@ -9,7 +9,7 @@ export default function Root(){
     return(
         <>
             <Navbar id="Navbar"/>
-            <Leaderboard id="Leaderboard" playerName={"Giero"}/>
+            <Leaderboard id="Leaderboard" powName={"Giero"} firstLeader={"Giero"} firstPoints={10} secondLeader={"Cristian"} secondPoints={6} thirdLeader={"Piter"} thirdPoints={3} playerLeaderFourth={"Leo"} playerFourthPoints={1} playerLeaderFifth={"Gabbo"} playerFithPoints={0}/>
             <PlayNow />
 
         </>
