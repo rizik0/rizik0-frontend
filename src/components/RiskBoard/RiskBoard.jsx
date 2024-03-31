@@ -1,6 +1,19 @@
 import * as React from "react"
 
-const RiskBoard = (props) => (
+
+function getRegionObject(maps, region) {
+  if (maps == undefined) return null;
+  for (let i = 0; i < maps.length; i++) { 
+    console.log(maps)
+    if (maps[i].name == region) {
+      console.log(maps[i])
+      return maps[i]
+    }
+  }
+}
+
+
+const RiskBoard = ({ maps, onClicks }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     id="svg2"
@@ -9,7 +22,6 @@ const RiskBoard = (props) => (
     style={{
       enableBackground: "new",
     }}
-    {...props}
   >
     <style>
       {
@@ -2516,7 +2528,7 @@ const RiskBoard = (props) => (
         className="land oceania"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "eastern_australia").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2544,7 +2556,7 @@ const RiskBoard = (props) => (
         className="land oceania"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "indonesia").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2565,7 +2577,7 @@ const RiskBoard = (props) => (
         className="land oceania"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "new_guinea").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2586,7 +2598,7 @@ const RiskBoard = (props) => (
         className="land north-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "alaska").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2607,7 +2619,7 @@ const RiskBoard = (props) => (
         className="land north-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "ontario").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2628,7 +2640,7 @@ const RiskBoard = (props) => (
         className="land north-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "northwest_territory").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2649,7 +2661,7 @@ const RiskBoard = (props) => (
         className="land south-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "venezuela").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2670,7 +2682,7 @@ const RiskBoard = (props) => (
         className="land africa"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "madagascar").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2691,7 +2703,7 @@ const RiskBoard = (props) => (
         className="land africa"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "north_africa").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2712,7 +2724,7 @@ const RiskBoard = (props) => (
         className="land north-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "greenland").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2742,7 +2754,7 @@ const RiskBoard = (props) => (
           wordSpacing: "normal",
           textAnchor: "start",
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "iceland").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2772,7 +2784,7 @@ const RiskBoard = (props) => (
           wordSpacing: "normal",
           textAnchor: "start",
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "great_britain").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2795,7 +2807,7 @@ const RiskBoard = (props) => (
         className="land europe"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "scandinavia").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2821,7 +2833,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "japan").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2844,7 +2856,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "yakutsk").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2872,7 +2884,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "kamchatka").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2900,7 +2912,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "siberia").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2928,7 +2940,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "ural").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2956,7 +2968,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "afghanistan").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -2984,7 +2996,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "middle_east").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3012,7 +3024,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "india").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3040,7 +3052,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "siam").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3068,7 +3080,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "china").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3096,7 +3108,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "mongolia").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3124,7 +3136,7 @@ const RiskBoard = (props) => (
         className="land asia"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "irkutsk").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3152,7 +3164,7 @@ const RiskBoard = (props) => (
         className="land europe"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "ukraine").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3180,7 +3192,7 @@ const RiskBoard = (props) => (
         className="land europe"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "southern_europe").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3208,7 +3220,7 @@ const RiskBoard = (props) => (
         className="land europe"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "western_europe").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3236,7 +3248,7 @@ const RiskBoard = (props) => (
         className="land europe"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "northern_europe").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3264,7 +3276,7 @@ const RiskBoard = (props) => (
         className="land africa"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "egypt").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3285,7 +3297,7 @@ const RiskBoard = (props) => (
         className="land africa"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "east_africa").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3306,7 +3318,7 @@ const RiskBoard = (props) => (
         className="land africa"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "congo").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3327,7 +3339,7 @@ const RiskBoard = (props) => (
         className="land africa"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "south_africa").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3348,7 +3360,7 @@ const RiskBoard = (props) => (
         className="land south-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "brazil").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3369,7 +3381,7 @@ const RiskBoard = (props) => (
         className="land south-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "argentina").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3390,7 +3402,7 @@ const RiskBoard = (props) => (
         className="land north-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "eastern_united_states").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3411,7 +3423,7 @@ const RiskBoard = (props) => (
         className="land north-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "western_united_states").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3432,7 +3444,7 @@ const RiskBoard = (props) => (
         className="land north-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "quebec").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3453,7 +3465,7 @@ const RiskBoard = (props) => (
         className="land north-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "central_america").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3474,7 +3486,7 @@ const RiskBoard = (props) => (
         className="land south-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "peru").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3495,7 +3507,7 @@ const RiskBoard = (props) => (
         className="land oceania"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "western_australia").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3523,7 +3535,7 @@ const RiskBoard = (props) => (
         className="land north-america"
         style={{
           opacity: 1,
-          fill: "none",
+          fill: getRegionObject(maps, "alberta").color,
           fillOpacity: 1,
           fillRule: "evenodd",
           stroke: "#000",
@@ -3546,130 +3558,130 @@ const RiskBoard = (props) => (
         }}
       />
       <text x={860} y={540} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "eastern_australia").troops}
       </text>
       <text x={776} y={490} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "indonesia").troops}
       </text>
       <text x={841} y={475} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "new_guinea").troops}
       </text>
       <text x={220} y={208} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "alaska").troops}
       </text>
       <text x={330} y={258} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "ontario").troops}
       </text>
       <text x={295} y={210} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "northwest_territory").troops}
       </text>
       <text x={335} y={410} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "venezuela").troops}
       </text>
       <text x={655} y={570} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "madagascar").troops}
       </text>
       <text x={505} y={440} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "north_africa").troops}
       </text>
       <text x={420} y={185} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "greenland").troops}
       </text>
       <text x={485} y={208} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "iceland").troops}
       </text>
       <text x={480} y={295} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "great_britain").troops}
       </text>
       <text x={530} y={240} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "scandinavia").troops}
       </text>
       <text x={860} y={310} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "japan").troops}
       </text>
       <text x={760} y={200} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "yakutsk").troops}
       </text>
       <text x={830} y={205} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "kamchatka").troops}
       </text>
       <text x={715} y={220} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "siberia").troops}
       </text>
       <text x={675} y={260} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "ural").troops}
       </text>
       <text x={665} y={320} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "afghanistan").troops}
       </text>
       <text x={620} y={380} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "middle_east").troops}
       </text>
       <text x={700} y={390} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "india").troops}
       </text>
       <text x={770} y={420} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "siam").troops}
       </text>
       <text x={750} y={350} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "china").troops}
       </text>
       <text x={770} y={305} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "mongolia").troops}
       </text>
       <text x={757} y={260} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "irkutsk").troops}
       </text>
       <text x={595} y={280} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "ukraine").troops}
       </text>
       <text x={545} y={340} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "southern_europe").troops}
       </text>
       <text x={477} y={365} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "western_europe").troops}
       </text>
       <text x={535} y={300} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "northern_europe").troops}
       </text>
       <text x={570} y={415} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "egypt").troops}
       </text>
       <text x={595} y={460} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "east_africa").troops}
       </text>
       <text x={565} y={500} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "congo").troops}
       </text>
       <text x={575} y={570} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "south_africa").troops}
       </text>
       <text x={405} y={460} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "brazil").troops}
       </text>
       <text x={350} y={530} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "argentina").troops}
       </text>
       <text x={335} y={320} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "eastern_united_states").troops}
       </text>
       <text x={280} y={300} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "western_united_states").troops}
       </text>
       <text x={380} y={255} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "quebec").troops}
       </text>
       <text x={275} y={347} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "central_america").troops}
       </text>
       <text x={350} y={475} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "peru").troops}
       </text>
       <text x={800} y={570} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "western_australia").troops}
       </text>
       <text x={280} y={250} className="board-region">
-        {" 10 "}
+        {getRegionObject(maps, "alberta").troops}
       </text>
     </g>
   </svg>
