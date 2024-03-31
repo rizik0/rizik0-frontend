@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { redirect, useNavigate } from 'react-router-dom'
+import logo from '../../assets/logo_circle.png'
+import './PlayNow.scss'
 
 export default function PlayNow(){
 
@@ -53,10 +55,85 @@ export default function PlayNow(){
         }
     }
     
-
-
     return(
-        <div style={{marginTop: '30rem'}}>
+        <section id="PlayNow">
+            <div className="playTitle">🎮 PLAY NOW 🎮</div>
+            <div className="playContainer container">
+                <div className=' row justify-content-md-center'>
+                    <div className='col-11'>
+                        <div className='playDescription'>
+                            Risk is a classic strategic board game that challenges players to conquer the world through military conquest and tactical prowess. Risk is not merely a game of brute force; it requires careful planning and negotiation. Players must decide whether to expand aggressively, fortify their defenses, or form alliances with other players to achieve their objectives! Are you up to the challenge?
+                        </div>
+                    </div>
+                </div>
+                <div className='row justify-content-center'>
+                    <div className='col-md-auto'>
+                        <div className="playButton" data-bs-toggle="modal" data-bs-target="#newModal">
+                            New Game
+                        </div>
+                    </div>
+                    <div className='col-md-auto'>
+                        <img className='playLogo' src={logo} alt="" />
+                    </div>
+                    <div className='col-md-auto'>
+                        <div className="playButton" data-bs-toggle="modal" data-bs-target="#joinModal">
+                            Join Game
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create a game!</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="recipient-name" class="col-form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="recipient-name" onChange={(s) => setName(s.target.value)} />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" onClick={createGame}>Play</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+            <div class="modal fade" id="joinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Join a game!</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="recipient-name" class="col-form-label">Your Name</label>
+                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setName(s.target.value)} />
+                            <label for="recipient-name" class="col-form-label">Match Code</label>
+                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setGameId(s.target.value)} />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onClick={joinGame}>Play</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </section>
+
+    )
+}
+
+/*
+
+
+<div style={{marginTop: '30rem'}}>
 
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Create a game!
@@ -107,5 +184,8 @@ export default function PlayNow(){
             </div>
             
         </div>
-    )
-}
+
+*/
+
+
+
