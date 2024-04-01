@@ -1,4 +1,8 @@
-@import "~bootstrap/scss/bootstrap";
+@import '../scss/stlyes.scss';
+
+body, html{
+    background-color: #005E7A !important;
+}
 
 //classe immagini
 .team-image {
@@ -9,5 +13,54 @@
 
 //ridefinizione colore border di bootstrap per rispecchiare la navbar
 .border-primary{
-    border-color: #151F2B !important; 
+    border-color: #FEFDE8 !important; 
+}
+
+#AboutUs{
+    background-color: #005E7A;
+    width: 100%;
+    padding: 2vh;
+    margin: 20vh 0 20vh 0;
+}
+
+.teamTitle{
+    color: #FEFDE8;
+    font-family: $font !important;
+    font-weight: 800;
+    font-size: 6vh;
+    padding: 1vh;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    cursor: default;
+}
+
+.aboutusContainer{
+    padding: 5vh;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    margin-bottom: 5vh;
+}
+
+
+.divider{
+    height: 1vh;
+    width: 5vh;
+    background-color: #FEFDE8;
+}
+
+.subName{
+    color: #FEFDE8 !important;
+}
+
+.cardCaption{
+    background-color: #FEFDE8;
+}
+
+.teamCard {
+    transition: all 0.3s ease-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Initial shadow
+}
+
+.teamCard:hover {
+    box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.7),
+        0 10px 20px -2px rgba(0, 0, 0, 0.2) !important; // Shadow on hover
 }
