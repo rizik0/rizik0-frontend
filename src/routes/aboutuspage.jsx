@@ -1,5 +1,5 @@
 import Navbar from '../components/Navbar/Navbar.jsx'
-import '../scss/stlyes.scss'
+import './aboutus.scss'
 import cristian from '../assets/cristian.jpg'
 import federico from '../assets/federico.png'
 import pietro from '../assets/pietro.jpeg'

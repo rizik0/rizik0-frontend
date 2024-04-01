@@ -1,14 +1,1 @@
 @import "~bootstrap/scss/bootstrap";
-
-//classe immagini
-.team-image {
-    width: 400px;
-    height: 400px;
-    object-fit: cover;
-    
-}
-
-//ridefinizione colore border di bootstrap per rispecchiare la navbar
-.border-primary{
-    border-color: #151F2B !important; 
-}
