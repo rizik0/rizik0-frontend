@@ -4,33 +4,33 @@ import cristian from '../assets/cristian.jpg'
 import federico from '../assets/federico.png'
 import pietro from '../assets/pietro.jpeg'
 
-export default function TechPage(){
+export default function AboutUs(){
     return(
-        <>
-            <div className="container">
-                <div className="row">
-                    <Navbar id="Navbar"/>
+        <section id='AboutUs'>
+            <Navbar id="Navbar"/>
+            <div className='container'>
+                <div className='row align-items-center'>
+                    <div className='col rounded divider'></div>
+                    <div className='col'>
+                        <div className="teamTitle display-5 text-center">TEAM</div>
+                    </div>
+                    <div className='col rounded divider'></div>
                 </div>
-                <div className="row" style={{paddingTop:'15em'}}>
-                    <section className="bg-light py-3 py-md-5 py-xl-8">
-                        <div className="container">
-                            <div className="row justify-content-center">
-                                <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-                                    <h2 className="mb-4 display-5 text-center">IL TEAM</h2>
-                                    <p className="text-secondary mb-5 text-center lead fs-4">Progetto di LTW</p>
-                                    <hr className="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle"></hr>
-                                </div>
-                            </div>
-                        </div>
+            </div>
 
-                        <div className="container overflow-hidden">
+            <div className="subName mb-5 text-center lead fs-4">Riziko</div>
+            <div className="container aboutusContainer">
+
+                <div className="row">
+                    <section className="test mb-8 py-xl-8">
+                        <div className="container">
                             <div className="row gy-4 gy-lg-0 gx-xxl-5">
                                 <div className="col-4 col-md-6 col-lg-4">
-                                    <div className="card border-2 border-bottom border-primary shadow-sm overflow-hidden">
+                                    <div className="teamCard card border-2 border-bottom border-primary shadow-bg">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
                                                 <img className="img-fluid team-image " loading="lazy" src={cristian} alt="cristian" />
-                                                <figcaption className="m-0 p-4">
+                                                <figcaption className="cardCaption m-0 p-4">
                                                     <h4 className="mb-1">Cristian Di Iorio</h4>
                                                     <p className="text-secondary mb-1">Studente terzo anno ingegneria informatica</p>
                                                 </figcaption>
@@ -39,11 +39,11 @@ export default function TechPage(){
                                     </div>
                                 </div>
                                 <div className="col-4 col-md-6 col-lg-4">
-                                    <div className="card border-2 border-bottom border-primary shadow-sm overflow-hidden">
+                                    <div className="teamCard card border-2 border-bottom border-primary shadow-bg">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
                                             <img className="img-fluid team-image" loading="lazy" src={federico} alt="federico"/>
-                                                <figcaption className="m-0 p-4">
+                                                <figcaption className="cardCaption m-0 p-4">
                                                     <h4 className="mb-1">Federico Gerardi</h4>
                                                     <p className="text-secondary mb-1">Studente terzo anno ingegneria informatica</p>
                                                 </figcaption>
@@ -52,11 +52,11 @@ export default function TechPage(){
                                     </div>
                                 </div>
                                 <div className="col-4 col-md-6 col-lg-4">
-                                    <div className="card border-2 border-bottom border-primary shadow-sm overflow-hidden">
+                                    <div className="teamCard card border-2 border-bottom border-primary shadow-sm overflow-hidden">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
                                                 <img className="img-fluid team-image" loading="lazy" src={pietro} alt="pietro"/>
-                                                <figcaption className="m-0 p-4">
+                                                <figcaption className="cardCaption m-0 p-4">
                                                     <h4 className="mb-1">Pietro Costanzi Fantini</h4>
                                                     <p className="text-secondary mb-1">Studente terzo anno ingegneria informatica</p>
                                                 </figcaption>
@@ -69,7 +69,6 @@ export default function TechPage(){
                     </section>
                 </div>
             </div>
-            
-        </>
+        </section>
     )
 }
