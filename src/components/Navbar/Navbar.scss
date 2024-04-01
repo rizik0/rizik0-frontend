@@ -1,7 +1,13 @@
+@import '../../scss/stlyes.scss';
+
 @media screen and (min-width:992px) {
 	.nav-item {
 		line-height: 80px;
 	}
+}
+
+#Navbar{
+	padding-bottom: 3vh;
 }
 
 #headerNav{
@@ -13,7 +19,7 @@
 }
 
 .nav-item {
-	font-size: 2.25vh;
+	font-size: 2.5vh;
 	padding-left: 2.5vh;
 	padding-right: 2.5vh;
 }

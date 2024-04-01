@@ -1,0 +1,35 @@
+@import '../../scss/stlyes.scss';
+
+@font-face {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    src: url('https: //fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+}
+
+.powName{
+    font-family: "Press Start 2P", system-ui !important;
+    font-size: 2vh;
+    fill: #FFE500;
+}
+
+.firstLeader{
+    font-family: "Press Start 2P", system-ui !important;
+    font-size: 1.75vh;
+    fill: #FFE500;
+}
+.secondLeader{
+    font-family: "Press Start 2P", system-ui !important;
+    font-size: 1.75vh;
+    fill: #C1C1C1;
+}
+.thirdLeader {
+    font-family: "Press Start 2P", system-ui !important;
+    font-size: 1.75vh;
+    fill: #B44100;
+}
+.playerLeader{
+    font-family: "Press Start 2P", system-ui !important;
+    font-size: 1.75vh;
+    fill: #FEFDE8;
+}
