@@ -51,10 +51,10 @@ export default function Navbar(){
                             </Link>
                         </li>
                         <li className="navElem nav-item">
-                            <LinkRouter className="nav-link mx-2" aria-selected='false' aria-controls='tab-pricing' to="/Tech">Tech</LinkRouter>
+                            <LinkRouter className="nav-link mx-2" aria-selected='false' aria-controls='tab-pricing' to="/tech">Tech</LinkRouter>
                         </li>
                         <li className="long navElem nav-item">
-                            <LinkRouter className="nav-link mx-2" aria-selected='false' aria-controls='tab-aboutus' to="/AboutUs">About us</LinkRouter>
+                            <LinkRouter className="nav-link mx-2" aria-selected='false' aria-controls='tab-aboutus' to="/about_us">About us</LinkRouter>
                         </li>
                         {/* <li className="nav-item dropdown">
                         <a className="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
