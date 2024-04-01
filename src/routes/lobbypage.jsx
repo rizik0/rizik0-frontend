@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar/Navbar.jsx'
 import '../scss/stlyes.scss'
-import Carousel from '../components/Carousel/Carousel.jsx'
 import { useNavigate } from 'react-router-dom'
 import { clear } from 'localforage'
 

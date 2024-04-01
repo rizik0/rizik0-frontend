@@ -2,12 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Navbar from './components/Navbar/Navbar.jsx'
 import '../src/scss/stlyes.scss'
-import Carousel from './components/Carousel/Carousel.jsx'
 import Root from "./routes/root";
 import GamePage from "./routes/gamepage";
 import LobbyPage from "./routes/lobbypage";
 import TechPage from "./routes/techpage";
 import ErrorPage from "./routes/error-page"
+import AboutUsPage from "./routes/aboutuspage.jsx"
 
 import {
   createBrowserRouter,
@@ -33,6 +33,11 @@ const router = createBrowserRouter([
   {
     path: "/tech",
     element:  <TechPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/about_us",
+    element:  <AboutUsPage />,
     errorElement: <ErrorPage />,
   },
 ]);
