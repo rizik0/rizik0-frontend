@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar/Navbar.jsx'
+import Footer from '../components/Footer/Footer.jsx'
 import './aboutus.scss'
 import cristian from '../assets/cristian.jpg'
 import federico from '../assets/federico.png'
@@ -69,6 +70,7 @@ export default function AboutUs(){
                     </section>
                 </div>
             </div>
+            <Footer id="Footer"/>
         </section>
     )
 }
