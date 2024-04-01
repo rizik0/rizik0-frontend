@@ -26,39 +26,39 @@ export default function TechPage(){
                         <div className="container overflow-hidden">
                             <div className="row gy-4 gy-lg-0 gx-xxl-5">
                                 <div className="col-4 col-md-6 col-lg-4">
-                                    <div className="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                                    <div className="card border-2 border-bottom border-primary shadow-sm overflow-hidden">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
-                                                <img className="img-fluid" loading="lazy" src={cristian} alt=""/>
+                                                <img className="img-fluid team-image " loading="lazy" src={cristian} alt="cristian" />
                                                 <figcaption className="m-0 p-4">
                                                     <h4 className="mb-1">Cristian Di Iorio</h4>
-                                                    <p className="text-secondary mb-0">Studente terzo anno ingegneria informatica</p>
+                                                    <p className="text-secondary mb-1">Studente terzo anno ingegneria informatica</p>
                                                 </figcaption>
                                             </figure>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-4 col-md-6 col-lg-4">
-                                    <div className="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                                    <div className="card border-2 border-bottom border-primary shadow-sm overflow-hidden">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
-                                            <img className="img-fluid" loading="lazy" src={federico} alt=""/>
+                                            <img className="img-fluid team-image" loading="lazy" src={federico} alt="federico"/>
                                                 <figcaption className="m-0 p-4">
                                                     <h4 className="mb-1">Federico Gerardi</h4>
-                                                    <p className="text-secondary mb-0">Studente terzo anno ingegneria informatica</p>
+                                                    <p className="text-secondary mb-1">Studente terzo anno ingegneria informatica</p>
                                                 </figcaption>
                                             </figure>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-4 col-md-6 col-lg-4">
-                                    <div className="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
+                                    <div className="card border-2 border-bottom border-primary shadow-sm overflow-hidden">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
-                                                <img className="img-fluid" loading="lazy" src={pietro} alt=""/>
+                                                <img className="img-fluid team-image" loading="lazy" src={pietro} alt="pietro"/>
                                                 <figcaption className="m-0 p-4">
                                                     <h4 className="mb-1">Pietro Costanzi Fantini</h4>
-                                                    <p className="text-secondary mb-0">Studente terzo anno ingegneria informatica</p>
+                                                    <p className="text-secondary mb-1">Studente terzo anno ingegneria informatica</p>
                                                 </figcaption>
                                             </figure>
                                         </div>
