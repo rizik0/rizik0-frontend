@@ -59,6 +59,7 @@ export default function LobbyPage(UserColor){
 
 
     if (localStorage.getItem('game_id') === null){
+        document.body.classList.remove('modal-open');
         return (<h1>Bro devi prima imboccare in una partita</h1>)
     }
 
