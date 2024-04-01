@@ -1,5 +1,8 @@
 import Navbar from '../components/Navbar/Navbar.jsx'
 import '../scss/stlyes.scss'
+import cristian from '../assets/cristian.jpg'
+import federico from '../assets/federico.png'
+import pietro from '../assets/pietro.jpeg'
 
 export default function TechPage(){
     return(
@@ -26,7 +29,7 @@ export default function TechPage(){
                                     <div className="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
-                                                <img className="img-fluid" loading="lazy" src="../../assets/react.svg" alt=""/>
+                                                <img className="img-fluid" loading="lazy" src={cristian} alt=""/>
                                                 <figcaption className="m-0 p-4">
                                                     <h4 className="mb-1">Cristian Di Iorio</h4>
                                                     <p className="text-secondary mb-0">Studente terzo anno ingegneria informatica</p>
@@ -39,7 +42,7 @@ export default function TechPage(){
                                     <div className="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
-                                                <img className="img-fluid" loading="lazy" src='../../assets/federico_gerardi.png' alt=""/>
+                                            <img className="img-fluid" loading="lazy" src={federico} alt=""/>
                                                 <figcaption className="m-0 p-4">
                                                     <h4 className="mb-1">Federico Gerardi</h4>
                                                     <p className="text-secondary mb-0">Studente terzo anno ingegneria informatica</p>
@@ -52,7 +55,7 @@ export default function TechPage(){
                                     <div className="card border-0 border-bottom border-primary shadow-sm overflow-hidden">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
-                                                <img className="img-fluid" loading="lazy" src="./assets/img/team-img-2.jpg" alt=""/>
+                                                <img className="img-fluid" loading="lazy" src={pietro} alt=""/>
                                                 <figcaption className="m-0 p-4">
                                                     <h4 className="mb-1">Pietro Costanzi Fantini</h4>
                                                     <p className="text-secondary mb-0">Studente terzo anno ingegneria informatica</p>
@@ -66,6 +69,7 @@ export default function TechPage(){
                     </section>
                 </div>
             </div>
+            
         </>
     )
 }
