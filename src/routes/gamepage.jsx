@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Navbar from '../components/Navbar/Navbar.jsx'
+import Footer from '../components/Footer/Footer.jsx'
 import '../scss/stlyes.scss'
 import RiskBoard from '../components/RiskBoard/RiskBoard.jsx'
 import * as bootstrap from 'bootstrap'
@@ -107,7 +108,9 @@ export default function GamePage({UserColor}){
                         Termino Attacchi
                     </button>
                 </div>
-                
+                <div class = "row">
+                    <Footer id="Footer"/>
+                </div>
             </div>
             
         </div>
