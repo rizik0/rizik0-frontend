@@ -1,7 +1,9 @@
 @import '../../scss/stlyes.scss';
 
-.custom-footer {
+#Footer {
     width: 100%;
     background-color: #151F2B;
     padding-bottom: 0.3em;
+    position: fixed;
+    bottom: 0;
 }

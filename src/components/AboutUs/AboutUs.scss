@@ -1,4 +1,4 @@
-@import '../scss/stlyes.scss';
+@import '../../scss/stlyes.scss';
 
 //classe immagini
 .team-image {
@@ -8,18 +8,18 @@
 }
 
 //ridefinizione colore border di bootstrap per rispecchiare la navbar
-.border-primary{
-    border-color: #FEFDE8 !important; 
+.border-primary {
+    border-color: #FEFDE8 !important;
 }
 
-#AboutUs{
+#AboutUs {
     background-color: #005E7A;
     width: 100%;
     padding: 2vh;
     margin: 20vh 0 20vh 0;
 }
 
-.teamTitle{
+.teamTitle {
     color: #FEFDE8;
     font-family: $font !important;
     font-weight: 800;
@@ -29,7 +29,7 @@
     cursor: default;
 }
 
-.aboutusContainer{
+.aboutusContainer {
     padding: 5vh;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 30px;
@@ -37,17 +37,17 @@
 }
 
 
-.divider{
+.divider {
     height: 1vh;
     width: 5vh;
     background-color: #FEFDE8;
 }
 
-.subName{
+.subName {
     color: #FEFDE8 !important;
 }
 
-.cardCaption{
+.cardCaption {
     background-color: #FEFDE8;
 }
 
