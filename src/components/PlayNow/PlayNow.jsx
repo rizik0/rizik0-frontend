@@ -77,7 +77,7 @@ export default function PlayNow(){
                         </div>
                     </div>
                 </div>
-                <div className='row justify-content-center'>
+                <div className='row justify-content-around'>
                     <div className='col-md-auto'>
                         <div className="playButton" data-bs-toggle="modal" data-bs-target="#newModal">
                             New Game

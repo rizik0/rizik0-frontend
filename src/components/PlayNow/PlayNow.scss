@@ -4,7 +4,7 @@
     margin-bottom: 10vh;
     margin-top: -6vh;
     background-color: #005E7A;
-    height: 65vh;
+    height: 50vh;
     padding-top: 4vh;
 }
 
@@ -12,7 +12,7 @@
     color: #FEFDE8;
     text-align: center;
     font-weight: 800;
-    font-size: 6vh;
+    font-size: 4vh;
     margin-bottom: 3vh;
     text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
 }
@@ -21,20 +21,19 @@
     background: rgba(255, 255, 255, 0.2);
     border-radius: 30px;
     padding-top: 1vh;
-    height: 40vh;   
-    margin-bottom: 45vh;
+    height: 30vh;   
+    margin-bottom: 30vh;
 }
 
 .playLogo {
-    height: 45vh;
-    width: 45vh;
+    height: 30vh;
+    width: 30vh;
 }
 
 .playDescription {
     color: #FEFDE8;
-    font-size: 2.5vh;
+    font-size: 2vh;
     padding: 3vh;
-    margin-bottom: 5vh;
     text-align: justify;
 }
 
@@ -43,7 +42,8 @@
     color: #151F2B;
     padding: 1.5vh;
     border-radius: 20px;
-    font-size: 4vh;
+    font-size: 3vh;
+    margin: 2vh 5vh 0 5vh;
     cursor: pointer;
 }
 
@@ -57,5 +57,5 @@
     height: 2vh;
     background-color: #005E7A;
     border-radius: 20px;
-    margin: auto auto 10vh auto;
+    margin: auto;
 }
