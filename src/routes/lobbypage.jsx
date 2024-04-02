@@ -84,13 +84,15 @@ export default function LobbyPage(UserColor){
                         <Navbar id="Navbar"/>
                     </div>
                     <div class="row" style={{textAlign:'center',color:'white',paddingTop:'10em'}}>
-                        <div>Aspettando altri giocatori...</div>
-                        <div>Invita i tuoi amici con il codice {localStorage.getItem('game_id')}</div>
-                        {players.map((player) => {
-                            return(
-                                <p key={player.name} style={{color: player.color}}>{player.name}</p>
-                            )
-                        })}
+                        <div style={{fontSize: "2rem", fontWeight: "bold", color: "#fefde8"}}>Waiting for other players...</div>
+                        <div style={{fontSize: "1.5rem", fontWeight: "bold", color: "#fefde8", marginBottom: "1rem"}}>Game Code: {localStorage.getItem('game_id')}</div>
+                        <div style={{backgroundColor: "#035e7b", borderRadius: "15px", padding: "2rem"}}>
+                            {players.map((player) => {
+                                return(
+                                    <div key={player.name} style={{color: player.color, backgroundColor: "#fefde8", borderRadius: "10px", padding: "1rem", textAlign: "left", margin: "0.5rem", fontSize: "1.2rem"}}>{player.name}</div>
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>
