@@ -1,0 +1,83 @@
+@import '../../scss/stlyes.scss';
+
+
+#LobbyComponent{
+    padding-top: 18vh;
+    background-color: #151F2B;
+    height: 100vh;
+}
+
+.lobbyContainer{
+    padding: 0 5vh 5vh 5vh !important;
+    border-radius: 20px;
+    background-color: #035e7b;
+}
+
+.lobbyTitle{
+    color: #FEFDE8;
+    font-size: 3vh;
+    margin-bottom: 5vh;
+}
+
+.playerLobby{
+    color: #151F2B;
+    background-color: #FEFDE8;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 2.5vh;
+    margin-top: 4vh !important;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.avatarLobby .ticLobby{
+    height: 7.5vh;
+    width: 7.5vh;
+}
+
+.rowContainer{
+    text-align: center !important;
+    color: #FEFDE8 !important;
+}
+
+.codeContainer{
+    outline: 2vh solid #035e7b;
+    margin-top: 10vh !important;
+    background-color: #FEFDE8;
+    border-radius: 10px;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.codeText{
+    color: #151F2B;
+    font-size: 3vh;
+}
+
+.copy{
+    margin-left: 1.5vh;
+    width: 3.5vh;
+    height: 3.5vh;
+    cursor: pointer;
+}
+
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animateOnClick {
+    animation: clickAnimation 0.2s;
+}
