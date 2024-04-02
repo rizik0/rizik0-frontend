@@ -12,6 +12,8 @@ body, html {
     background-color: #FEFDE8;
     font-family: $font;
     font-weight: 600;
+    display: flex;
+    flex-direction: column;
 }
 
 .loading {
@@ -40,3 +42,7 @@ body, html {
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 20px 0 6px #151F2B;
 }
+
+// @media (max-width: 600px) {
+
+// }

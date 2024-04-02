@@ -33,3 +33,21 @@
     font-size: 1.75vh;
     fill: #FEFDE8;
 }
+
+@media (max-width: 500px) {
+    #soldier,#pole,#lead_pole,#lead_base{
+        display: none;
+        width: 100%;
+    }
+    #pow{
+        padding-bottom: 1.5vh;
+        position: relative;
+        top:-55px !important;
+    }
+    #leaderboard{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2vh;
+    }
+}
