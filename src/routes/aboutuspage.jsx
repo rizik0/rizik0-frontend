@@ -26,7 +26,7 @@ export default function AboutUs(){
                     <section className="test mb-8 py-xl-8">
                         <div className="container">
                             <div className="row gy-4 gy-lg-0 gx-xxl-5">
-                                <div className="col-4 col-md-6 col-lg-4">
+                                <div className="col-12 col-md-6 col-lg-4">
                                     <div className="teamCard card border-2 border-bottom border-primary shadow-bg">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
@@ -39,7 +39,7 @@ export default function AboutUs(){
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-4 col-md-6 col-lg-4">
+                                <div className="col-12 col-md-6 col-lg-4">
                                     <div className="teamCard card border-2 border-bottom border-primary shadow-bg">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
@@ -52,7 +52,7 @@ export default function AboutUs(){
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-4 col-md-6 col-lg-4">
+                                <div className="col-12 col-md-6 col-lg-4">
                                     <div className="teamCard card border-2 border-bottom border-primary shadow-sm overflow-hidden">
                                         <div className="card-body p-0">
                                             <figure className="m-0 p-0">
