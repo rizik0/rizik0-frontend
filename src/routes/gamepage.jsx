@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Navbar from '../components/Navbar/Navbar.jsx'
 import Footer from '../components/Footer/Footer.jsx'
+import Clock from '../components/Clock/Clock.jsx'
 import '../scss/stlyes.scss'
 import RiskBoard from '../components/RiskBoard/RiskBoard.jsx'
 import * as bootstrap from 'bootstrap'
@@ -94,7 +95,7 @@ export default function GamePage({UserColor}){
                         Turno di: {status}
                     </div>
                     <div class = "col" style={{textAlign:'center',color:userColor}}>
-                        10:25
+                        <Clock id="Clock"/>
                     </div>
                 </div>
                 <div class="row" >
