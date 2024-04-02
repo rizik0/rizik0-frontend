@@ -4,9 +4,7 @@ import * as React from "react"
 function getRegionObject(maps, region) {
   if (maps == undefined) return null;
   for (let i = 0; i < maps.length; i++) { 
-    console.log(maps)
     if (maps[i].name == region) {
-      console.log(maps[i])
       return maps[i]
     }
   }
@@ -2549,6 +2547,7 @@ const RiskBoard = ({ maps, onClicks }) => (
           filter: "url(#filter12951)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target="#eastern_australiaModal"
       />
       <path
         id="indonesia"
@@ -3528,6 +3527,8 @@ const RiskBoard = ({ maps, onClicks }) => (
           filter: "url(#filter14319)",
           enableBackground: "accumulate",
         }}
+
+        data-bs-toggle="modal" data-bs-target="#joinModal"
       />
       <path
         id="alberta"
