@@ -2,8 +2,25 @@ import React, { useEffect, useState } from 'react'
 import '../../scss/stlyes.scss'
 import { useNavigate } from 'react-router-dom'
 import loadingPic from '../../assets/logo_circle.png'
+import avatar from '../../assets/avatar.png'
+import copy from '../../assets/copy.png'
+import tic from '../../assets/tic.png'
+import './LobbyComponent.scss'
+
 
 export default function LobbyComponent(UserColor){
+
+    function copyCode() {
+        navigator.clipboard.writeText(localStorage.getItem('game_id'))
+        
+        const copyImage = document.querySelector('.copy');
+        copyImage.classList.add('animateOnClick');
+
+        setTimeout(() => {
+            copyImage.classList.remove('animateOnClick');
+        }, 200); // Remove the class after the same duration as the animation
+    
+    }
 
     const [status, setStatus] = useState("waiting")
     const [players, setPlayers] = useState([])
@@ -59,28 +76,68 @@ export default function LobbyComponent(UserColor){
     if (localStorage.getItem('game_id') === null){
         document.body.classList.remove('modal-open');
         return (
-            <div style={{backgroundColor:'#151F2B',height:'100vh'}}>
-                <div class="container">
-                    <div class="row">
-                    </div>
+            <section id='LobbyComponent'>
+                <div class="lobbyContainer container">
                     <div class="row" style={{textAlign:'center',color:'white',paddingTop:'10em'}}>
                         <div><img className="loading" src={loadingPic} alt="loading" style={{width: "10rem", marginTop: "10rem"}} /></div>     
                         <div style={{marginTop: "1rem", fontSize: "2rem"}}>Loading...</div>
                     </div>
                 </div>
-            </div>
+            </section>
         )
     }
 
     else {
         return(
-            <div style={{backgroundColor:'#151F2B',height:'100vh'}}>
+            <section id='LobbyComponent'>
                 <div class="container">
-                    <div class="row">
+                    <div className='row'>
+                        <div className='lobbyTitle col-12 text-center'>
+                            Waiting for other players...
+                        </div>
                     </div>
-                    <div class="row" style={{textAlign:'center',color:'white',paddingTop:'10em'}}>
+                    <div className='row'>
+                        <div className='lobbyContainer container'>
+                            {players.map((player) => {
+                                return(
+                                    <div className='container'> 
+                                        <div className='row playerLobby'>
+                                            <div className='col-1'>
+                                                <img className='avatarLobby' src={avatar}/>
+                                            </div>
+                                            <div className='col-9'>
+                                                <div key={player.name}>{player.name}</div>
+                                            </div>
+                                            <div className='col-2'>
+                                                <img className='ticLobby' src={tic} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </div>
+                    <div className='row justify-content-center'>
+                        <div className='codeContainer col-4'>
+                            <div className='codeText'>
+                                Game Code: {localStorage.getItem('game_id')}
+                                <img className='copy' onClick={copyCode} src={copy} />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        )
+    }
+
+}
+
+/*
+<div class="lobbyContainer rounded container">
+                    <div class="row rowContainer" style={{textAlign:'center',color:'white',paddingTop:'10em'}}>
                         <div style={{fontSize: "2rem", fontWeight: "bold", color: "#fefde8"}}>Waiting for other players...</div>
-                        <div style={{fontSize: "1.5rem", fontWeight: "bold", color: "#fefde8", marginBottom: "1rem"}}>Game Code: {localStorage.getItem('game_id')}</div>
+                        <div style={{fontSize: "1.5rem", fontWeight: "bold", color: "#fefde8", marginBottom: "1rem"}}>G</div>
                         <div style={{backgroundColor: "#035e7b", borderRadius: "15px", padding: "2rem"}}>
                             {players.map((player) => {
                                 return(
@@ -90,11 +147,8 @@ export default function LobbyComponent(UserColor){
                         </div>
                     </div>
                 </div>
-            </div>
-        )
-    }
 
-}
 
+*/ 
 
 
