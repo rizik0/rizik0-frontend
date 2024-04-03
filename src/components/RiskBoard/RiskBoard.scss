@@ -1,0 +1,21 @@
+@import '../../scss/stlyes.scss';
+
+.land{
+    cursor: pointer !important;
+}
+
+.land:hover{
+    stroke-width: 3 !important;
+    stroke: white !important;
+}
+
+.active{
+    stroke-width: 5 !important;
+    stroke: white !important;
+}
+
+.country{
+    height: 1vh;
+    width: 2vh;
+    background-color: wheat;
+}
