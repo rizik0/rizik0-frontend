@@ -1,5 +1,42 @@
 @import '../../scss/stlyes.scss';
 
 i {
-    font-size: 2em;
+    font-size: 1.5em;
+    position: relative;
+    top: 0.5vh;
+}
+
+#TechSection {
+    padding-top: 15vh;
+    background-color: #151F2B;
+}
+
+.TechContainer {
+    padding: 0 4vh 4vh 4vh !important;
+    border-radius: 15px;
+    background-color: #035e7b;
+    margin-bottom: 2vh; // Add margin-bottom for spacing
+}
+
+.techIntro {
+    color: #FEFDE8;
+    font-size: 4vh;
+    margin-bottom: 4vh;
+}
+
+.techTitle {
+    color: #151F2B;
+    background-color: #FEFDE8;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 2vh;
+    margin-top: 3vh !important;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.rowContainer {
+    text-align: center !important;
+    color: #FEFDE8 !important;
 }
