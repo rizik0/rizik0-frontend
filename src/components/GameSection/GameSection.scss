@@ -1,0 +1,50 @@
+@import '../../scss/stlyes.scss';
+
+#GameSection{
+    padding-top: 14vh;
+    background-color: #151F2B;
+    height: 100vh;    
+}
+
+.infoDisplay{
+    background-color: #197493;
+    border-radius: 10px 10px 0 0;
+}
+
+.turnDisplay, .clock, .modeDisplay, .countrySelection{
+    color: #FEFDE8;
+    font-size: 2.5vh;
+    cursor: default;
+}
+
+.mapContainer{
+    padding: 5vh 0vh 5vh 20vh !important;
+    border-radius: 0 0 10px 10px;
+    background-color: #035e7b;
+    margin-bottom: 3vh;
+}
+
+.objDisplay{
+    margin-left: 1vh !important;
+    background-color: #fefde8be;
+    border-radius: 10px;
+    outline: 1vh solid #035e7b;
+    font-size: 5vh;
+    font-weight: 900;
+    cursor: default;
+}
+
+.endContainer{
+    cursor: pointer;
+    text-align: left;
+    background-color: #FB5621;
+    border-radius: 10px;
+    font-size: 5vh;
+    font-weight: 900;
+}
+
+.endContainer:hover{
+    color: #FEFDE8;
+    transition: all 0.3s ease;
+}
+    
