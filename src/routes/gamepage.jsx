@@ -52,49 +52,34 @@ export default function GamePage({UserColor}){
         {"name": "new_guinea", "troops": 0, "owner": null, "continent": "oceania", "neighbours": ["indonesia", "western_australia", "eastern_australia"], "color": null},
         {"name": "western_australia", "troops": 0, "owner": null, "continent": "oceania", "neighbours": ["indonesia", "new_guinea", "eastern_australia"], "color": null},
         {"name": "eastern_australia", "troops": 0, "owner": null, "continent": "oceania", "neighbours": ["new_guinea", "western_australia"], "color": null}
-    ]});
-
-   
-    const [status, setStatus] = useState("")
-
-    const [turn, setTurn] = useState({turn_status: ''})
+    ],
+    status: "waiting",
+    });
 
     const userColor = localStorage.getItem('player_color')
 
     useEffect(() => {
         const abortController = new AbortController()
-        const fetchData = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/maps`, {
+        const fetchData = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/status`, {
             method: "GET",
             headers: { 'Content-Type': 'application/json' }
         })
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
             .then(ob => {setData(ob.data)})
-
-        const fetchStatus = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/status`, {
-            method: "GET",
-            headers: { 'Content-Type': 'application/json' }
-        })
-            .then(res => res.json()
-                .then(data => ({data: data, status: res.status})))
-            .then(ob => {setStatus(ob.data.status)})
-        
-        const fetchTurn = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/turn_status`, {
-            method: "GET",
-            headers: { 'Content-Type': 'application/json' }
-        })
-            .then(res => res.json()
-                .then(data => ({data: data, status: res.status})))
-            .then(ob => {setTurn(ob.data.status)})
         
         fetchData()  
-        fetchStatus() 
-        fetchTurn()
+
+        if (data.status === localStorage.getItem('player_id')) {
+            if (data.phase === 'initial') {
+                
+            }
+        }
         
         return () => {
             abortController.abort()
         }
-    }, [data, status]);
+    }, [data]);
 
     return(
         <div style={{backgroundColor:'#151F2B',height:'100vh'}}>  
@@ -104,7 +89,7 @@ export default function GamePage({UserColor}){
                 </div>
                 <div class = "row">
                     <div class = "col" style={{textAlign:'center',color:UserColor}}>
-                        Turno di: {status}
+                        Turno di: {data.status}
                     </div>
                     <div class = "col" style={{textAlign:'center',color:userColor}}>
                         <Clock id="Clock"/>
@@ -126,39 +111,31 @@ export default function GamePage({UserColor}){
                 </div>
 
                 {
-                        data.maps.map((map) => {
-                            
-                                // Se è il mio turno
+                    data.maps.map((map) => {
+                
+                        return (
+                            <div class="modal fade" id={`${map.name}_init_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Place Troops on {map.name}!</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <label for="recipient-name" class="col-form-label">How many?</label>
+                                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => console.log(s)} />
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" >Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                                
-                                    // Fase iniziale di assegnamento truppe
-
-                                    
-                                        // se il territorio è mio
-                                        
-                                        return (
-                                            <div class="modal fade" id={`${map.name}Modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Place Troops on {map.name}!</h1>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <label for="recipient-name" class="col-form-label">How many?</label>
-                                                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => console.log(s)} />
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary" >Send</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-            
-                                        )
-            
-                                        })}
+                        )
+                    })
+                }
                     
                                 
 
