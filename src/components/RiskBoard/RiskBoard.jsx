@@ -11,7 +11,7 @@ function getRegionObject(maps, region) {
 }
 
 
-const RiskBoard = ({ maps, onClicks }) => (
+const RiskBoard = ({ maps, phase }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     id="svg2"
@@ -2547,7 +2547,7 @@ const RiskBoard = ({ maps, onClicks }) => (
           filter: "url(#filter12951)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target="#eastern_australiaModal"
+        data-bs-toggle="modal" data-bs-target={`#eastern_australia_${phase}_modal`}
       />
       <path
         id="indonesia"
@@ -2569,6 +2569,8 @@ const RiskBoard = ({ maps, onClicks }) => (
           display: "inline",
           filter: "url(#filter12863)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#indonesia_${phase}_modal`}
+
       />
       <path
         id="new_guinea"
@@ -2590,6 +2592,7 @@ const RiskBoard = ({ maps, onClicks }) => (
           display: "inline",
           filter: "url(#filter12867)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#new_guinea_${phase}_modal`}
       />
       <path
         id="alaska"
@@ -2611,6 +2614,7 @@ const RiskBoard = ({ maps, onClicks }) => (
           display: "inline",
           filter: "url(#filter12871)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#alaska_${phase}_modal`}
       />
       <path
         id="ontario"
@@ -2632,6 +2636,7 @@ const RiskBoard = ({ maps, onClicks }) => (
           display: "inline",
           filter: "url(#filter12875)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#ontario_${phase}_modal`}
       />
       <path
         id="northwest_territory"
@@ -2653,6 +2658,7 @@ const RiskBoard = ({ maps, onClicks }) => (
           display: "inline",
           filter: "url(#filter12879)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#northwest_territory_${phase}_modal`}
       />
       <path
         id="venezuela"
@@ -2674,6 +2680,7 @@ const RiskBoard = ({ maps, onClicks }) => (
           display: "inline",
           filter: "url(#filter12883)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#venezuela_${phase}_modal`}
       />
       <path
         id="madagascar"
@@ -2695,6 +2702,7 @@ const RiskBoard = ({ maps, onClicks }) => (
           display: "inline",
           filter: "url(#filter12887)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#madagascar_${phase}_modal`}
       />
       <path
         id="north_africa"
@@ -2716,6 +2724,7 @@ const RiskBoard = ({ maps, onClicks }) => (
           display: "inline",
           filter: "url(#filter12891)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#north_africa_${phase}_modal`}
       />
       <path
         id="greenland"
@@ -2739,6 +2748,7 @@ const RiskBoard = ({ maps, onClicks }) => (
           display: "inline",
           filter: "url(#filter12895)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#greenland_${phase}_modal`}
       />
       <path
         id="iceland"

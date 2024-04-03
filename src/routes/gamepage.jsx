@@ -54,7 +54,14 @@ export default function GamePage({UserColor}){
         {"name": "eastern_australia", "troops": 0, "owner": null, "continent": "oceania", "neighbours": ["new_guinea", "western_australia"], "color": null}
     ],
     status: "waiting",
+    phase: "initial",
+    turn: 0,
+    players: [{name: '', color: ''}]
     });
+
+    const [initialTroops, setInitialTroops] = useState(0)
+
+    const [textTemp, setTextTemp] = useState('')
 
     const userColor = localStorage.getItem('player_color')
 
@@ -72,7 +79,16 @@ export default function GamePage({UserColor}){
 
         if (data.status === localStorage.getItem('player_id')) {
             if (data.phase === 'initial') {
+                const fetchInitialGet = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/initial/get`, {
+                    method: "POST",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({player_id: localStorage.getItem('player_id')})
+                })
+                    .then(res => res.json()
+                        .then(data => ({data: data, status: res.status})))
+                    .then(ob => {setInitialTroops(ob.data.troops)})
                 
+                fetchInitialGet()
             }
         }
         
@@ -96,11 +112,12 @@ export default function GamePage({UserColor}){
                     </div>
                 </div>
                 <div class="row" >
-                    <RiskBoard maps={data.maps} />
+                    <RiskBoard maps={data.maps} status={data.status} phase={data.phase} />
                 </div>
                 <div class="row" style={{textAlign:'center',color:userColor}}>
                     OBIETTIVO
                 </div>
+                {data.phase === 'initial' && data.status === localStorage.getItem('player_id') ? (<div>Truppe disponibili {initialTroops} </div>) : null}
                 <div class="row">
                     <button type="button" class="btn btn-primary" id="end-turn-button" style={{backgroundColor:userColor}}>
                         Termino Attacchi
@@ -114,7 +131,7 @@ export default function GamePage({UserColor}){
                     data.maps.map((map) => {
                 
                         return (
-                            <div class="modal fade" id={`${map.name}_init_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id={`${map.name}_initial_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -123,11 +140,22 @@ export default function GamePage({UserColor}){
                                         </div>
                                         <div class="modal-body">
                                             <label for="recipient-name" class="col-form-label">How many?</label>
-                                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => console.log(s)} />
+                                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" >Send</button>
+                                            <button type="button" class="btn btn-primary" onClick={() => {
+                                                console.log('sending')
+                                                console.log(textTemp)
+                                                fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/initial/place`, {
+                                                    method: "POST",
+                                                    headers: { 'Content-Type': 'application/json' },
+                                                    body: JSON.stringify({player_id: localStorage.getItem('player_id'), troops: textTemp, territory: map.name})
+                                                })
+                                                    .then(res => res.json()
+                                                        .then(data => ({data: data, status: res.status})))
+                                                    .then(ob => {console.log(ob.data)})
+                                            }} >Send</button>
                                         </div>
                                     </div>
                                 </div>
