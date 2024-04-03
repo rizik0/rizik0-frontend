@@ -96,79 +96,48 @@ export default function GamePage({UserColor}){
     }, [data]);
    
     return(
-        <div style={{backgroundColor:'#151F2B',height:'100vh'}}>  
-            <div class="container" style={{paddingTop:'10em'}}>
-                <div class = "row">
-                    <Navbar id="Navbar"/>
-                </div>
-                <div class = "row">
-                    <div class = "col" style={{textAlign:'center',color:UserColor}}>
-                        Turno di: {data.status}
-                    </div>
-                    <div class = "col" style={{textAlign:'center',color:userColor}}>
-                        <Clock id="Clock"/>
-                    </div>
-                </div>
-                <div class="row" >
-                    <RiskBoard maps={data.maps} status={data.status} phase={data.phase} />
-                </div>
-                <div class="row" style={{textAlign:'center',color:userColor}}>
-                    OBIETTIVO
-                </div>
-                {data.phase === 'initial' && data.status === localStorage.getItem('player_id') ? (<div>Truppe disponibili {initialTroops} </div>) : null}
-                <div class="row">
-                    <button type="button" class="btn btn-primary" id="end-turn-button" style={{backgroundColor:userColor}}>
-                        Termino Attacchi
-                    </button>
-                </div>
-                <div class = "row">
-                    <Footer id="Footer"/>
-                </div>
+        <>               
+            <Navbar id="Navbar"/>
+            <GameSection data={data} id="GameSection"/>
+            <Footer id="Footer"/>      
 
-                {
-                    data.maps.map((map) => {
-                
-                        return (
-                            <div class="modal fade" id={`${map.name}_initial_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Place Troops on {map.name}!</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <label for="recipient-name" class="col-form-label">How many?</label>
-                                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" onClick={() => {
-                                                console.log('sending')
-                                                console.log(textTemp)
-                                                fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/initial/place`, {
-                                                    method: "POST",
-                                                    headers: { 'Content-Type': 'application/json' },
-                                                    body: JSON.stringify({player_id: localStorage.getItem('player_id'), troops: textTemp, territory: map.name})
-                                                })
-                                                    .then(res => res.json()
-                                                        .then(data => ({data: data, status: res.status})))
-                                                    .then(ob => {console.log(ob.data)})
-                                            }} >Send</button>
-                                        </div>
+            {
+                data.maps.map((map) => {
+            
+                    return (
+                        <div class="modal fade" id={`${map.name}_initial_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Place Troops on {map.name}!</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <label for="recipient-name" class="col-form-label">How many?</label>
+                                        <input type="text" class="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" onClick={() => {
+                                            console.log('sending')
+                                            console.log(textTemp)
+                                            fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/initial/place`, {
+                                                method: "POST",
+                                                headers: { 'Content-Type': 'application/json' },
+                                                body: JSON.stringify({player_id: localStorage.getItem('player_id'), troops: textTemp, territory: map.name})
+                                            })
+                                                .then(res => res.json()
+                                                    .then(data => ({data: data, status: res.status})))
+                                                .then(ob => {console.log(ob.data)})
+                                        }} >Send</button>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                        )
-                    })
-                }
-                    
-                                
-
-                         
-                
-            </div>
-            
-        </div>
+                    )
+                })
+            }       
+        </>
     )
 }
