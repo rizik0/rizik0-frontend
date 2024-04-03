@@ -44,10 +44,8 @@
         position: relative;
         top:-55px !important;
     }
-    #leaderboard{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2vh;
+    #lead_svg{
+        width: 50%;
+        height: auto;
     }
 }
