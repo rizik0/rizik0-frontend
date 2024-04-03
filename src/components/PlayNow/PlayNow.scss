@@ -30,6 +30,10 @@
     width: 30vh;
 }
 
+#square_logo{
+    display: none;
+}
+
 .playDescription {
     color: #FEFDE8;
     font-size: 2vh;
@@ -58,4 +62,34 @@
     background-color: #005E7A;
     border-radius: 20px;
     margin: auto;
+}
+
+@media (max-width: 500px) {
+    #PlayNow {
+        margin-top: -10vh;
+        height: 60vh;
+    }
+    .playTitle {
+        font-size: 3.5vh;
+    }
+    .playContainer {
+        height: 45vh;
+    }
+    .playDescription {
+        font-size: 1.5vh;
+    }
+    .playButton {
+        text-align: center;
+        font-size: 2.3vh;
+    }
+    .sectionDivider{
+        width: 90%;
+    }
+    #circle_logo{
+        display: none;
+    }
+    #square_logo{
+        // display: none; per pietro da finire
+        transform: scale(0.4);
+    }
 }
