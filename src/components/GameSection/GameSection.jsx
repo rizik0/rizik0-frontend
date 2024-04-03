@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import Navbar from '../components/Navbar/Navbar.jsx'
-import Footer from '../components/Footer/Footer.jsx'
-import '../scss/stlyes.scss'
-import GameSection from '../components/GameSection/GameSection.jsx'
+import RiskBoard from '../RiskBoard/RiskBoard.jsx'
+import Clock from '../Clock/Clock.jsx'
+import './GameSection.scss'
 
-
-export default function GamePage({UserColor}){
+export default function GameSection({UserColor}){
 
     const [data, setData] = useState({maps: [
         {"name": "alaska", "troops": 0, "owner": null, "continent": "north-america", "neighbours": ["northwest_territory", "alberta", "kamchatka"], "color": null},
@@ -50,125 +48,83 @@ export default function GamePage({UserColor}){
         {"name": "new_guinea", "troops": 0, "owner": null, "continent": "oceania", "neighbours": ["indonesia", "western_australia", "eastern_australia"], "color": null},
         {"name": "western_australia", "troops": 0, "owner": null, "continent": "oceania", "neighbours": ["indonesia", "new_guinea", "eastern_australia"], "color": null},
         {"name": "eastern_australia", "troops": 0, "owner": null, "continent": "oceania", "neighbours": ["new_guinea", "western_australia"], "color": null}
-    ],
-    status: "waiting",
-    phase: "initial",
-    turn: 0,
-    players: [{name: '', color: ''}]
-    });
+    ]});
 
-    const [initialTroops, setInitialTroops] = useState(0)
-
-    const [textTemp, setTextTemp] = useState('')
+    const [status, setStatus] = useState("")
 
     const userColor = localStorage.getItem('player_color')
 
     useEffect(() => {
         const abortController = new AbortController()
-        const fetchData = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/status`, {
+        const fetchData = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/maps`, {
             method: "GET",
             headers: { 'Content-Type': 'application/json' }
         })
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
             .then(ob => {setData(ob.data)})
-        
-        fetchData()  
 
-        if (data.status === localStorage.getItem('player_id')) {
-            if (data.phase === 'initial') {
-                const fetchInitialGet = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/initial/get`, {
-                    method: "POST",
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({player_id: localStorage.getItem('player_id')})
-                })
-                    .then(res => res.json()
-                        .then(data => ({data: data, status: res.status})))
-                    .then(ob => {setInitialTroops(ob.data.troops)})
-                
-                fetchInitialGet()
-            }
-        }
+        const fetchStatus = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/status`, {
+            method: "GET",
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(res => res.json()
+                .then(data => ({data: data, status: res.status})))
+            .then(ob => {setStatus(ob.data.status); console.log(status)})
+
+        fetchData()  
+        fetchStatus() 
         
         return () => {
             abortController.abort()
         }
-    }, [data]);
-   
+    }, [data, status]);
+
+    const [countryName, setCountryName] = useState(null);
+
     return(
-        <div style={{backgroundColor:'#151F2B',height:'100vh'}}>  
-            <div class="container" style={{paddingTop:'10em'}}>
-                <div class = "row">
-                    <Navbar id="Navbar"/>
-                </div>
-                <div class = "row">
-                    <div class = "col" style={{textAlign:'center',color:UserColor}}>
-                        Turno di: {data.status}
+        <section id="GameSection">
+            <div className="container">
+                <div className="infoDisplay row text-center justify-content-between">
+                    <div className= "turnDisplay col-2">
+                        Turn: <span style={{color:UserColor}}>{status}</span>
                     </div>
-                    <div class = "col" style={{textAlign:'center',color:userColor}}>
-                        <Clock id="Clock"/>
+                    <div className='modeDisplay col-2'>
+                        Mode: <span style={{color:UserColor}}>Attack</span>
+                    </div>
+                    <div className='countrySelection col-5'>
+                        Region: <span style={{color:"#151F2B"}}>{countryName}</span>
+                    </div>
+                    <div className="clock col-3">
+                        Time: <Clock id="Clock"/>
                     </div>
                 </div>
-                <div class="row" >
-                    <RiskBoard maps={data.maps} status={data.status} phase={data.phase} />
+                <div className="row">
+                    <div className='mapContainer col-12'>
+                        <RiskBoard setCountryName={setCountryName} maps={data.maps}/>
+                    </div>
                 </div>
-                <div class="row" style={{textAlign:'center',color:userColor}}>
-                    OBIETTIVO
+                <div className="row justify-content-between">
+                    <div className='objDisplay col-6'>
+                        OBJECTIVE: <span style={{fontWeight:600}}>Conquer Europe</span>
+                    </div>
+                    <div className='endContainer col-2'>
+                        <span>End Turn</span>
+                    </div>
                 </div>
-                {data.phase === 'initial' && data.status === localStorage.getItem('player_id') ? (<div>Truppe disponibili {initialTroops} </div>) : null}
-                <div class="row">
-                    <button type="button" class="btn btn-primary" id="end-turn-button" style={{backgroundColor:userColor}}>
-                        Termino Attacchi
-                    </button>
-                </div>
-                <div class = "row">
-                    <Footer id="Footer"/>
-                </div>
-
-                {
-                    data.maps.map((map) => {
-                
-                        return (
-                            <div class="modal fade" id={`${map.name}_initial_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Place Troops on {map.name}!</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <label for="recipient-name" class="col-form-label">How many?</label>
-                                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" onClick={() => {
-                                                console.log('sending')
-                                                console.log(textTemp)
-                                                fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/initial/place`, {
-                                                    method: "POST",
-                                                    headers: { 'Content-Type': 'application/json' },
-                                                    body: JSON.stringify({player_id: localStorage.getItem('player_id'), troops: textTemp, territory: map.name})
-                                                })
-                                                    .then(res => res.json()
-                                                        .then(data => ({data: data, status: res.status})))
-                                                    .then(ob => {console.log(ob.data)})
-                                            }} >Send</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        )
-                    })
-                }
-                    
-                                
-
-                         
-                
             </div>
-            
-        </div>
+                
+        </section>
     )
 }
+
+
+/*
+
+
+
+
+<button type="button" className="btn btn-primary" id="end-turn-button" style={{backgroundColor:userColor}}>
+                        Termino Attacchi
+                    </button>
+*/

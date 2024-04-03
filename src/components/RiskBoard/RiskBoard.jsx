@@ -1,5 +1,6 @@
 import * as React from "react"
-
+import './RiskBoard.scss'
+import { useEffect, useState } from 'react'
 
 function getRegionObject(maps, region) {
   if (maps == undefined) return null;
@@ -11,7 +12,36 @@ function getRegionObject(maps, region) {
 }
 
 
-const RiskBoard = ({ maps, phase }) => (
+
+const RiskBoard = ({ maps, phase, setCountryName }) => {
+  function handlePathClick(event) {
+
+    const lands = document.querySelectorAll('.land');
+    lands.forEach(land => land.classList.remove('active'));
+
+    if (event.target) {
+      event.target.classList.add('active');
+      const countryName = event.target.getAttribute('id');
+      setCountryName(countryName);
+    }
+  }
+
+  useEffect(() => {
+
+      const paths = document.querySelectorAll('svg path');
+      paths.forEach(path => {
+        path.addEventListener('click', handlePathClick);
+      });
+
+      return () => {
+        paths.forEach(path => {
+          path.removeEventListener('click', handlePathClick);
+        });
+      };
+    }, []);
+
+  return(
+    <div>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     id="svg2"
@@ -23,7 +53,7 @@ const RiskBoard = ({ maps, phase }) => (
   >
     <style>
       {
-        '.board-region{font-size:22px;fill:#000;font-weight:700;font-family:"Times New Roman"}'
+        '.board-region{cursor:pointer;text-shadow: 1px 1px 4px black;font-size:22px;fill:#FFF;font-weight:700;font-family:"Times New Roman"}'
       }
     </style>
     <defs id="defs5">
@@ -2515,7 +2545,7 @@ const RiskBoard = ({ maps, phase }) => (
     <g
       id="layer4"
       style={{
-        opacity: 0.709434,
+        opacity: 1,
         display: "inline",
       }}
       transform="translate(-167.997 -118.555)"
@@ -3696,5 +3726,22 @@ const RiskBoard = ({ maps, phase }) => (
       </text>
     </g>
   </svg>
-)
+  </div>
+);
+}
 export default RiskBoard
+
+
+
+
+
+/*
+
+function handlePathClick(event) {
+   if (event.target) {
+    event.target.style.opacity= 0; // Change the stroke color to red
+  }
+}
+
+
+*/
