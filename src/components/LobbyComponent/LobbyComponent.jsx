@@ -149,5 +149,3 @@ export default function LobbyComponent(UserColor){
                 </div>
 */ 
 
-
-*/ 
