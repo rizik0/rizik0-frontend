@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo_circle.png'
+import logo_square from '../../assets/logo_full.png'
 import './PlayNow.scss'
 import { Modal } from 'bootstrap';
 
@@ -67,7 +68,7 @@ export default function PlayNow(){
             <div className="playTitle">🎮 PLAY NOW 🎮</div>
             <div className="playContainer container">
                 <div className=' row justify-content-md-center'>
-                    <div className='col-11'>
+                    <div className='col-12'>
                         <div className='playDescription'>
                             Risk is a classic strategic board game that challenges players to conquer the world through 
                             military conquest and tactical prowess. Risk is not merely a game of brute force; it requires 
@@ -84,14 +85,16 @@ export default function PlayNow(){
                         </div>
                     </div>
                     <div className='col-md-auto'>
-                        <img className='playLogo' src={logo} alt="" />
+                        <img className='playLogo' id="circle_logo" src={logo} alt="" />
                     </div>
                     <div className='col-md-auto'>
                         <div className="playButton" data-bs-toggle="modal" data-bs-target="#joinModal">
                             Join Game
                         </div>
                     </div>
-                    
+                </div>
+                <div className='row'>
+                        <img id="square_logo" src={logo_square} alt="" />
                 </div>
             </div>
 
