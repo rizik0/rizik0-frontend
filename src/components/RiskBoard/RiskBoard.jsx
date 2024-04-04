@@ -2809,6 +2809,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12899)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#iceland_${phase}_modal`}
       />
       <path
         id="great_britain"
@@ -2839,6 +2840,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12903)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#great_britain_${phase}_modal`}
       />
       <path
         id="scandinavia"
@@ -2865,6 +2867,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12907)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#scandinavia_${phase}_modal`}
       />
       <path
         id="japan"
@@ -2888,6 +2891,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12911)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#japan_${phase}_modal`}
       />
       <path
         id="yakutsk"
@@ -2916,6 +2920,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12915)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#yakutsk_${phase}_modal`}
       />
       <path
         id="kamchatka"
@@ -2944,6 +2949,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12919)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#kamchatka_${phase}_modal`}
       />
       <path
         id="siberia"
@@ -2972,6 +2978,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12923)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#siberia_${phase}_modal`}
       />
       <path
         id="ural"
@@ -3000,6 +3007,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12927)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#ural_${phase}_modal`}
       />
       <path
         id="afghanistan"
@@ -3028,6 +3036,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12931)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#afghanistan_${phase}_modal`}
       />
       <path
         id="middle_east"
@@ -3056,6 +3065,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12935)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#middle_east_${phase}_modal`}
       />
       <path
         id="india"
@@ -3084,6 +3094,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12939)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#india_${phase}_modal`}
       />
       <path
         id="siam"
@@ -3112,6 +3123,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12943)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#siam_${phase}_modal`}
       />
       <path
         id="china"
@@ -3169,6 +3181,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12951)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#mongolia_${phase}_modal`}
       />
       <path
         id="irkutsk"
@@ -3197,6 +3210,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12955)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#irkutsk_${phase}_modal`}
       />
       <path
         id="ukraine"
@@ -3225,6 +3239,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12959)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#ukraine_${phase}_modal`}
       />
       <path
         id="southern_europe"
@@ -3253,6 +3268,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12963)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#southern_europe_${phase}_modal`}
       />
       <path
         id="western_europe"
@@ -3281,6 +3297,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12967)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#western_europe_${phase}_modal`}
       />
       <path
         id="northern_europe"
@@ -3309,6 +3326,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12971)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#northern_europe_${phase}_modal`}
       />
       <path
         id="egypt"
@@ -3330,6 +3348,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12975)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#egypt_${phase}_modal`}
       />
       <path
         id="east_africa"
@@ -3351,6 +3370,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12979)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#east_africa_${phase}_modal`}
       />
       <path
         id="congo"
@@ -3372,6 +3392,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12983)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#congo_${phase}_modal`}
       />
       <path
         id="south_africa"
@@ -3393,6 +3414,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12987)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#south_africa_${phase}_modal`}
       />
       <path
         id="brazil"
@@ -3414,6 +3436,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12991)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#brazil_${phase}_modal`}
       />
       <path
         id="argentina"
@@ -3435,6 +3458,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12995)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#argentina_${phase}_modal`}
       />
       <path
         id="eastern_united_states"
@@ -3456,6 +3480,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12999)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#eastern_united_states_${phase}_modal`}
       />
       <path
         id="western_united_states"
@@ -3477,6 +3502,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter13003)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#western_united_states_${phase}_modal`}
       />
       <path
         id="quebec"
@@ -3498,6 +3524,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter13007)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#quebec_${phase}_modal`}
       />
       <path
         id="central_america"
@@ -3519,6 +3546,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter13011)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#central_america_${phase}_modal`}
       />
       <path
         id="peru"
@@ -3540,6 +3568,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter13015)",
         }}
+        data-bs-toggle="modal" data-bs-target={`#peru_${phase}_modal`}
       />
       <path
         id="western_australia"
@@ -3569,7 +3598,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           enableBackground: "accumulate",
         }}
 
-        data-bs-toggle="modal" data-bs-target="#joinModal"
+        data-bs-toggle="modal" data-bs-target={`#western_australia_${phase}_modal`}
       />
       <path
         id="alberta"
@@ -3598,6 +3627,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12879)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#alberta_${phase}_modal`}
       />
       <text x={860} y={540} className="board-region">
         {getRegionObject(maps, "eastern_australia").troops}
