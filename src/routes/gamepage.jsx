@@ -60,6 +60,7 @@ export default function GamePage({UserColor}){
     const [initialTroops, setInitialTroops] = useState(0)
 
     const [textTemp, setTextTemp] = useState('')
+    const [territoryTemp, setTerritoryTemp] = useState('')
 
     const userColor = localStorage.getItem('player_color')
 
@@ -169,6 +170,48 @@ export default function GamePage({UserColor}){
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
                                                     body: JSON.stringify({player_id: localStorage.getItem('player_id'), troops: textTemp, territory: map.name})
+                                                })
+                                                    .then(res => res.json()
+                                                        .then(data => ({data: data, status: res.status})))
+                                                    .then(ob => {console.log(ob.data)})
+                                            }} >Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal fade" id={`${map.name}_attacking_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Attack from {map.name}!</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <label for="recipient-name" class="col-form-label">What do you want to attack?</label>
+                                            <select class="form-select" onChange={(s) => {setTerritoryTemp(s.target.value)}}>
+                                                <option selected>Choose...</option>
+                                                {
+                                                    map.neighbours.map((neighbour) => {
+                                                        return(
+                                                            <option>{neighbour}</option>
+                                                        )
+                                                    })
+                                                }
+                                            </select>
+                                            <label for="recipient-name" class="col-form-label">How many troops?</label>
+                                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" onClick={() => {
+                                                console.log('sending')
+                                                // console.log(textTemp)
+                                                console.log({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
+                                                fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/attacking`, {
+                                                    method: "POST",
+                                                    headers: { 'Content-Type': 'application/json' },
+                                                    body: JSON.stringify({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
                                                 })
                                                     .then(res => res.json()
                                                         .then(data => ({data: data, status: res.status})))
