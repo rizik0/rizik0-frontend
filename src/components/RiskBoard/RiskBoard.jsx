@@ -3140,6 +3140,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12947)",
           enableBackground: "accumulate",
         }}
+        data-bs-toggle="modal" data-bs-target={`#china_${phase}_modal`}
       />
       <path
         id="mongolia"

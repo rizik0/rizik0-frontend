@@ -88,6 +88,19 @@ export default function GamePage({UserColor}){
                 
                 fetchInitialGet()
             }
+
+            if (data.phase === 'positioning') {
+                const fetchPositioningGet = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/positioning/get`, {
+                    method: "POST",
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({player_id: localStorage.getItem('player_id')})
+                })
+                    .then(res => res.json()
+                        .then(data => ({data: data, status: res.status})))
+                    .then(ob => {setInitialTroops(ob.data.troops)})
+                
+                fetchPositioningGet()
+            }
         }
         
         return () => {
@@ -99,6 +112,7 @@ export default function GamePage({UserColor}){
         <>               
             <Navbar id="Navbar"/>
             <GameSection data={data} id="GameSection"/>
+            <div style={{fontSize: "25px", color: "white"}}>{initialTroops}</div>
             <Footer id="Footer"/>      
 
             {
@@ -135,7 +149,7 @@ export default function GamePage({UserColor}){
                                 </div>
                             </div>
 
-                            <div class="modal fade" id={`${map.name}_initial_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal fade" id={`${map.name}_positioning_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -151,7 +165,7 @@ export default function GamePage({UserColor}){
                                             <button type="button" class="btn btn-primary" onClick={() => {
                                                 console.log('sending')
                                                 console.log(textTemp)
-                                                fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/initial/place`, {
+                                                fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/positioning/place`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
                                                     body: JSON.stringify({player_id: localStorage.getItem('player_id'), troops: textTemp, territory: map.name})
