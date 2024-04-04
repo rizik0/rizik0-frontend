@@ -208,14 +208,14 @@ export default function GamePage({UserColor}){
                                                 console.log('sending')
                                                 // console.log(textTemp)
                                                 console.log({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
-                                                fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/attacking`, {
+                                                fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/attacking/`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
                                                     body: JSON.stringify({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
                                                 })
                                                     .then(res => res.json()
                                                         .then(data => ({data: data, status: res.status})))
-                                                    .then(ob => {console.log(ob.data)})
+                                                    // .then(ob => {console.log(ob.data)})
                                             }} >Send</button>
                                         </div>
                                     </div>
