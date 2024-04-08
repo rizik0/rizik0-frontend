@@ -98,42 +98,42 @@ export default function PlayNow(){
                 </div>
             </div>
 
-            <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={newModalRef}>
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create a game!</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="newModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={newModalRef}>
+                        <div className="modal-dialog modal-dialog-centered">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h1 className="modal-title fs-5" id="exampleModalLabel">Create a game!</h1>
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
-                                    <label for="recipient-name" class="col-form-label">Your Name</label>
-                                    <input type="text" class="form-control" id="recipient-name" onChange={(s) => setName(s.target.value)} />
+                                <div className="modal-body">
+                                    <label for="recipient-name" className="col-form-label">Your Name</label>
+                                    <input type="text" className="form-control" id="recipient-name" onChange={(s) => setName(s.target.value)} />
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" onClick={createGame}>Play</button>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" className="btn btn-primary" onClick={createGame}>Play</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
 
-            <div class="modal fade" id="joinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={joinModalRef}>
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Join a game!</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="joinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={joinModalRef}>
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">Join a game!</h1>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <label for="recipient-name" class="col-form-label">Your Name</label>
-                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setName(s.target.value)} />
-                            <label for="recipient-name" class="col-form-label">Match Code</label>
-                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setGameId(s.target.value)} />
+                        <div className="modal-body">
+                            <label for="recipient-name" className="col-form-label">Your Name</label>
+                            <input type="text" className="form-control" id="recipient-name" onChange={(s) => setName(s.target.value)} />
+                            <label for="recipient-name" className="col-form-label">Match Code</label>
+                            <input type="text" className="form-control" id="recipient-name" onChange={(s) => setGameId(s.target.value)} />
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" onClick={joinGame}>Play</button>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-primary" onClick={joinGame}>Play</button>
                         </div>
                     </div>
                 </div>
