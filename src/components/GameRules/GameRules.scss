@@ -32,14 +32,34 @@
     border-radius: 30px;
 }
 
+
+
 @media (max-width: 500px) {
+    #GameRules{
+        margin-top: 15vh;
+        padding: 2vh 2vh 2vh 2vh;
+        margin-bottom: 10vh;
+    }
     .ruleTitle{
         font-size: 4.5vh;
     }
     .ruleContainer{
         padding: 2vh !important;
     }
-    .carouselImage {
-        height: 30vh;
+    .carousel-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
+    .carouselImage {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        height: 55vh;
+    }
+    .carousel-caption{
+        margin-bottom: 0%;
+    }
+
 }

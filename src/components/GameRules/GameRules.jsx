@@ -23,7 +23,7 @@ export default function Carousel() {
                                     <div className="d-flex justify-content-center">
                                         <img src={firstImg} className="carouselImage d-block rounded align-middle h-80 w-100" ></img>
                                     </div>
-                                <div className="carousel-caption d-none d-md-block">
+                                <div className="carousel-caption">
                                     <h5>First slide label</h5>
                                     <p>Some representative placeholder content for the first slide.</p>
                                 </div>
@@ -32,14 +32,14 @@ export default function Carousel() {
                                     <div className="d-flex justify-content-center">
                                         <img src={secondImg} className="carouselImage d-block align-middle h-40 w-100" ></img>
                                     </div>
-                                <div className="carousel-caption d-none d-md-block">
+                                <div className="carousel-caption">
                                     <h5>Second slide label</h5>
                                     <p>Some representative placeholder content for the second slide.</p>
                                 </div>
                                 </div>
                                 <div className="carousel-item">
                                     <img src={thirdImg} className="carouselImage d-block w-100" alt="..."></img>
-                                <div className="carousel-caption d-none d-md-block">
+                                <div className="carousel-caption">
                                     <h5>Third slide label</h5>
                                     <p>Some representative placeholder content for the third slide.</p>
                                 </div>
