@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar/Navbar.jsx'
 import Footer from '../components/Footer/Footer.jsx'
 import '../scss/stlyes.scss'
 import GameSection from '../components/GameSection/GameSection.jsx'
-
+import { Modal } from 'bootstrap'
 
 export default function GamePage({UserColor}){
 
@@ -60,6 +60,10 @@ export default function GamePage({UserColor}){
     const [initialTroops, setInitialTroops] = useState(0)
 
     const [textTemp, setTextTemp] = useState('')
+    const [territoryTemp, setTerritoryTemp] = useState('')
+
+    const [fromTerritory, setFromTerritory] = useState('')
+    const [toTerritory, setToTerritory] = useState('')
 
     const userColor = localStorage.getItem('player_color')
 
@@ -178,10 +182,92 @@ export default function GamePage({UserColor}){
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="modal fade" id={`${map.name}_attacking_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Attack from {map.name}!</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <label for="recipient-name" class="col-form-label">What do you want to attack?</label>
+                                            <select class="form-select" onChange={(s) => {setTerritoryTemp(s.target.value)}}>
+                                                <option selected>Choose...</option>
+                                                {
+                                                    map.neighbours.map((neighbour) => {
+                                                        return(
+                                                            <option>{neighbour}</option>
+                                                        )
+                                                    })
+                                                }
+                                            </select>
+                                            <label for="recipient-name" class="col-form-label">How many troops?</label>
+                                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" onClick={() => {
+                                                console.log('sending')
+                                                // console.log(textTemp)
+                                                console.log({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
+                                                fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/attacking/`, {
+                                                    method: "POST",
+                                                    headers: { 'Content-Type': 'application/json' },
+                                                    body: JSON.stringify({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
+                                                })
+                                                    .then(res => res.json()
+                                                        .then(data => ({data: data, status: res.status})))
+                                                     .then(ob => ob.data.won)
+                                                     .then(won => {
+                                                        if (won === 'yes') {
+                                                            setFromTerritory(map.name)
+                                                            const win_modal = new Modal(document.getElementById('attack_move_modal'), {keyboard: false})
+
+                                                            win_modal.show()
+                                                        }
+                                                     })
+                                            }} >Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </>
                     )
                 })
-            }       
+            }
+            
+
+            <div class="modal fade" id="attack_move_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Move troops to the territory you won!</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="recipient-name" class="col-form-label">How many?</label>
+                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onClick={() => {
+                                console.log('sending')
+                                console.log(textTemp)
+                                fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/attacking/move`, {
+                                    method: "POST",
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({player_id: localStorage.getItem('player_id'), from_territory: fromTerritory, to_territory: territoryTemp, troops: textTemp})
+                                })
+                                    .then(res => res.json()
+                                        .then(data => ({data: data, status: res.status})))
+                                    .then(ob => {console.log(ob.data)})
+                            }} >Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </>
     )
 }

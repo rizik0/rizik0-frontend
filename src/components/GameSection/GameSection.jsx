@@ -34,7 +34,16 @@ export default function GameSection({ data }){
                         OBJECTIVE: <span style={{fontWeight:600}}>Conquer Europe</span>
                     </div>
                     <div className='endContainer col-2'>
-                        <span>End Turn</span>
+                        <span onClick={() => {
+                            fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/attacking/end`, {
+                                method: "POST",
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({player_id: localStorage.getItem('player_id')})
+                            })
+                                .then(res => res.json()
+                                    .then(data => ({data: data, status: res.status})))
+                                .then(ob => {console.log(ob.data)})
+                        }}>End Turn</span>
                     </div>
                 </div>
             </div>

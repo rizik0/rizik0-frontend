@@ -16,9 +16,9 @@ export default function LobbyComponent(UserColor){
         const copyImage = document.querySelector('.copy');
         copyImage.classList.add('animateOnClick');
 
-        setTimeout(() => {
-            copyImage.classList.remove('animateOnClick');
-        }, 200); // Remove the class after the same duration as the animation
+        // setTimeout(() => {
+        //     copyImage.classList.remove('animateOnClick');
+        // }, 200); // Remove the class after the same duration as the animation
     
     }
 
