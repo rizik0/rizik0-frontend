@@ -1,3 +1,4 @@
+import { left } from '@popperjs/core'
 import './TechSection.scss'
 
 export default function TechSection(){
@@ -14,13 +15,13 @@ export default function TechSection(){
                     <div className='TechContainer container'>
                         <div className='container'> 
                             <div className='row techTitle'>
-                                <div className='col-1 justify-content-left'> 
+                                <div style={{backgroundColor:'#ADD8E6'}} className='col-1 justify-content-center iconWrapper'> 
                                     <i class="fa-brands fa-react"></i>
                                 </div>
                                 <div className='col-9 justify-content-left'>
-                                    <div >REACT</div>
+                                    <div>REACT </div>
                                     <div className='row'>
-                                        <p className="mb-1">We choose React as it allowed us to make our website to be dynamic.</p>
+                                        <p className="mb-1">We choose React as it allowed our website to be dynamic.</p>
                                     </div>
                                 </div>
                             </div>
@@ -29,7 +30,7 @@ export default function TechSection(){
                     <div className='TechContainer container'>
                         <div className='container'> 
                             <div className='row techTitle'>
-                                <div className='col-1 justify-content-left'> 
+                                <div style={{backgroundColor:'#A020F0'}} className='col-1 justify-content-center iconWrapper'> 
                                     <i class="fa-brands fa-vine"></i>
                                 </div>
                                 <div className='col-9 justify-content-left'>
@@ -44,7 +45,7 @@ export default function TechSection(){
                     <div className='TechContainer container'>
                         <div className='container'> 
                             <div className='row techTitle'>
-                                <div className='col-1 justify-content-left'> 
+                                <div style={{backgroundColor:'#FFFF00'}} className='col-1 justify-content-center iconWrapper'> 
                                     <i class="fa-brands fa-python"></i>
                                 </div>
                                 <div className='col-9 justify-content-left'>
@@ -59,7 +60,7 @@ export default function TechSection(){
                     <div className='TechContainer container'>
                         <div className='container'> 
                             <div className='row techTitle'>
-                                <div className='col-1 justify-content-left'> 
+                                <div style={{backgroundColor:'#FF5733'}} className='col-1 justify-content-center iconWrapper'> 
                                     <i class="fa-solid fa-database"></i>
                                 </div>
                                 <div className='col-9 justify-content-left'>
