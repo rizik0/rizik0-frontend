@@ -59,8 +59,8 @@ export default function GamePage({UserColor}){
 
     const [initialTroops, setInitialTroops] = useState(0)
 
-    const [troopsPlaced, setTroopsPlaced] = useState(null)
     const [totalTroopsPlaced, setTotalTroopsPlaced] = useState(0)
+    const [totalReinforcementPlaced, setTotalReinforcementPlaced] = useState(0)
 
     const [textTemp, setTextTemp] = useState('')
     const [territoryTemp, setTerritoryTemp] = useState('')
@@ -118,7 +118,7 @@ export default function GamePage({UserColor}){
     return(
         <>               
             <Navbar id="Navbar"/>
-            <GameSection data={data} id="GameSection" troopsPlaced={troopsPlaced}/>
+            <GameSection data={data} id="GameSection" troopsPlaced={totalTroopsPlaced} reinforcementPlaced={totalReinforcementPlaced}/>
             <div style={{fontSize: "25px", color: "white"}}>{initialTroops}</div>
 
             {
@@ -144,7 +144,8 @@ export default function GamePage({UserColor}){
                                                 const newTotalTroopsPlaced = totalTroopsPlaced + parseInt(textTemp)
                                                 if (newTotalTroopsPlaced < 21) {
                                                     setTotalTroopsPlaced(newTotalTroopsPlaced)
-                                                    setTroopsPlaced(textTemp)
+                                                }else if(newTotalTroopsPlaced === 21){
+                                                    setTotalTroopsPlaced(0)
                                                 }
                                                 fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/initial/place`, {
                                                     method: "POST",
@@ -179,6 +180,13 @@ export default function GamePage({UserColor}){
                                             <button type="button" className="btn btn-primary" onClick={() => {
                                                 console.log('sending')
                                                 console.log(textTemp)
+                                                const newReinforcementPlaced = totalReinforcementPlaced + parseInt(textTemp)
+                                                if (newReinforcementPlaced < 5) {
+                                                    setTotalReinforcementPlaced(newReinforcementPlaced)
+                                                }
+                                                if (newReinforcementPlaced === 4) {
+                                                    setTotalReinforcementPlaced(0)
+                                                }
                                                 fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/positioning/place`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },

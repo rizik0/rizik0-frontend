@@ -11,10 +11,15 @@
     border-radius: 10px 10px 0 0;
 }
 
-.turnDisplay, .clock, .modeDisplay, .countrySelection{
+.turnDisplay, .clock, .modeDisplay, .countrySelection, .playerColor, .troopPlacement{
     color: #FEFDE8;
     font-size: 2.5vh;
     cursor: default;
+}
+
+.playerColor{
+    align-items: center;
+    display: inline-flex !important;
 }
 
 .mapContainer{
@@ -29,7 +34,7 @@
     background-color: #fefde8be;
     border-radius: 10px;
     outline: 1vh solid #035e7b;
-    font-size: 5vh;
+    font-size: 4vh;
     font-weight: 900;
     cursor: default;
 }
@@ -39,8 +44,9 @@
     text-align: left;
     background-color: #FB5621;
     border-radius: 10px;
-    font-size: 5vh;
+    font-size: 4vh;
     font-weight: 900;
+    text-align: center;
 }
 
 .endContainer:hover{
