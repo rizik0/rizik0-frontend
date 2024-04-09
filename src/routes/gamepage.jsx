@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar/Navbar.jsx'
 import Footer from '../components/Footer/Footer.jsx'
 import '../scss/stlyes.scss'
 import GameSection from '../components/GameSection/GameSection.jsx'
-import { Modal } from 'bootstrap'
+import * as bootstrap from 'bootstrap'
 
 export default function GamePage({UserColor}){
 
@@ -58,6 +58,9 @@ export default function GamePage({UserColor}){
     });
 
     const [initialTroops, setInitialTroops] = useState(0)
+
+    const [totalTroopsPlaced, setTotalTroopsPlaced] = useState(0)
+    const [totalReinforcementPlaced, setTotalReinforcementPlaced] = useState(0)
 
     const [textTemp, setTextTemp] = useState('')
     const [territoryTemp, setTerritoryTemp] = useState('')
@@ -115,30 +118,35 @@ export default function GamePage({UserColor}){
     return(
         <>               
             <Navbar id="Navbar"/>
-            <GameSection data={data} id="GameSection"/>
+            <GameSection data={data} id="GameSection" troopsPlaced={totalTroopsPlaced} reinforcementPlaced={totalReinforcementPlaced}/>
             <div style={{fontSize: "25px", color: "white"}}>{initialTroops}</div>
-            <Footer id="Footer"/>      
 
             {
                 data.maps.map((map) => {        
                     return (
                         <>
-                            <div class="modal fade" id={`${map.name}_initial_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Place Troops on {map.name}!</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div className="modal fade" id={`${map.name}_initial_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog modal-dialog-centered">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h1 className="modal-title fs-5" id="exampleModalLabel">Place Troops on {map.name}!</h1>
+                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body">
-                                            <label for="recipient-name" class="col-form-label">How many?</label>
-                                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
+                                        <div className="modal-body">
+                                            <label for="recipient-name" className="col-form-label">How many?</label>
+                                            <input type="text" className="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" onClick={() => {
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" className="btn btn-primary" onClick={() => {
                                                 console.log('sending')
                                                 console.log(textTemp)
+                                                const newTotalTroopsPlaced = totalTroopsPlaced + parseInt(textTemp)
+                                                if (newTotalTroopsPlaced < 21) {
+                                                    setTotalTroopsPlaced(newTotalTroopsPlaced)
+                                                }else if(newTotalTroopsPlaced === 21){
+                                                    setTotalTroopsPlaced(0)
+                                                }
                                                 fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/initial/place`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
@@ -147,28 +155,38 @@ export default function GamePage({UserColor}){
                                                     .then(res => res.json()
                                                         .then(data => ({data: data, status: res.status})))
                                                     .then(ob => {console.log(ob.data)})
+                                                    const modalElement = document.getElementById(`${map.name}_initial_modal`)
+                                                    const modalInstance = bootstrap.Modal.getInstance(modalElement)
+                                                    modalInstance.hide()
                                             }} >Send</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="modal fade" id={`${map.name}_positioning_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Place Troops on {map.name}!</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div className="modal fade" id={`${map.name}_positioning_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog modal-dialog-centered">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h1 className="modal-title fs-5" id="exampleModalLabel">Place Troops on {map.name}!</h1>
+                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body">
-                                            <label for="recipient-name" class="col-form-label">How many?</label>
-                                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
+                                        <div className="modal-body">
+                                            <label for="recipient-name" className="col-form-label">How many?</label>
+                                            <input type="text" className="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" onClick={() => {
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" className="btn btn-primary" onClick={() => {
                                                 console.log('sending')
                                                 console.log(textTemp)
+                                                const newReinforcementPlaced = totalReinforcementPlaced + parseInt(textTemp)
+                                                if (newReinforcementPlaced < 5) {
+                                                    setTotalReinforcementPlaced(newReinforcementPlaced)
+                                                }
+                                                if (newReinforcementPlaced === 4) {
+                                                    setTotalReinforcementPlaced(0)
+                                                }
                                                 fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/positioning/place`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
@@ -177,22 +195,25 @@ export default function GamePage({UserColor}){
                                                     .then(res => res.json()
                                                         .then(data => ({data: data, status: res.status})))
                                                     .then(ob => {console.log(ob.data)})
+                                                    const modalElement = document.getElementById(`${map.name}_positioning_modal`)
+                                                    const modalInstance = bootstrap.Modal.getInstance(modalElement)
+                                                    modalInstance.hide()
                                             }} >Send</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="modal fade" id={`${map.name}_attacking_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Attack from {map.name}!</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div className="modal fade" id={`${map.name}_attacking_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog modal-dialog-centered">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h1 className="modal-title fs-5" id="exampleModalLabel">Attack from {map.name}!</h1>
+                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body">
-                                            <label for="recipient-name" class="col-form-label">What do you want to attack?</label>
-                                            <select class="form-select" onChange={(s) => {setTerritoryTemp(s.target.value)}}>
+                                        <div className="modal-body">
+                                            <label for="recipient-name" className="col-form-label">What do you want to attack?</label>
+                                            <select className="form-select" onChange={(s) => {setTerritoryTemp(s.target.value)}}>
                                                 <option selected>Choose...</option>
                                                 {
                                                     map.neighbours.map((neighbour) => {
@@ -202,12 +223,12 @@ export default function GamePage({UserColor}){
                                                     })
                                                 }
                                             </select>
-                                            <label for="recipient-name" class="col-form-label">How many troops?</label>
-                                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
+                                            <label for="recipient-name" className="col-form-label">How many troops?</label>
+                                            <input type="text" className="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" onClick={() => {
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" className="btn btn-primary" onClick={() => {
                                                 console.log('sending')
                                                 // console.log(textTemp)
                                                 console.log({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
@@ -227,6 +248,9 @@ export default function GamePage({UserColor}){
                                                             win_modal.show()
                                                         }
                                                      })
+                                                    const modalElement = document.getElementById(`${map.name}_attacking_modal`)
+                                                    const modalInstance = bootstrap.Modal.getInstance(modalElement)
+                                                    modalInstance.hide()
                                             }} >Send</button>
                                         </div>
                                     </div>
@@ -238,20 +262,20 @@ export default function GamePage({UserColor}){
             }
             
 
-            <div class="modal fade" id="attack_move_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Move troops to the territory you won!</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="attack_move_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">Move troops to the territory you won!</h1>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <label for="recipient-name" class="col-form-label">How many?</label>
-                            <input type="text" class="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
+                        <div className="modal-body">
+                            <label for="recipient-name" className="col-form-label">How many?</label>
+                            <input type="text" className="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary" onClick={() => {
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-primary" onClick={() => {
                                 console.log('sending')
                                 console.log(textTemp)
                                 fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/attacking/move`, {
@@ -262,6 +286,9 @@ export default function GamePage({UserColor}){
                                     .then(res => res.json()
                                         .then(data => ({data: data, status: res.status})))
                                     .then(ob => {console.log(ob.data)})
+                                    const modalElement = document.getElementById('attack_move_modal')
+                                    const modalInstance = bootstrap.Modal.getInstance(modalElement)
+                                    modalInstance.hide()
                             }} >Send</button>
                         </div>
                     </div>
