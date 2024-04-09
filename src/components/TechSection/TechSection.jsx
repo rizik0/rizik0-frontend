@@ -19,7 +19,7 @@ export default function TechSection(){
                                     <i class="fa-brands fa-react"></i>
                                 </div>
                                 <div className='col-9 justify-content-left'>
-                                    <div>REACT </div>
+                                    <div className='techName'> REACT </div>
                                     <div className='row'>
                                         <p className="mb-1">We choose React as it allowed our website to be dynamic.</p>
                                     </div>
@@ -34,7 +34,7 @@ export default function TechSection(){
                                     <i class="fa-brands fa-vine"></i>
                                 </div>
                                 <div className='col-9 justify-content-left'>
-                                    <div >VITE</div>
+                                    <div className='techName' >VITE</div>
                                     <div className='row'>
                                         <p className="mb-1">Vite was our choice because <em>create-react-app</em> has been deprecated recently.</p>
                                     </div>
@@ -49,7 +49,7 @@ export default function TechSection(){
                                     <i class="fa-brands fa-python"></i>
                                 </div>
                                 <div className='col-9 justify-content-left'>
-                                    <div >Python</div>
+                                    <div className='techName'>Python</div>
                                     <div className='row'>
                                     <p className="mb-1">We used Python and Flask for our backend. It proved to be more flexible than its MVC counterparts, like <em>Ruby on Rails</em>. Those would have been far too cumbersome to handle the complex mechanics of the game.  </p>
                                     </div>
@@ -64,7 +64,7 @@ export default function TechSection(){
                                     <i class="fa-solid fa-database"></i>
                                 </div>
                                 <div className='col-9 justify-content-left'>
-                                    <div >SQL</div>
+                                    <div className='techName'>SQL</div>
                                     <div className='row'>
                                     <p className="mb-1">SQL was our natural choice because we are all familiar with it. It allowed us to handle the creation and usage of accounts with ease.</p>
                                     </div>
