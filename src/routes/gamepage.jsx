@@ -119,7 +119,6 @@ export default function GamePage({UserColor}){
         <>               
             <Navbar id="Navbar"/>
             <GameSection data={data} id="GameSection" troopsPlaced={totalTroopsPlaced} reinforcementPlaced={totalReinforcementPlaced}/>
-            <div style={{fontSize: "25px", color: "white"}}>{initialTroops}</div>
 
             {
                 data.maps.map((map) => {        
