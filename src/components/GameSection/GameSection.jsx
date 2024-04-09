@@ -38,7 +38,7 @@ export default function GameSection({ data, troopsPlaced, reinforcementPlaced })
                         Turn: <span style={{color: userColor}}>{data.status}</span>
                     </div>
                     <div className='modeDisplay col-2'>
-                        Mode: <span style={{color: userColor}}>{data.phase}</span>
+                        Mode: <span style={{color: userColor}}>{Math.floor(data.turn/3) + '-' + data.phase}</span>
                     </div>
                     <div className='playerColor col-2'>
                         Color:<span style={{backgroundColor: userColor, marginLeft:"1vh", height:"2vh", width:"2vh"}}></span>    
