@@ -5,6 +5,7 @@ import './GameSection.scss'
 
 export default function GameSection({ data, troopsPlaced, reinforcementPlaced }){
     const userColor = localStorage.getItem('player_color')
+    const playerGoal = localStorage.getItem('playerGoal')
     const [countryName, setCountryName] = useState(null);
     const [showTroopPlacement, setShowTroopPlacement] = useState(false);
     const [ShowReinforcementPlacement, setShowReinforcementPlacement] = useState(false);
@@ -27,8 +28,7 @@ export default function GameSection({ data, troopsPlaced, reinforcementPlaced })
         if(reinforcementPlaced == 0){
             setShowReinforcementPlacement(false);
         }
-    }
-    , [reinforcementPlaced]);
+    }, [reinforcementPlaced]);
 
     return(
         <section id="GameSection">
@@ -57,7 +57,7 @@ export default function GameSection({ data, troopsPlaced, reinforcementPlaced })
                 </div>
                 <div className="row justify-content-between">
                     <div className='objDisplay col-5'>
-                        OBJECTIVE: <span style={{fontWeight:600}}>Conquer Europe</span>
+                        OBJECTIVE: <span style={{fontWeight:600}}>Conquer {playerGoal}</span>
                     </div>
                     {(showTroopPlacement && <div className='troopPlacement col-2'>
                         Troops placed: <span style={{color: userColor}}>{troopsPlaced}</span>

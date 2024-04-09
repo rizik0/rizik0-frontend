@@ -100,13 +100,13 @@ export default function LobbyComponent(UserColor){
                         <div className='lobbyContainer container'>
                             {players.map((player) => {
                                 return(
-                                    <div className='container'> 
+                                    <div className='container' key={player.name}> 
                                         <div className='row playerLobby'>
                                             <div className='col-1'>
                                                 <img className='avatarLobby' src={avatar}/>
                                             </div>
                                             <div className='col-9'>
-                                                <div key={player.name}>{player.name}</div>
+                                                <div>{player.name}</div>
                                             </div>
                                             <div className='col-2'>
                                                 <img className='ticLobby' src={tic} />
