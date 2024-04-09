@@ -26,7 +26,7 @@ export default function PlayNow(){
         })
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
-            .then(ob => {localStorage.setItem('game_id', ob.data.game_id); localStorage.setItem('player_id', name);})
+            .then(ob => {localStorage.setItem('game_id', ob.data.game_id); localStorage.setItem('player_id', name); localStorage.setItem('playerGoal', ob.data.playerGoal);})
 
         fetchData()   
         
@@ -49,6 +49,7 @@ export default function PlayNow(){
         })
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
+            .then(ob => {localStorage.setItem('playerGoal', ob.data.playerGoal);})
             // .then(ob => {localStorage.setItem('game_id', ob.data.game_id); localStorage.setItem('player_id', name);})
 
         fetchData()   
