@@ -242,11 +242,56 @@ export default function GamePage({UserColor}){
                                                      .then(won => {
                                                         if (won === 'yes') {
                                                             setFromTerritory(map.name)
-                                                            const win_modal = new Modal(document.getElementById('attack_move_modal'), {keyboard: false})
+                                                            const win_modal = new bootstrap.Modal(document.getElementById('attack_move_modal'), {keyboard: false})
 
                                                             win_modal.show()
                                                         }
                                                      })
+                                                    const modalElement = document.getElementById(`${map.name}_attacking_modal`)
+                                                    const modalInstance = bootstrap.Modal.getInstance(modalElement)
+                                                    modalInstance.hide()
+                                            }} >Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="modal fade" id={`${map.name}_movement_modal`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog modal-dialog-centered">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h1 className="modal-title fs-5" id="exampleModalLabel">Move from {map.name}!</h1>
+                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div className="modal-body">
+                                            <label for="recipient-name" className="col-form-label">Where do you want to move your troops?</label>
+                                            <select className="form-select" onChange={(s) => {setTerritoryTemp(s.target.value)}}>
+                                                <option selected>Choose...</option>
+                                                {
+                                                    map.neighbours.map((neighbour) => {
+                                                        return(
+                                                            <option>{neighbour}</option>
+                                                        )
+                                                    })
+                                                }
+                                            </select>
+                                            <label for="recipient-name" className="col-form-label">How many troops? (0 is an accettable option)</label>
+                                            <input type="text" className="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" className="btn btn-primary" onClick={() => {
+                                                console.log('sending')
+                                                // console.log(textTemp)
+                                                console.log({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
+                                                fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/movement/`, {
+                                                    method: "POST",
+                                                    headers: { 'Content-Type': 'application/json' },
+                                                    body: JSON.stringify({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
+                                                })
+                                                    .then(res => res.json()
+                                                        .then(data => ({data: data, status: res.status})))
+                                                    
                                                     const modalElement = document.getElementById(`${map.name}_attacking_modal`)
                                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
                                                     modalInstance.hide()
