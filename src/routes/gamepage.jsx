@@ -242,7 +242,7 @@ export default function GamePage({UserColor}){
                                                      .then(won => {
                                                         if (won === 'yes') {
                                                             setFromTerritory(map.name)
-                                                            const win_modal = new Modal(document.getElementById('attack_move_modal'), {keyboard: false})
+                                                            const win_modal = new bootstrap.Modal(document.getElementById('attack_move_modal'), {keyboard: false})
 
                                                             win_modal.show()
                                                         }
