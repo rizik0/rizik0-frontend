@@ -213,7 +213,11 @@ export default function GamePage({UserColor}){
                                                 })
                                                     .then(res => res.json()
                                                         .then(data => ({data: data, status: res.status})))
-                                                    .then(ob => {console.log(ob.data)})
+                                                    .then(ob => {
+                                                        if (ob.data['error']) {
+                                                            alert(ob.data['error'])    
+                                                        }
+                                                    })
                                                     const modalElement = document.getElementById(`${map.name}_positioning_modal`)
                                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
                                                     modalInstance.hide()
@@ -258,7 +262,15 @@ export default function GamePage({UserColor}){
                                                 })
                                                     .then(res => res.json()
                                                         .then(data => ({data: data, status: res.status})))
-                                                     .then(ob => ob.data.won)
+                                                     .then(ob => {
+                                                        if (ob.data['error']) {
+                                                            alert(ob.data['error']) 
+                                                            return 'no'   
+                                                        }
+                                                        else {
+                                                            return ob.data.won
+                                                        }
+                                                    })
                                                      .then(won => {
                                                         if (won === 'yes') {
                                                             setFromTerritory(map.name)
@@ -311,6 +323,12 @@ export default function GamePage({UserColor}){
                                                 })
                                                     .then(res => res.json()
                                                         .then(data => ({data: data, status: res.status})))
+                                                    .then(ob => {
+                                                            if (ob.data['error']) {
+                                                                alert(ob.data['error'])   
+                                                            }
+                                                        }
+                                                    )
                                                     
                                                     const modalElement = document.getElementById(`${map.name}_attacking_modal`)
                                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
@@ -349,7 +367,11 @@ export default function GamePage({UserColor}){
                                 })
                                     .then(res => res.json()
                                         .then(data => ({data: data, status: res.status})))
-                                    .then(ob => {console.log(ob.data)})
+                                    .then(ob => {
+                                        if (ob.data['error']) {
+                                            alert(ob.data['error'])    
+                                        }
+                                    })
                                     const modalElement = document.getElementById('attack_move_modal')
                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
                                     modalInstance.hide()
