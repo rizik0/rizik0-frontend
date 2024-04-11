@@ -2577,7 +2577,9 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12951)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#eastern_australia_${phase}_modal`}
+        
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "eastern_australia").owner ? `#eastern_australia_${phase}_modal` : null}
+
       />
       <path
         id="indonesia"
@@ -2599,7 +2601,8 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12863)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#indonesia_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "indonesia").owner ? `#indonesia_${phase}_modal` : null}
+
 
       />
       <path
@@ -2622,7 +2625,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12867)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#new_guinea_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "new_guinea").owner ? `#new_guinea_${phase}_modal` : null}
       />
       <path
         id="alaska"
@@ -2644,7 +2647,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12871)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#alaska_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "alaska").owner ? `#alaska_${phase}_modal` : null}
       />
       <path
         id="ontario"
@@ -2666,7 +2669,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12875)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#ontario_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "ontario").owner ? `#ontario_${phase}_modal` : null}
       />
       <path
         id="northwest_territory"
@@ -2688,7 +2691,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12879)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#northwest_territory_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "northwest_territory").owner ? `#northwest_territory_${phase}_modal` : null}
       />
       <path
         id="venezuela"
@@ -2710,7 +2713,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12883)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#venezuela_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "venezuela").owner ? `#venezuela_${phase}_modal` : null}
       />
       <path
         id="madagascar"
@@ -2732,7 +2735,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12887)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#madagascar_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "madagascar").owner ? `#madagascar_${phase}_modal` : null}
       />
       <path
         id="north_africa"
@@ -2754,7 +2757,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12891)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#north_africa_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "north_africa").owner ? `#north_africa_${phase}_modal` : null}
       />
       <path
         id="greenland"
@@ -2778,7 +2781,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12895)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#greenland_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "greenland").owner ? `#greenland_${phase}_modal` : null}
       />
       <path
         id="iceland"
@@ -2809,7 +2812,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12899)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#iceland_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "iceland").owner ? `#iceland_${phase}_modal` : null}
       />
       <path
         id="great_britain"
@@ -2840,7 +2843,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12903)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#great_britain_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "great_britain").owner ? `#great_britain_${phase}_modal` : null}
       />
       <path
         id="scandinavia"
@@ -2867,7 +2870,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12907)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#scandinavia_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "scandinavia").owner ? `#scandinavia_${phase}_modal` : null}
       />
       <path
         id="japan"
@@ -2891,7 +2894,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12911)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#japan_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "japan").owner ? `#japan_${phase}_modal` : null}
       />
       <path
         id="yakutsk"
@@ -2920,7 +2923,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12915)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#yakutsk_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "yakutsk").owner ? `#yakutsk_${phase}_modal` : null}
       />
       <path
         id="kamchatka"
@@ -2949,7 +2952,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12919)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#kamchatka_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "kamchatka").owner ? `#kamchatka_${phase}_modal` : null}
       />
       <path
         id="siberia"
@@ -2978,7 +2981,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12923)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#siberia_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "siberia").owner ? `#siberia_${phase}_modal` : null}
       />
       <path
         id="ural"
@@ -3007,7 +3010,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12927)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#ural_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "ural").owner ? `#ural_${phase}_modal` : null}
       />
       <path
         id="afghanistan"
@@ -3036,7 +3039,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12931)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#afghanistan_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "afghanistan").owner ? `#afghanistan_${phase}_modal` : null}
       />
       <path
         id="middle_east"
@@ -3065,7 +3068,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12935)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#middle_east_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "middle_east").owner ? `#middle_east_${phase}_modal` : null}
       />
       <path
         id="india"
@@ -3094,7 +3097,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12939)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#india_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "india").owner ? `#india_${phase}_modal` : null}
       />
       <path
         id="siam"
@@ -3123,7 +3126,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12943)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#siam_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "siam").owner ? `#siam_${phase}_modal` : null}
       />
       <path
         id="china"
@@ -3152,7 +3155,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12947)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#china_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "china").owner ? `#china_${phase}_modal` : null}
       />
       <path
         id="mongolia"
@@ -3181,7 +3184,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12951)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#mongolia_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "mongolia").owner ? `#mongolia_${phase}_modal` : null}
       />
       <path
         id="irkutsk"
@@ -3210,7 +3213,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12955)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#irkutsk_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "irkutsk").owner ? `#irkutsk_${phase}_modal` : null}
       />
       <path
         id="ukraine"
@@ -3239,7 +3242,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12959)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#ukraine_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "ukraine").owner ? `#ukraine_${phase}_modal` : null}
       />
       <path
         id="southern_europe"
@@ -3268,7 +3271,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12963)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#southern_europe_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "southern_europe").owner ? `#southern_europe_${phase}_modal` : null}
       />
       <path
         id="western_europe"
@@ -3297,7 +3300,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12967)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#western_europe_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "western_europe").owner ? `#western_europe_${phase}_modal` : null}
       />
       <path
         id="northern_europe"
@@ -3326,7 +3329,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12971)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#northern_europe_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "northern_europe").owner ? `#northern_europe_${phase}_modal` : null}
       />
       <path
         id="egypt"
@@ -3348,7 +3351,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12975)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#egypt_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "egypt").owner ? `#egypt_${phase}_modal` : null}
       />
       <path
         id="east_africa"
@@ -3370,7 +3373,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12979)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#east_africa_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "east_africa").owner ? `#east_africa_${phase}_modal` : null}
       />
       <path
         id="congo"
@@ -3392,7 +3395,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12983)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#congo_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "congo").owner ? `#congo_${phase}_modal` : null}
       />
       <path
         id="south_africa"
@@ -3414,7 +3417,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12987)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#south_africa_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "south_africa").owner ? `#south_africa_${phase}_modal` : null}
       />
       <path
         id="brazil"
@@ -3436,7 +3439,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12991)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#brazil_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "brazil").owner ? `#brazil_${phase}_modal` : null}
       />
       <path
         id="argentina"
@@ -3458,7 +3461,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12995)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#argentina_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "argentina").owner ? `#argentina_${phase}_modal` : null}
       />
       <path
         id="eastern_united_states"
@@ -3480,7 +3483,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter12999)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#eastern_united_states_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "eastern_united_states").owner ? `#eastern_united_states_${phase}_modal` : null}
       />
       <path
         id="western_united_states"
@@ -3502,7 +3505,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter13003)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#western_united_states_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "western_united_states").owner ? `#western_united_states_${phase}_modal` : null}
       />
       <path
         id="quebec"
@@ -3524,7 +3527,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter13007)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#quebec_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "quebec").owner ? `#quebec_${phase}_modal` : null}
       />
       <path
         id="central_america"
@@ -3546,7 +3549,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter13011)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#central_america_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "central_america").owner ? `#central_america_${phase}_modal` : null}
       />
       <path
         id="peru"
@@ -3568,7 +3571,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           display: "inline",
           filter: "url(#filter13015)",
         }}
-        data-bs-toggle="modal" data-bs-target={`#peru_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "peru").owner ? `#peru_${phase}_modal` : null}
       />
       <path
         id="western_australia"
@@ -3598,7 +3601,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           enableBackground: "accumulate",
         }}
 
-        data-bs-toggle="modal" data-bs-target={`#western_australia_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "western_australia").owner ? `#western_australia_${phase}_modal` : null}
       />
       <path
         id="alberta"
@@ -3627,7 +3630,7 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
           filter: "url(#filter12879)",
           enableBackground: "accumulate",
         }}
-        data-bs-toggle="modal" data-bs-target={`#alberta_${phase}_modal`}
+        data-bs-toggle="modal" data-bs-target={localStorage.getItem("player_id") == getRegionObject(maps, "alberta").owner ? `#alberta_${phase}_modal` : null}
       />
       <text x={860} y={540} className="board-region">
         {getRegionObject(maps, "eastern_australia").troops}
