@@ -1,0 +1,23 @@
+@import '../../scss/stlyes.scss';
+
+.Login{
+    padding-top: 23vh;
+}
+
+#loginButton{
+    padding-left: '2.5rem';
+    padding-right: '2.5rem';
+    background-color: #151F2B !important;
+}
+
+#registerLink{
+    color: #FB5621;
+    padding-top: 0.5vh;
+}
+
+@media (max-width: 1000px) {
+    #soldier{
+        display: none;
+        width: 100%;
+    }
+}

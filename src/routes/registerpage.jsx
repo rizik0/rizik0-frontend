@@ -1,12 +1,13 @@
 import Navbar from '../components/Navbar/Navbar.jsx'
 import Footer from '../components/Footer/Footer.jsx'
-import AboutUs from '../components/AboutUs/AboutUs.jsx'
+import '../scss/stlyes.scss'
+import Register from '../components/Register/Register.jsx'
 
-export default function AboutUsPage(){
+export default function RegisterPage(){
     return(
         <>
             <Navbar id="Navbar"/>
-            <AboutUs id="AboutUs"/>
+            <Register id="Register"/>
             <Footer id="Footer"/>
         </>
     )
