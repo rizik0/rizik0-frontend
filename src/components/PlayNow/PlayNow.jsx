@@ -49,15 +49,22 @@ export default function PlayNow(){
         })
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
-            .then(ob => {localStorage.setItem('playerGoal', ob.data.playerGoal);})
+            .then(ob => {
+                console.log(ob)
+                if (ob.data['error']) {
+                    alert(ob.data['error'])
+                }
+                else {
+                    localStorage.setItem('playerGoal', ob.data.playerGoal);
+                    localStorage.setItem('game_id', game_id)
+                    localStorage.setItem('player_id', name)
+
+                    navigate('/lobby')
+                }
+            })
             // .then(ob => {localStorage.setItem('game_id', ob.data.game_id); localStorage.setItem('player_id', name);})
 
         fetchData()   
-        
-        localStorage.setItem('game_id', game_id)
-        localStorage.setItem('player_id', name)
-
-        navigate('/lobby')
         
         return () => {
             abortController.abort()

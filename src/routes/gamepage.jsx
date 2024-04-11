@@ -4,6 +4,7 @@ import Footer from '../components/Footer/Footer.jsx'
 import '../scss/stlyes.scss'
 import GameSection from '../components/GameSection/GameSection.jsx'
 import * as bootstrap from 'bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 export default function GamePage({UserColor}){
 
@@ -70,6 +71,8 @@ export default function GamePage({UserColor}){
 
     const userColor = localStorage.getItem('player_color')
 
+    const navigate = useNavigate()
+
     useEffect(() => {
         const abortController = new AbortController()
         const fetchData = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/status`, {
@@ -78,7 +81,15 @@ export default function GamePage({UserColor}){
         })
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
-            .then(ob => {setData(ob.data)})
+            .then(ob => {
+                if (ob.data['error']) {
+                    alert(ob.data['error'])
+                    navigate('/')
+                }
+                else {
+                    setData(ob.data)
+                }
+            })
         
         fetchData()  
 
@@ -91,7 +102,12 @@ export default function GamePage({UserColor}){
                 })
                     .then(res => res.json()
                         .then(data => ({data: data, status: res.status})))
-                    .then(ob => {setInitialTroops(ob.data.troops)})
+                    .then(ob => {
+                        if (ob.data['error']) {
+                            alert(ob.data['error'])
+                            navigate('/')
+                        }
+                        setInitialTroops(ob.data.troops)})
                 
                 fetchInitialGet()
             }
@@ -153,7 +169,11 @@ export default function GamePage({UserColor}){
                                                 })
                                                     .then(res => res.json()
                                                         .then(data => ({data: data, status: res.status})))
-                                                    .then(ob => {console.log(ob.data)})
+                                                    .then(ob => {
+                                                        if (ob.data['error']) {
+                                                            alert(ob.data['error'])    
+                                                        }
+                                                    })
                                                     const modalElement = document.getElementById(`${map.name}_initial_modal`)
                                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
                                                     modalInstance.hide()
@@ -193,7 +213,11 @@ export default function GamePage({UserColor}){
                                                 })
                                                     .then(res => res.json()
                                                         .then(data => ({data: data, status: res.status})))
-                                                    .then(ob => {console.log(ob.data)})
+                                                    .then(ob => {
+                                                        if (ob.data['error']) {
+                                                            alert(ob.data['error'])    
+                                                        }
+                                                    })
                                                     const modalElement = document.getElementById(`${map.name}_positioning_modal`)
                                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
                                                     modalInstance.hide()
@@ -238,7 +262,15 @@ export default function GamePage({UserColor}){
                                                 })
                                                     .then(res => res.json()
                                                         .then(data => ({data: data, status: res.status})))
-                                                     .then(ob => ob.data.won)
+                                                     .then(ob => {
+                                                        if (ob.data['error']) {
+                                                            alert(ob.data['error']) 
+                                                            return 'no'   
+                                                        }
+                                                        else {
+                                                            return ob.data.won
+                                                        }
+                                                    })
                                                      .then(won => {
                                                         if (won === 'yes') {
                                                             setFromTerritory(map.name)
@@ -291,6 +323,12 @@ export default function GamePage({UserColor}){
                                                 })
                                                     .then(res => res.json()
                                                         .then(data => ({data: data, status: res.status})))
+                                                    .then(ob => {
+                                                            if (ob.data['error']) {
+                                                                alert(ob.data['error'])   
+                                                            }
+                                                        }
+                                                    )
                                                     
                                                     const modalElement = document.getElementById(`${map.name}_attacking_modal`)
                                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
@@ -331,7 +369,11 @@ export default function GamePage({UserColor}){
                                 })
                                     .then(res => res.json()
                                         .then(data => ({data: data, status: res.status})))
-                                    .then(ob => {console.log(ob.data)})
+                                    .then(ob => {
+                                        if (ob.data['error']) {
+                                            alert(ob.data['error'])    
+                                        }
+                                    })
                                     const modalElement = document.getElementById('attack_move_modal')
                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
                                     modalInstance.hide()
