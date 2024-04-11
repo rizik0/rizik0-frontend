@@ -8,6 +8,9 @@ import LobbyPage from "./routes/lobbypage";
 import TechPage from "./routes/techpage";
 import ErrorPage from "./routes/error-page"
 import AboutUsPage from "./routes/aboutuspage.jsx"
+import LoginPage from "./routes/loginpage.jsx"
+import RegisterPage from "./routes/registerpage.jsx"
+
 
 import {
   createBrowserRouter,
@@ -39,6 +42,16 @@ const router = createBrowserRouter([
     path: "/about_us",
     element:  <AboutUsPage />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login",
+    element:  <LoginPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+  path: "/register",
+  element:  <RegisterPage />,
+  errorElement: <ErrorPage />,
   },
 ]);
 

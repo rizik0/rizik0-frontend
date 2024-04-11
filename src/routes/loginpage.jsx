@@ -1,12 +1,13 @@
 import Navbar from '../components/Navbar/Navbar.jsx'
 import Footer from '../components/Footer/Footer.jsx'
-import AboutUs from '../components/AboutUs/AboutUs.jsx'
+import '../scss/stlyes.scss'
+import Login from '../components/Login/Login.jsx'
 
-export default function AboutUsPage(){
+export default function LoginPage(){
     return(
         <>
             <Navbar id="Navbar"/>
-            <AboutUs id="AboutUs"/>
+            <Login id="Login"/>
             <Footer id="Footer"/>
         </>
     )
