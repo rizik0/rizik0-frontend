@@ -120,7 +120,7 @@ export default function GamePage({UserColor}){
             <Navbar id="Navbar"/>
             <GameSection data={data} id="GameSection" troopsPlaced={totalTroopsPlaced} reinforcementPlaced={totalReinforcementPlaced}/>
 
-            {
+            { data.status === localStorage.getItem('player_id') ?
                 data.maps.map((map) => {        
                     return (
                         <>
@@ -303,6 +303,8 @@ export default function GamePage({UserColor}){
                         </>
                     )
                 })
+                :
+                null
             }
             
 
