@@ -34,7 +34,17 @@ export default function LobbyComponent(UserColor){
         })
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
-            .then(ob => {setStatus(ob.data.status); console.log(status)})
+            .then(ob => {
+                if (ob.data['error']) {
+                    alert(ob.data['error'])
+                    clearInterval(interval)
+                    navigate('/')
+                }
+                else {
+                    setStatus(ob.data.status); 
+                    console.log(status)
+                }
+            })
         
         const fetchPlayers = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/players`, {
             method: "GET",
@@ -49,6 +59,7 @@ export default function LobbyComponent(UserColor){
 
             fetchStatus()
             fetchPlayers()
+
             if (status != "waiting" && status != null){
 
                 for (let i = 0; i < players.length; i++){
@@ -57,8 +68,8 @@ export default function LobbyComponent(UserColor){
                     }
                 }
 
-                navigate('/game')
                 clearInterval(interval)
+                navigate('/game')
             }
     
 
