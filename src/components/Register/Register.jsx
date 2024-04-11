@@ -1,4 +1,6 @@
 import './Register.scss'
+import { Link } from 'react-scroll'
+import { Link as LinkRouter} from 'react-router-dom'
 import soldier from "../../assets/soldier.png";
 
 
@@ -31,9 +33,8 @@ export default function Register(){
                             </div>
 
                             <div data-mdb-input-init className="form-outline mb-4">
-                            <label className="form-label" htmlFor="form3Example3">IMMAGINE PROFILO</label>
-                                <input type="email" id="form3Example3" className="form-control form-control-lg"
-                                    placeholder="IMMAGINE" />
+                            <label className="form-label" htmlFor="form3Example3">Immagine profilo</label>
+                                <input type="file" class="form-control" id="customFile"  accept="image/jpeg,image/png,image/jpg"/>
                             </div>
 
                             <div className="text-center text-lg-start mt-4 pt-2">
@@ -41,10 +42,8 @@ export default function Register(){
                                     Register
                                 </button>
                                 <p className="small fw-bold mt-2 pt-1 mb-0"> 
-                                    Already have an account?   
-                                    <a href="#!" className="link-danger" id="loginLink">
-                                        Login
-                                    </a>
+                                    Already have an account?
+                                    <LinkRouter id="loginLink" aria-selected='false' aria-controls='tab-pricing' to="/login">Login</LinkRouter>
                                 </p>
                                 
                             </div>

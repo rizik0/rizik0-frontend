@@ -1,4 +1,6 @@
 import './Login.scss'
+import { Link } from 'react-scroll'
+import { Link as LinkRouter} from 'react-router-dom'
 import soldier from "../../assets/soldier.png";
 
 
@@ -30,9 +32,7 @@ export default function Login(){
                                 </button>
                                 <p className="small fw-bold mt-2 pt-1 mb-0"> 
                                     Don't have an account?   
-                                    <a href="#!" className="link-danger" id="registerLink">
-                                        Register
-                                    </a>
+                                    <LinkRouter id="registerLink" aria-selected='false' aria-controls='tab-pricing' to="/register">Register</LinkRouter>
                                 </p>
                                 
                             </div>
