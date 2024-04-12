@@ -71,6 +71,9 @@ export default function GamePage({UserColor}){
 
     const userColor = localStorage.getItem('player_color')
 
+    const [flagEndGame, setFlagEndGame] = useState(true)
+    const [errorFlag, setErrorFlag] = useState(true)
+
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -82,7 +85,8 @@ export default function GamePage({UserColor}){
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
             .then(ob => {
-                if (ob.data['error']) {
+                if (ob.data['error'] && errorFlag) {
+                    setErrorFlag(false)
                     alert(ob.data['error'])
                     navigate('/')
                 }
@@ -124,6 +128,20 @@ export default function GamePage({UserColor}){
                 
                 fetchPositioningGet()
             }
+        }
+
+        if (data.phase === 'won' && data.status === localStorage.getItem('player_id') && flagEndGame === true) {
+            setFlagEndGame(false)
+
+            const winner_modal = new bootstrap.Modal(document.getElementById('winner_modal'), {keyboard: false})
+            winner_modal.show()
+
+        }
+
+        else if (data.phase === 'won' && data.status !== localStorage.getItem('player_id') && flagEndGame === true) {
+            setFlagEndGame(false)
+            const loser_modal = new bootstrap.Modal(document.getElementById('loser_modal'), {keyboard: false})
+            loser_modal.show()
         }
         
         return () => {
@@ -330,7 +348,7 @@ export default function GamePage({UserColor}){
                                                         }
                                                     )
                                                     
-                                                    const modalElement = document.getElementById(`${map.name}_attacking_modal`)
+                                                    const modalElement = document.getElementById(`${map.name}_movement_modal`)
                                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
                                                     modalInstance.hide()
                                             }} >Send</button>
@@ -378,6 +396,60 @@ export default function GamePage({UserColor}){
                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
                                     modalInstance.hide()
                             }} >Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="modal fade" id="winner_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">YOU WIN</h1>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <h1>Congratulations! You have won the game!</h1>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {
+                                const modalElement = document.getElementById('winner_modal')
+                                const modalInstance = bootstrap.Modal.getInstance(modalElement)
+                                modalInstance.hide()
+
+                                navigate('/')
+
+                                localStorage.removeItem('game_id')
+                                localStorage.removeItem('player_id')
+                                localStorage.removeItem('player_color')
+                            }}>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="modal fade" id="loser_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">You have lost...</h1>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <h1>The winner is {data.status}</h1>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {
+                                const loser_modal = new bootstrap.Modal(document.getElementById('loser_modal'), {keyboard: false})
+
+                                loser_modal.hide()
+
+                                navigate('/')
+                                
+                                localStorage.removeItem('game_id')
+                                localStorage.removeItem('player_id')
+                                localStorage.removeItem('player_color')
+                            }}>Close</button>
                         </div>
                     </div>
                 </div>
