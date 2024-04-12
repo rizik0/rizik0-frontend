@@ -125,6 +125,18 @@ export default function GamePage({UserColor}){
                 fetchPositioningGet()
             }
         }
+
+        if (data.phase === 'win' && data.status === localStorage.getItem('player_id')) {
+            const modalElement = document.getElementById('winner_modal')
+            const modalInstance = bootstrap.Modal.getInstance(modalElement)
+            modalInstance.show()
+        }
+
+        else if (data.phase === 'win' && data.status !== localStorage.getItem('player_id')) {
+            const modalElement = document.getElementById('loser_modal')
+            const modalInstance = bootstrap.Modal.getInstance(modalElement)
+            modalInstance.show()
+        }
         
         return () => {
             abortController.abort()
@@ -378,6 +390,60 @@ export default function GamePage({UserColor}){
                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
                                     modalInstance.hide()
                             }} >Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="modal fade" id="winner_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">YOU WIN</h1>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <h1>Congratulations! You have won the game!</h1>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {
+                                const modalElement = document.getElementById('winner_modal')
+                                const modalInstance = bootstrap.Modal.getInstance(modalElement)
+                                modalInstance.hide()
+
+                                navigate('/')
+
+                                localStorage.removeItem('game_id')
+                                localStorage.removeItem('player_id')
+                                localStorage.removeItem('player_color')
+                            }}>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="modal fade" id="loser_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">You have lost...</h1>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <h1>The winner is {data.status}</h1>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {
+                                const modalElement = document.getElementById('winner_modal')
+                                const modalInstance = bootstrap.Modal.getInstance(modalElement)
+                                modalInstance.hide()
+
+                                navigate('/')
+                                
+                                localStorage.removeItem('game_id')
+                                localStorage.removeItem('player_id')
+                                localStorage.removeItem('player_color')
+                            }}>Close</button>
                         </div>
                     </div>
                 </div>
