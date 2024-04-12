@@ -25,6 +25,7 @@ export default function LobbyComponent(UserColor){
     const [status, setStatus] = useState("waiting")
     const [players, setPlayers] = useState([])
     const navigate = useNavigate()
+    const [errorFlag, setErrorFlag] = useState(true)
 
     useEffect(() => {
         const abortController = new AbortController()
@@ -35,7 +36,8 @@ export default function LobbyComponent(UserColor){
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
             .then(ob => {
-                if (ob.data['error']) {
+                if (ob.data['error'] && errorFlag) {
+                    setErrorFlag(false)
                     alert(ob.data['error'])
                     clearInterval(interval)
                     navigate('/')

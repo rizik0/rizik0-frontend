@@ -71,6 +71,9 @@ export default function GamePage({UserColor}){
 
     const userColor = localStorage.getItem('player_color')
 
+    const [flagEndGame, setFlagEndGame] = useState(true)
+    const [errorFlag, setErrorFlag] = useState(true)
+
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -82,7 +85,8 @@ export default function GamePage({UserColor}){
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
             .then(ob => {
-                if (ob.data['error']) {
+                if (ob.data['error'] && errorFlag) {
+                    setErrorFlag(false)
                     alert(ob.data['error'])
                     navigate('/')
                 }
@@ -126,16 +130,18 @@ export default function GamePage({UserColor}){
             }
         }
 
-        if (data.phase === 'win' && data.status === localStorage.getItem('player_id')) {
-            const modalElement = document.getElementById('winner_modal')
-            const modalInstance = bootstrap.Modal.getInstance(modalElement)
-            modalInstance.show()
+        if (data.phase === 'won' && data.status === localStorage.getItem('player_id') && flagEndGame === true) {
+            setFlagEndGame(false)
+
+            const winner_modal = new bootstrap.Modal(document.getElementById('winner_modal'), {keyboard: false})
+            winner_modal.show()
+
         }
 
-        else if (data.phase === 'win' && data.status !== localStorage.getItem('player_id')) {
-            const modalElement = document.getElementById('loser_modal')
-            const modalInstance = bootstrap.Modal.getInstance(modalElement)
-            modalInstance.show()
+        else if (data.phase === 'won' && data.status !== localStorage.getItem('player_id') && flagEndGame === true) {
+            setFlagEndGame(false)
+            const loser_modal = new bootstrap.Modal(document.getElementById('loser_modal'), {keyboard: false})
+            loser_modal.show()
         }
         
         return () => {
@@ -342,7 +348,7 @@ export default function GamePage({UserColor}){
                                                         }
                                                     )
                                                     
-                                                    const modalElement = document.getElementById(`${map.name}_attacking_modal`)
+                                                    const modalElement = document.getElementById(`${map.name}_movement_modal`)
                                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
                                                     modalInstance.hide()
                                             }} >Send</button>
@@ -434,9 +440,9 @@ export default function GamePage({UserColor}){
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => {
-                                const modalElement = document.getElementById('winner_modal')
-                                const modalInstance = bootstrap.Modal.getInstance(modalElement)
-                                modalInstance.hide()
+                                const loser_modal = new bootstrap.Modal(document.getElementById('loser_modal'), {keyboard: false})
+
+                                loser_modal.hide()
 
                                 navigate('/')
                                 
