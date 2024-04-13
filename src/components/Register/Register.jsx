@@ -3,7 +3,6 @@ import { Link } from 'react-scroll'
 import { Link as LinkRouter} from 'react-router-dom'
 import soldier from "../../assets/soldier.png";
 
-
 export default function Register(){
     return (
         <section className="Register">
