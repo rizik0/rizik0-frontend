@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import RiskBoard from '../RiskBoard/RiskBoard.jsx'
 import Clock from '../Clock/Clock.jsx'
-import QuestionMark from '../../assets/qm.png'
 import './GameSection.scss'
 
 export default function GameSection({ data, initialTroops, phase }){
@@ -9,8 +8,44 @@ export default function GameSection({ data, initialTroops, phase }){
     const playerGoal = localStorage.getItem('playerGoal')
     const [countryName, setCountryName] = useState(null);
 
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = () => {
+        setShowModal(true);
+    };
+
+    const closeModal = () => {
+        setShowModal(false);
+    };
+
     return(
         <section id="GameSection">
+
+            <div className="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLongTitle">Tutorial</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div className="modal-body">
+                        <span className="modalTitle">Initial: </span>
+                            <div className="modalDesc">In this initial phase of the game you need to place at least 21 troops in your own territory and prepare to fight in order to conquer your objective!</div>
+                        <span className="modalTitle">Positioning: </span>
+                            <div className="modalDesc">In this phase of your turn you will have to place the troops granted to you depending on the amount of territories you own. The more territories you occupy, the higher it will be!</div>
+                        <span className="modalTitle">Attack: </span>
+                            <div className="modalDesc">In this phase you need to show your military prowess and crush your enemies by invading their territories. First select the region you want to attack from and then select which one you want to attack! (MAX 3 troops per attack)</div>
+                        <span className="modalTitle">Movement: </span>
+                            <div className="modalDesc">In this phase you have the option to move troops around the territories you own!</div>
+                        
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            
             <div className="container">
                 <div className="infoDisplay row text-center justify-content-between">
                     <div className= "turnDisplay col-2">
@@ -28,7 +63,7 @@ export default function GameSection({ data, initialTroops, phase }){
                     <div className="clock col-2">
                         Time: <Clock id="Clock"/>
                     </div>
-                    <div className='infoPoint col-1'>
+                    <div className='infoPoint col-1' data-bs-toggle="modal" data-bs-target="#infoModal">
                         ?
                     </div>
                 </div>
@@ -61,7 +96,6 @@ export default function GameSection({ data, initialTroops, phase }){
                     </div>
                 </div>
             </div>
-                
         </section>
     )
 }
