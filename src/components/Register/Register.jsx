@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './Register.scss'
+import {useNavigate} from "react-router-dom";
 import { Link } from 'react-scroll'
 import { Link as LinkRouter} from 'react-router-dom'
 import soldier from "../../assets/soldier.png";
@@ -12,6 +13,8 @@ export default function Register(){
         password_hash: ''
     })
 
+    const navigate = useNavigate()
+
     if (localStorage.getItem('jwt') !== null) {
         alert("DEVI PRIMA FARE LOGOUT")
         return
@@ -20,24 +23,29 @@ export default function Register(){
             e.preventDefault()
             let status = {success: ''};
 
-            console.log(player)
+            //console.log(player)
 
             fetch('http://localhost:3000/api/player/register', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify([ player.username, player.email, player.password_hash ])
             })
-                .then(res => res.json().then(data => ({data: data, status: res.status}))).then(res => {status = res.data})
+                .then(res => res.json())
+                .then(data => {
+                    // console.log('data', data)
+                    if (data) {
+                        status.success = true;
+                    } else {
+                        status.success = false;
+                    }
+                });
 
             setTimeout(() => {
-                console.log(status)
+                // console.log(status)
                 if (status.success) {
-                    // history.push('/player/register/completed')
-                    alert("Registrazione completata con successo!")
-                }
-
-                else {
-                    alert("Hai sbagliato a compilare un campo oppure sei già registrato. Riprova!")
+                    navigate('/login')
+                } else {
+                    alert("Registration failed. Try again.")
                 }
             }, 1000)
 
