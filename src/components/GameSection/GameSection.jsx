@@ -1,34 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import RiskBoard from '../RiskBoard/RiskBoard.jsx'
 import Clock from '../Clock/Clock.jsx'
+import QuestionMark from '../../assets/qm.png'
 import './GameSection.scss'
 
-export default function GameSection({ data, troopsPlaced, reinforcementPlaced }){
+export default function GameSection({ data, initialTroops, phase }){
     const userColor = localStorage.getItem('player_color')
     const playerGoal = localStorage.getItem('playerGoal')
     const [countryName, setCountryName] = useState(null);
-    const [showTroopPlacement, setShowTroopPlacement] = useState(false);
-    const [ShowReinforcementPlacement, setShowReinforcementPlacement] = useState(false);
-
-    useEffect(() => {
-        if (troopsPlaced) {
-            setShowTroopPlacement(true);
-        }
-        
-        if(troopsPlaced == 0){
-            setShowTroopPlacement(false);
-        }
-    }, [troopsPlaced]);
-
-    useEffect(() => {
-        if (reinforcementPlaced) {
-            setShowReinforcementPlacement(true);
-        }
-
-        if(reinforcementPlaced == 0){
-            setShowReinforcementPlacement(false);
-        }
-    }, [reinforcementPlaced]);
 
     return(
         <section id="GameSection">
@@ -43,11 +22,14 @@ export default function GameSection({ data, troopsPlaced, reinforcementPlaced })
                     <div className='playerColor col-2'>
                         Color:<span style={{backgroundColor: userColor, marginLeft:"1vh", height:"2vh", width:"2vh"}}></span>    
                     </div>
-                    <div className='countrySelection col-4'>
+                    <div className='countrySelection col-3'>
                         Region: <span style={{color:"#151F2B"}}>{countryName}</span>
                     </div>
                     <div className="clock col-2">
                         Time: <Clock id="Clock"/>
+                    </div>
+                    <div className='infoPoint col-1'>
+                        ?
                     </div>
                 </div>
                 <div className="row">
@@ -55,15 +37,16 @@ export default function GameSection({ data, troopsPlaced, reinforcementPlaced })
                         <RiskBoard setCountryName={setCountryName} phase={data.phase} maps={data.maps}/>
                     </div>
                 </div>
-                <div className="row justify-content-between">
+                <div className="row justify-content-between align-items-center">
                     <div className='objDisplay col-5'>
                         OBJECTIVE: <span style={{fontWeight:600}}>Conquer {playerGoal}</span>
                     </div>
-                    {(showTroopPlacement && <div className='troopPlacement col-2'>
-                        Troops placed: <span style={{color: userColor}}>{troopsPlaced}</span>
-                    </div>) || (ShowReinforcementPlacement && <div className='troopPlacement col-2'>
-                        Reinforcements placed: <span style={{color: userColor}}>{reinforcementPlaced}</span>
-                    </div>)}
+                    { phase === 'initial' ? (<div className='troopPlacement col-2'>
+                        Troops to place: <span style={{color: userColor}}>{initialTroops}</span>
+                    </div>) : phase === 'positioning' ? (<div className='troopPlacement col-2'>
+                        Reinforcements to place: <span style={{color: userColor}}>{initialTroops}</span>
+                    </div>) : (<div className='troopPlacement col-2'></div>)
+                    }
                     <div className='endContainer col-2'>
                         <span onClick={() => {
                             fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/attacking/end`, {

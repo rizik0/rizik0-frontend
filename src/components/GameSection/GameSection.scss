@@ -8,7 +8,15 @@
 
 .infoDisplay{
     background-color: #197493;
+    align-items: center !important;
     border-radius: 10px 10px 0 0;
+}
+
+.infoPoint{
+    color:#FEFDE8;
+    font-size: 3vh;
+    cursor: pointer;
+    border: 4px solid #FEFDE8;
 }
 
 .turnDisplay, .clock, .modeDisplay, .countrySelection, .playerColor, .troopPlacement{
