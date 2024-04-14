@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import Navbar from '../components/Navbar/Navbar.jsx'
-import Footer from '../components/Footer/Footer.jsx'
 import '../scss/stlyes.scss'
 import GameSection from '../components/GameSection/GameSection.jsx'
 import * as bootstrap from 'bootstrap'
@@ -58,10 +57,7 @@ export default function GamePage({UserColor}){
     players: [{name: '', color: ''}]
     });
 
-    const [initialTroops, setInitialTroops] = useState(0)
-
-    const [totalTroopsPlaced, setTotalTroopsPlaced] = useState(0)
-    const [totalReinforcementPlaced, setTotalReinforcementPlaced] = useState(0)
+    const [initialTroops, setInitialTroops] = useState(21)
 
     const [textTemp, setTextTemp] = useState('')
     const [territoryTemp, setTerritoryTemp] = useState('')
@@ -111,7 +107,8 @@ export default function GamePage({UserColor}){
                             alert(ob.data['error'])
                             navigate('/')
                         }
-                        setInitialTroops(ob.data.troops)})
+                        setInitialTroops(ob.data.troops)
+                    })
                 
                 fetchInitialGet()
             }
@@ -152,7 +149,7 @@ export default function GamePage({UserColor}){
     return(
         <>               
             <Navbar id="Navbar"/>
-            <GameSection data={data} id="GameSection" troopsPlaced={totalTroopsPlaced} reinforcementPlaced={totalReinforcementPlaced}/>
+            <GameSection data={data} id="GameSection" initialTroops={initialTroops} phase={data.phase} />
 
             { data.status === localStorage.getItem('player_id') ?
                 data.maps.map((map) => {        
@@ -174,12 +171,16 @@ export default function GamePage({UserColor}){
                                             <button type="button" className="btn btn-primary" onClick={() => {
                                                 console.log('sending')
                                                 console.log(textTemp)
-                                                const newTotalTroopsPlaced = totalTroopsPlaced + parseInt(textTemp)
-                                                if (newTotalTroopsPlaced < 21) {
-                                                    setTotalTroopsPlaced(newTotalTroopsPlaced)
-                                                }else if(newTotalTroopsPlaced === 21){
-                                                    setTotalTroopsPlaced(0)
+                                                console.log('troops: ' + initialTroops)
+                                                const newTotalTroopsPlaced = initialTroops - parseInt(textTemp)
+                                                if(parseInt(textTemp) > 0 && parseInt(textTemp) <= initialTroops){
+                                                    if (newTotalTroopsPlaced < 22) {
+                                                        setInitialTroops(newTotalTroopsPlaced)
+                                                    }else if(newTotalTroopsPlaced === 0){
+                                                        setInitialTroops(0)
+                                                    }
                                                 }
+                                                
                                                 fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/initial/place`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
@@ -217,13 +218,16 @@ export default function GamePage({UserColor}){
                                             <button type="button" className="btn btn-primary" onClick={() => {
                                                 console.log('sending')
                                                 console.log(textTemp)
-                                                const newReinforcementPlaced = totalReinforcementPlaced + parseInt(textTemp)
-                                                if (newReinforcementPlaced < 5) {
-                                                    setTotalReinforcementPlaced(newReinforcementPlaced)
+                                                const newReinforcementsPlaced = initialTroops - parseInt(textTemp)
+                                                if(parseInt(textTemp) > 0 && parseInt(textTemp) <= initialTroops){
+                                                    if (newReinforcementsPlaced < 5) {
+                                                        setInitialTroops(newReinforcementsPlaced)
+                                                    }
+                                                    if (newReinforcementsPlaced === 0) {
+                                                        setInitialTroops(0)
+                                                    }
                                                 }
-                                                if (newReinforcementPlaced === 4) {
-                                                    setTotalReinforcementPlaced(0)
-                                                }
+                                                
                                                 fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/positioning/place`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
