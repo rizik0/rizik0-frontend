@@ -71,9 +71,9 @@ export default function Login(){
                                 <button id="loginButton" type="submit" data-mdb-button-init data-mdb-ripple-init className="btn btn-primary btn-lg">
                                     Login
                                 </button>
-                                <p className="small fw-bold mt-2 pt-1 mb-0"> 
+                                <p className="fw-bold mt-2 pt-1 mb-0"> 
                                     Don't have an account?   
-                                    <LinkRouter id="registerLink" aria-selected='false' aria-controls='tab-pricing' to="/register">Register</LinkRouter>
+                                    <LinkRouter id="registerLink" aria-selected='false' aria-controls='tab-pricing' to="/register"> Register</LinkRouter>
                                 </p>
                                 
                             </div>

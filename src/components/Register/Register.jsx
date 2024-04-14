@@ -84,12 +84,12 @@ export default function Register(){
                                 </div> */}
     
                                 <div className="text-center text-lg-start mt-4 pt-2">
-                                    <button id="registerButton" type="submit" data-mdb-button-init data-mdb-ripple-init className="b</button>tn btn-primary btn-lg">
+                                    <button id="registerButton" type="submit" data-mdb-button-init data-mdb-ripple-init className="btn btn-primary btn-lg">
                                         Register
                                     </button>
-                                    <p className="small fw-bold mt-2 pt-1 mb-0"> 
+                                    <p className="fw-bold mt-2 pt-1 mb-0"> 
                                         Already have an account?
-                                        <LinkRouter id="loginLink" aria-selected='false' aria-controls='tab-pricing' to="/login">Login</LinkRouter>
+                                        <LinkRouter id="loginLink" aria-selected='false' aria-controls='tab-pricing' to="/login"> Login</LinkRouter>
                                     </p>
                                     
                                 </div>
