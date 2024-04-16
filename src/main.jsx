@@ -11,6 +11,7 @@ import AboutUsPage from "./routes/aboutuspage.jsx"
 import LoginPage from "./routes/loginpage.jsx"
 import RegisterPage from "./routes/registerpage.jsx"
 import LogoutPage from "./routes/logoutpage.jsx"
+import ProfilePage from './routes/profilepage.jsx';
 
 import {
   createBrowserRouter,
@@ -57,7 +58,12 @@ const router = createBrowserRouter([
     path: "/logout",
     element:  <LogoutPage />,
     errorElement: <ErrorPage />,
-    },
+  },
+  {
+    path: '/profile',
+    element: <ProfilePage />,
+    errorElement: <ErrorPage />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
