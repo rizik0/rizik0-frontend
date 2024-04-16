@@ -4,6 +4,7 @@ import logo from '../../assets/logo_circle.png'
 import logo_square from '../../assets/logo_full.png'
 import './PlayNow.scss'
 import { Modal } from 'bootstrap';
+import { jwtDecode } from 'jwt-decode'
 
 export default function PlayNow(){
 
@@ -15,18 +16,16 @@ export default function PlayNow(){
     const navigate = useNavigate()
 
     const createGame = () => {
-        const modalInstance = Modal.getInstance(newModalRef.current)
-        modalInstance.hide()
+        
         const abortController = new AbortController()
         console.log(name)
         const fetchData = async() => await fetch('http://localhost:3000/api/game/create', {
             method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({player_id: name})
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('jwt')}`},
         })
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
-            .then(ob => {localStorage.setItem('game_id', ob.data.game_id); localStorage.setItem('player_id', name); localStorage.setItem('playerGoal', ob.data.playerGoal);})
+            .then(ob => {localStorage.setItem('game_id', ob.data.game_id); localStorage.setItem('player_id', jwtDecode(localStorage.getItem('jwt')).sub.username); localStorage.setItem('playerGoal', ob.data.playerGoal);})
 
         fetchData()   
         
@@ -44,8 +43,8 @@ export default function PlayNow(){
         console.log(name)
         const fetchData = async() => await fetch('http://localhost:3000/api/game/join', {
             method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({player_id: name, game_id: game_id})
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('jwt')}` },
+            body: JSON.stringify({game_id: game_id})
         })
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
@@ -57,7 +56,7 @@ export default function PlayNow(){
                 else {
                     localStorage.setItem('playerGoal', ob.data.playerGoal);
                     localStorage.setItem('game_id', game_id)
-                    localStorage.setItem('player_id', name)
+                    localStorage.setItem('player_id', jwtDecode(localStorage.getItem('jwt')).sub.username)
 
                     navigate('/lobby')
                 }
@@ -88,7 +87,7 @@ export default function PlayNow(){
                 </div>
                 <div className='row justify-content-around'>
                     <div className='col-md-auto'>
-                        <div className="playButton" data-bs-toggle="modal" data-bs-target="#newModal">
+                        <div onClick={localStorage.getItem('jwt') !=  null ? createGame : () => navigate('/login')} className="playButton" >
                             New Game
                         </div>
                     </div>
@@ -106,24 +105,6 @@ export default function PlayNow(){
                 </div>
             </div>
 
-            <div className="modal fade" id="newModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={newModalRef}>
-                        <div className="modal-dialog modal-dialog-centered">
-                            <div className="modal-content">
-                                <div className="modal-header">
-                                    <h1 className="modal-title fs-5" id="exampleModalLabel">Create a game!</h1>
-                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div className="modal-body">
-                                    <label for="recipient-name" className="col-form-label">Your Name</label>
-                                    <input type="text" className="form-control" id="recipient-name" onChange={(s) => setName(s.target.value)} />
-                                </div>
-                                <div className="modal-footer">
-                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" className="btn btn-primary" onClick={createGame}>Play</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
             <div className="modal fade" id="joinModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref={joinModalRef}>
@@ -134,14 +115,17 @@ export default function PlayNow(){
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <label for="recipient-name" className="col-form-label">Your Name</label>
-                            <input type="text" className="form-control" id="recipient-name" onChange={(s) => setName(s.target.value)} />
                             <label for="recipient-name" className="col-form-label">Match Code</label>
                             <input type="text" className="form-control" id="recipient-name" onChange={(s) => setGameId(s.target.value)} />
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary" onClick={joinGame}>Play</button>
+                            <button type="button" className="btn btn-primary" onClick={localStorage.getItem('jwt') ? joinGame : () => {
+                                const modalElement = document.getElementById('joinModal')
+                                const modalInstance = Modal.getInstance(modalElement)
+                                modalInstance.hide()
+                                navigate('/login')
+                            }}>Play</button>
                         </div>
                     </div>
                 </div>

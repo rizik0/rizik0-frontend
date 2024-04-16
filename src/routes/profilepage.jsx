@@ -47,7 +47,6 @@ function ProfilePage() {
                 <p>Won: {data.wins}</p>
                 <p>Played: {data.games}</p>
 
-                <PlayNow />
             </div>
         );
     }
