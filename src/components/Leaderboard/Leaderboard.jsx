@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./Leaderboard.scss";
 import soldier from "../../assets/soldier.png";
 
-export default function Leaderboard({ powName, firstLeader, firstPoints , secondLeader, secondPoints, thirdLeader, thirdPoints, playerLeaderFourth, playerFourthPoints, playerLeaderFifth, playerFithPoints}) {
+export default function Leaderboard({ powName, firstLeader, firstPoints, secondLeader, secondPoints, thirdLeader, thirdPoints, playerLeaderFourth, playerFourthPoints, playerLeaderFifth, playerFithPoints}) {
 
     
     const x_pos = 368;

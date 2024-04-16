@@ -28,8 +28,6 @@ export default function Login(){
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log('saldkfg')
-                    console.log('data', data)
                     if (data) {
                         localStorage.setItem('jwt', data.jwt)
                     } else {
@@ -39,7 +37,7 @@ export default function Login(){
 
             setTimeout(() => {
                 if (localStorage.getItem('jwt') !== null) {
-                    navigate('/about_us')
+                    navigate('/profile')
                 }
                 else {
                     alert("Login failed. Try again.")
