@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "@react-spring/web": "^9.7.3",
     "bootstrap": "^5.3.3",
     "jwt-decode": "^4.0.0",
     "localforage": "^1.10.0",

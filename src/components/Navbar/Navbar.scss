@@ -36,3 +36,34 @@
 .navElem:hover {
 	border-bottom: 3px solid #FEFDE8;
 }
+
+.profileGreet{
+	color: #fefde89b;	
+	margin-left: 4vh;
+	width: 260px; 
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: default;
+}
+
+.profileLogo{
+	margin-left: -6vh;
+}
+
+.profileSection{
+	position: absolute;
+	display: flex;
+	margin-left: 45%;
+}
+
+.profilePic{
+	padding: 0.25vh;
+	width: 7vh;
+	height: 7vh;
+	border-radius: 100%;
+}
+
+.profilePic:hover{
+	border: solid 4px #FEFDE8;
+}

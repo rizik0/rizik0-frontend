@@ -1,0 +1,63 @@
+@import '../../scss/stlyes.scss';
+
+
+#profileTitle{
+    color: #151F2B;
+    text-align: center;
+    font-weight: 800;
+    font-size: 4vh;
+    margin-top: 18vh;
+    margin-bottom: 3vh;
+}
+
+#profileSoldier{
+    margin: 3vh auto 0 auto;
+    text-align: center;
+}
+
+.profileContainer{
+    margin-bottom: 10vh;
+    margin-top: 3vh;
+    height: 50vh;
+    padding-top: 4vh;
+}
+
+#statsTitle{
+    color: #FEFDE8;
+    cursor: default;
+    margin: 0 0 4vh 8vh;
+    text-align: center;
+    margin-left: -1vh;
+    font-weight: 800;
+    font-size: 5vh;
+    margin-bottom: 3vh;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.statsTab{
+    color: #FEFDE8;
+    border-radius: 10px;
+    font-size: 3vh;
+    width: 200px;
+    margin: 0 2vh 0 2vh;
+    cursor: default;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.statsNumber{
+    margin-top: 2.5vh;
+    font-weight: 800;
+    font-size: 6vh;
+    text-shadow: none !important;
+}
+
+.logoutButton{
+    color: #151F2B;
+    font-size: 3vh;
+    border-radius: 10px;
+    text-align: center;
+    width: 15vh;
+    background-color: #FEFDE8;
+    margin: 13vh auto 0 auto;
+    text-decoration: none !important;
+}
