@@ -45,10 +45,16 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	cursor: default;
+	@media (max-width: 768px) {
+			display: none;
+		}
 }
 
 .profileLogo{
 	margin-left: -6vh;
+	@media (max-width: 768px) {
+		margin-left: 100%;
+	}
 }
 
 .profileSection{

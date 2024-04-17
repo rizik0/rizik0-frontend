@@ -14,10 +14,10 @@ export default function Logout(){
         <section className="Logout">
             <div className="container-fluid">
                 <div className="col justify-content-center align-items-center">
-                    <div id="soldier" className="row-md4 justify-content-center align-items-center">
+                    <div id="soldier" className="row-md4 justify-content-center text-center align-items-center">
                         <img src={soldier} alt="soldier" className="img-fluid" />
                     </div>
-                    <div className="row justify-content-center align-items-center">
+                    <div className="row justify-content-center text-center align-items-center">
                         <h1>Logout</h1>
                         <p>Sei stato disconnesso correttamente</p>
                         <LinkRouter to="/login">
