@@ -72,6 +72,10 @@ export default function GamePage({UserColor}){
 
     const navigate = useNavigate()
 
+    function getOwner(territory){ 
+        return data.maps.find(map => map.name === territory).owner
+    }
+
     useEffect(() => {
         const abortController = new AbortController()
         const fetchData = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/status`, {
@@ -206,8 +210,8 @@ export default function GamePage({UserColor}){
                                 <div className="modal-dialog modal-dialog-centered">
                                     <div className="modal-content">
                                         <div className="modal-header">
-                                            <h1 className="modal-title fs-5" id="exampleModalLabel">Place Troops on {map.name}!</h1>
-                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <h1 className="modal-title fs-5" id="exampleModalLabel">Place troops on <span style={{fontWeight:'800'}}>{map.name} </span></h1>
+                                            <button type="button" className="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div className="modal-body">
                                             <label for="recipient-name" className="col-form-label">How many?</label>
@@ -261,7 +265,9 @@ export default function GamePage({UserColor}){
                                             <select className="form-select" onChange={(s) => {setTerritoryTemp(s.target.value)}}>
                                                 <option selected>Choose...</option>
                                                 {
-                                                    map.neighbours.map((neighbour) => {
+                                                    map.neighbours
+                                                        .filter(neighbour => localStorage.getItem('player_id') != getOwner(neighbour)) 
+                                                        .map((neighbour) => {
                                                         return(
                                                             <option>{neighbour}</option>
                                                         )
@@ -322,7 +328,9 @@ export default function GamePage({UserColor}){
                                             <select className="form-select" onChange={(s) => {setTerritoryTemp(s.target.value)}}>
                                                 <option selected>Choose...</option>
                                                 {
-                                                    map.neighbours.map((neighbour) => {
+                                                    map.neighbours
+                                                        .filter(neighbour => localStorage.getItem('player_id') === getOwner(neighbour)) 
+                                                        .map((neighbour) => {
                                                         return(
                                                             <option>{neighbour}</option>
                                                         )
