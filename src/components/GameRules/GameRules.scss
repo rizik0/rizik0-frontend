@@ -24,6 +24,11 @@
 
 .carouselImage {
     height: 55vh;
+    filter: blur(10px); /* Add this line to apply the blur effect */
+}
+
+.carousel-caption{
+    color: black !important;
 }
 
 .ruleContainer{

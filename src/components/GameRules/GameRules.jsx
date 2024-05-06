@@ -24,8 +24,8 @@ export default function Carousel() {
                                         <img src={firstImg} className="carouselImage d-block rounded align-middle h-80 w-100" ></img>
                                     </div>
                                 <div className="carousel-caption">
-                                    <h5>First slide label</h5>
-                                    <p>Some representative placeholder content for the first slide.</p>
+                                    <h5>Introduction and Strategy Hints</h5>
+                                    <p id= "rules_text">In the classic “World Domination RISK®‘” game of military strategy, you are battling to conquer the world. To win, you must launch daring attacks, defend yourself on all fronts, and sweep across vast continents with boldness and cunning. But remember, the dangers, as well as the rewards, are high. Just when the world is within your grasp, your opponent might strike and take it all away!. Conquer whole continents, watch your enemies and fortify your borders.</p>
                                 </div>
                                 </div>
                                 <div className="carousel-item">
@@ -33,15 +33,15 @@ export default function Carousel() {
                                         <img src={secondImg} className="carouselImage d-block align-middle h-40 w-100" ></img>
                                     </div>
                                 <div className="carousel-caption">
-                                    <h5>Second slide label</h5>
-                                    <p>Some representative placeholder content for the second slide.</p>
+                                    <h5>Setup</h5>
+                                    <p id= "rules_text">Unlike most games, RISK demands careful planning before you actually start to play. After you get your territories, place your tanks strategically to fortify your defences and don't forget to plan your attacks! You can attack with a maximum of three troops and for each of those a dice will be rolled. Then the highest die rolled by you and the defender is compared. If yours is higher, the defender loses one troop and viceversa. In case of a tie, the defender wins. After defeating the last troop on a territory, you have captured it! Now you must occupy it with at least a troop.</p>
                                 </div>
                                 </div>
                                 <div className="carousel-item">
                                     <img src={thirdImg} className="carouselImage d-block w-100" alt="..."></img>
                                 <div className="carousel-caption">
-                                    <h5>Third slide label</h5>
-                                    <p>Some representative placeholder content for the third slide.</p>
+                                    <h5>Fortifying your position and Winning</h5>
+                                    <p id= "rules_text">You may end your attacks at any time. After doing so, you must fortify your positions. Move as many armies as you like between your territories! Don't forget to leave one behind. The winner is the first player to eliminate every opponent by capturing all territories on the board! </p>
                                 </div>
                                 </div>
                             </div>

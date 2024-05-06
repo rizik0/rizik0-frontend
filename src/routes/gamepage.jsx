@@ -337,7 +337,7 @@ export default function GamePage({UserColor}){
                                                     })
                                                 }
                                             </select>
-                                            <label for="recipient-name" className="col-form-label">How many troops? (0 is an accettable option)</label>
+                                            <label for="recipient-name" className="col-form-label">How many troops? (0 is an acceptable option)</label>
                                             <input type="text" className="form-control" id="recipient-name" onChange={(s) => setTextTemp(s.target.value)}/>
                                         </div>
                                         <div className="modal-footer">
