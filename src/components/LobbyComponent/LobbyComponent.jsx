@@ -38,7 +38,9 @@ export default function LobbyComponent(UserColor){
             .then(ob => {
                 if (ob.data['error'] && errorFlag) {
                     setErrorFlag(false)
-                    alert(ob.data['error'])
+                    if (ob.data['error'] !== "Game not found") {
+                        alert(ob.data['error'])
+                    }
                     clearInterval(interval)
                     navigate('/')
                 }

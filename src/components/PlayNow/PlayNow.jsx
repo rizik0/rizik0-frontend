@@ -51,7 +51,9 @@ export default function PlayNow(){
             .then(ob => {
                 console.log(ob)
                 if (ob.data['error']) {
-                    alert(ob.data['error'])
+                    if (ob.data['error'] !== "Game not found") {
+                        alert(ob.data['error'])
+                    }       
                 }
                 else {
                     localStorage.setItem('playerGoal', ob.data.playerGoal);

@@ -87,7 +87,9 @@ export default function GamePage({UserColor}){
             .then(ob => {
                 if (ob.data['error'] && errorFlag) {
                     setErrorFlag(false)
-                    alert(ob.data['error'])
+                    if (ob.data['error'] !== "Game not found") {
+                        alert(ob.data['error'])
+                    }
                     navigate('/')
                 }
                 else {
@@ -108,7 +110,9 @@ export default function GamePage({UserColor}){
                         .then(data => ({data: data, status: res.status})))
                     .then(ob => {
                         if (ob.data['error']) {
-                            alert(ob.data['error'])
+                            if (ob.data['error'] !== "Game not found") {
+                                alert(ob.data['error'])
+                            }
                             navigate('/')
                         }
                         setInitialTroops(ob.data.troops)
@@ -194,7 +198,9 @@ export default function GamePage({UserColor}){
                                                         .then(data => ({data: data, status: res.status})))
                                                     .then(ob => {
                                                         if (ob.data['error']) {
-                                                            alert(ob.data['error'])    
+                                                            if (ob.data['error'] !== "Game not found") {
+                                                                alert(ob.data['error'])
+                                                            }    
                                                         }
                                                     })
                                                     const modalElement = document.getElementById(`${map.name}_initial_modal`)
@@ -241,7 +247,9 @@ export default function GamePage({UserColor}){
                                                         .then(data => ({data: data, status: res.status})))
                                                     .then(ob => {
                                                         if (ob.data['error']) {
-                                                            alert(ob.data['error'])    
+                                                            if (ob.data['error'] !== "Game not found") {
+                                                                alert(ob.data['error'])
+                                                            }    
                                                         }
                                                     })
                                                     const modalElement = document.getElementById(`${map.name}_positioning_modal`)
@@ -292,7 +300,9 @@ export default function GamePage({UserColor}){
                                                         .then(data => ({data: data, status: res.status})))
                                                      .then(ob => {
                                                         if (ob.data['error']) {
-                                                            alert(ob.data['error']) 
+                                                            if (ob.data['error'] !== "Game not found") {
+                                                                alert(ob.data['error'])
+                                                            } 
                                                             return 'no'   
                                                         }
                                                         else {
@@ -355,7 +365,9 @@ export default function GamePage({UserColor}){
                                                         .then(data => ({data: data, status: res.status})))
                                                     .then(ob => {
                                                             if (ob.data['error']) {
-                                                                alert(ob.data['error'])   
+                                                                if (ob.data['error'] !== "Game not found") {
+                                                                    alert(ob.data['error'])
+                                                                }   
                                                             }
                                                         }
                                                     )
@@ -401,7 +413,9 @@ export default function GamePage({UserColor}){
                                         .then(data => ({data: data, status: res.status})))
                                     .then(ob => {
                                         if (ob.data['error']) {
-                                            alert(ob.data['error'])    
+                                            if (ob.data['error'] !== "Game not found") {
+                                                alert(ob.data['error'])
+                                            }    
                                         }
                                     })
                                     const modalElement = document.getElementById('attack_move_modal')
