@@ -313,12 +313,14 @@ export default function GamePage({UserColor}){
                                                         if (won === 'yes') {
                                                             setFromTerritory(map.name)
                                                             const win_modal = new bootstrap.Modal(document.getElementById('attack_move_modal'), {keyboard: false})
-
+                                                            
                                                             win_modal.show()
                                                         }
                                                      })
+                                                    const win_modal = new bootstrap.Modal(document.getElementById('attack_move_modal'))
                                                     const modalElement = document.getElementById(`${map.name}_attacking_modal`)
                                                     const modalInstance = bootstrap.Modal.getInstance(modalElement)
+                                                    win_modal.hide()
                                                     modalInstance.hide()
                                             }} >Send</button>
                                         </div>

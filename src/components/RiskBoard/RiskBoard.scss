@@ -19,3 +19,9 @@
     width: 2vh;
     background-color: wheat;
 }
+
+#svg2 {
+    @media (max-width: 800px) {
+        background-color: #151F2B !important;
+    }
+}

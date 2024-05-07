@@ -8,7 +8,6 @@ export default function TechPage(){
         <>
             <Navbar id="Navbar"/>
             <TechSection id="TechSection"/>
-            <Footer id="Footer"/>
         </>
     )
 }

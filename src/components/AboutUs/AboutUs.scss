@@ -5,6 +5,10 @@
     width: 400px !important;
     height: 400px !important;
     object-fit: cover;
+    @media (max-width: 768px) {
+        margin-left: 5vh;
+    }
+
 }
 
 //ridefinizione colore border di bootstrap per rispecchiare la navbar
