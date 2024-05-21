@@ -25,7 +25,7 @@ export default function PlayNow(){
         })
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
-            .then(ob => {localStorage.setItem('game_id', ob.data.game_id); localStorage.setItem('player_id', jwtDecode(localStorage.getItem('jwt')).sub.username); localStorage.setItem('playerGoal', ob.data.playerGoal);})
+            .then(ob => {localStorage.setItem('game_id', ob.data.game_id); localStorage.setItem('player_id', jwtDecode(localStorage.getItem('jwt')).sub.username); localStorage.setItem('playerGoal', ob.data.playerGoal); localStorage.setItem('player_color', ob.data.playerColor);})
 
         fetchData()   
         
@@ -58,6 +58,7 @@ export default function PlayNow(){
                 else {
                     localStorage.setItem('playerGoal', ob.data.playerGoal);
                     localStorage.setItem('game_id', game_id)
+                    localStorage.setItem('player_color', ob.data.playerColor)
                     localStorage.setItem('player_id', jwtDecode(localStorage.getItem('jwt')).sub.username)
 
                     navigate('/lobby')
