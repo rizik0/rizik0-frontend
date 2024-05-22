@@ -32,11 +32,35 @@
     padding: 2vh;
     border-radius: 30px;
     font-size: 1.7vh;
-    @media (min-width: 625px){
+
+    @media (min-width: 901px) {
         bottom: 30% !important;
         
     }
 
+    @media (max-width: 900px) {
+        bottom: 25% !important;
+    }
+
+    @media (max-width: 780px) {
+        bottom: 20% !important;
+    }
+
+    @media (max-width: 630px) {
+        bottom: 6% !important;
+    }
+
+    @media (max-width: 570px) {
+        bottom: 0% !important;
+        
+    }
+
+}
+
+#rules_text{
+        @media (max-width: 780px) {
+            font-size: 1.5vh !important;
+        }
 }
 
 .ruleContainer{
@@ -51,6 +75,11 @@
     font-weight: 800;
     margin-bottom: 1vh;
     text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 780px) {
+        font-size: 2vh !important;
+    }
+
 }
 
 

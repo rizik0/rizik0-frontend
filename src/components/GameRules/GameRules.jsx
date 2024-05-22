@@ -34,7 +34,7 @@ export default function Carousel() {
                                     </div>
                                 <div className="carousel-caption">
                                     <h5 className='capTitle'>Setup</h5>
-                                    <p id= "rules_text">Unlike most games, RISK demands careful planning before you actually start to play. After you get your territories, place your tanks strategically to fortify your defences and don't forget to plan your attacks! You can attack with a maximum of three troops and for each of those a dice will be rolled. Then the highest die rolled by you and the defender is compared. If yours is higher, the defender loses one troop and viceversa. In case of a tie, the defender wins. After defeating the last troop on a territory, you have captured it! Now you must occupy it with at least a troop.</p>
+                                    <p id= "rules_text">Unlike most games, RISK demands careful planning before you actually start to play. After you get your territories, place your tanks strategically to fortify your defences and don't forget to plan your attacks! You can attack with a maximum of three troops and for each of those a dice will be rolled. Then the highest die rolled by you and the defender is compared. If yours is higher, the defender loses one troop and viceversa. After defeating the last troop on a territory, you have captured it!</p>
                                 </div>
                                 </div>
                                 <div className="carousel-item">
