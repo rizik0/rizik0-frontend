@@ -51,15 +51,17 @@ i {
     color: #FEFDE8 !important;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     i {
-        font-size: 0.9em;
+        font-size: 1.2em;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     i {
-        font-size: 0.7em;
+        font-size: 0.8em;
+        position: relative;
+        right: 0.8vh;
     }
 }
 
