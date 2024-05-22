@@ -85,11 +85,15 @@
     .sectionDivider{
         width: 90%;
     }
-    #circle_logo{
-        display: none;
-    }
     #square_logo{
         // display: none; per pietro da finire
         transform: scale(0.4);
     }
+}
+
+@media (max-width: 768px) {
+    #circle_logo{
+        display: none;
+    }
+    
 }

@@ -1,9 +1,28 @@
 @import '../../scss/stlyes.scss';
 
 #GameSection{
-    padding-top: 14vh;
+    padding-top: 16vh;
     background-color: #151F2B;
-    height: 100vh;    
+    height: 100vh; 
+
+    @media screen and (max-width: 965px) {
+            height: 80rem;
+    }
+    
+    @media screen and (max-width: 800px) and (orientation: landscape) {
+        height: 50rem;
+        width: 50rem;
+    }
+
+    @media screen and (max-width: 1000px) and (orientation: landscape) {
+        height: 70rem;
+    }
+}
+
+#infotab{
+    @media screen and (max-width:900px) and (orientation: landscape) {
+        padding-top: 20vh;
+    }
 }
 
 .infoDisplay{
@@ -20,7 +39,7 @@
 }
 
 .modalTitle{
-    color: black;
+    color: white;
     font-weight: 900;
     font-size: 2.5vh;
 }
@@ -48,6 +67,27 @@
     border-radius: 0 0 10px 10px;
     background-color: #035e7b;
     margin-bottom: 3vh;
+
+
+    @media (max-width: 1200px) {
+        padding: 5vh 0vh 5vh 8vh !important;
+    }
+    @media (max-width: 991px) {
+        padding: 5vh 0vh 5vh 0vh !important;
+    }
+    @media screen and (max-width: 800px) and (orientation: landscape){
+        background-color: #151F2B !important;
+        margin-left: -24vh;
+    }
+
+    @media screen and (max-width: 1000px) and (orientation: landscape) {
+        padding: 5vh 0vh 5vh 0vh !important;
+    }
+
+    @media screen and (max-width: 769px) {
+        margin-left: -10vh;
+        padding: 0 !important;
+    }
 }
 
 .objDisplay{

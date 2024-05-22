@@ -26,7 +26,7 @@ export default function GameSection({ data, initialTroops, phase }){
                     <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title" id="exampleModalLongTitle">Tutorial</h5>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" className="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
                         <span className="modalTitle">Initial: </span>
@@ -46,7 +46,7 @@ export default function GameSection({ data, initialTroops, phase }){
                 </div>
                 </div>
             
-            <div className="container">
+            <div className="container" id='infotab'>
                 <div className="infoDisplay row text-center justify-content-between">
                     <div className= "turnDisplay col-2">
                         Turn: <span style={{color: userColor}}>{data.status}</span>

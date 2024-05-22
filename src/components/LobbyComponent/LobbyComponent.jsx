@@ -117,13 +117,13 @@ export default function LobbyComponent(UserColor){
                                 return(
                                     <div className='container' key={player.name}> 
                                         <div className='row playerLobby'>
-                                            <div className='col-1'>
+                                            <div className='col-xl-1 col-md-2 col-sm-3 col-4'>
                                                 <img className='avatarLobby' src={avatar}/>
                                             </div>
-                                            <div className='col-9'>
+                                            <div className='col-xl-9 col-md-8 col-sm-5 col-3'>
                                                 <div>{player.name}</div>
                                             </div>
-                                            <div className='col-2'>
+                                            <div className='col-xl-2 col-md-2 col-sm-2 col-1'>
                                                 <img className='ticLobby' src={tic} />
                                             </div>
                                         </div>

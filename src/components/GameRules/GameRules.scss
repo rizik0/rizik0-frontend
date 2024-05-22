@@ -24,11 +24,19 @@
 
 .carouselImage {
     height: 55vh;
-    filter: blur(10px);
+    filter: blur(10px); 
 }
 
 .carousel-caption{
-    color: black !important;
+    background-color: #005d7ab2;
+    padding: 2vh;
+    border-radius: 30px;
+    font-size: 1.7vh;
+    @media (min-width: 625px){
+        bottom: 30% !important;
+        
+    }
+
 }
 
 .ruleContainer{
@@ -37,6 +45,13 @@
     border-radius: 30px;
 }
 
+.capTitle{
+    color: #FEFDE8;
+    font-size: 2.5vh;
+    font-weight: 800;
+    margin-bottom: 1vh;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
 
 
 @media (max-width: 550px) {
