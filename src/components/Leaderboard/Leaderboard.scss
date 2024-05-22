@@ -34,6 +34,13 @@
     fill: #FEFDE8;
 }
 
+#leaderboard{
+    @media (min-width: 400px) and (max-width: 500px) {
+            position: relative;
+            left: -8% !important;
+        }
+}
+
 @media (max-width: 850px) {
     .icons {
             text-align: center;

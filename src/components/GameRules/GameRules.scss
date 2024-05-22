@@ -52,7 +52,10 @@
 
     @media (max-width: 570px) {
         bottom: 0% !important;
-        
+    }
+
+    @media (max-width: 500px) {
+        bottom: 15% !important;
     }
 
 }

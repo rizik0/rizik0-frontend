@@ -9,6 +9,7 @@
 $font: 'Dosis', sans-serif;
 
 body, html {
+    overflow-x: hidden;
     background-color: #FEFDE8;
     font-family: $font;
     font-weight: 600;
