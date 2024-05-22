@@ -104,7 +104,7 @@ export default function Profile(){
         
         return (
             <section id='Profile'>
-                <div id='profileTitle'>Welcome {decoded.sub.username}, you are currently in postion #{userPosition}!</div>
+                <div id='profileTitle'>Welcome {decoded.sub.username}, you are currently in postion #{userPosition+1}!</div>
                 <div id='profileSoldier'>
                     <img src={soldier} alt="" />
                 </div>
