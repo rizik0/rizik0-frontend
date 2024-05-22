@@ -67,9 +67,9 @@ export default function LobbyComponent(UserColor){
             if (status != "waiting" && status != null){
 
                 for (let i = 0; i < players.length; i++){
-                    if (players[i].name === localStorage.getItem('player_id')){
-                        localStorage.setItem('player_color', players[i].color)
-                    }
+                    // if (players[i].name === localStorage.getItem('player_id')){
+                    //     localStorage.setItem('player_color', players[i].color)
+                    // }
                 }
 
                 clearInterval(interval)
