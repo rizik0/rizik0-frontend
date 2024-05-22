@@ -50,3 +50,16 @@ i {
     text-align: center !important;
     color: #FEFDE8 !important;
 }
+
+@media (max-width: 800px) {
+    i {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 500px) {
+    i {
+        font-size: 0.7em;
+    }
+}
+
