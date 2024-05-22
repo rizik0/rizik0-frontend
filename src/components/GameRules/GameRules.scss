@@ -24,7 +24,7 @@
 
 .carouselImage {
     height: 55vh;
-    filter: blur(10px); /* Add this line to apply the blur effect */
+    filter: blur(10px);
 }
 
 .carousel-caption{
@@ -39,7 +39,7 @@
 
 
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
     #GameRules{
         margin-top: 15vh;
         padding: 2vh 2vh 2vh 2vh;
