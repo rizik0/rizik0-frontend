@@ -91,7 +91,6 @@ export default function GameSection({ data, initialTroops, phase }){
                             })
                                 .then(res => res.json()
                                     .then(data => ({data: data, status: res.status})))
-                                .then(ob => {console.log(ob.data)})
                         }}>End Turn</span>
                     </div>
                 </div>

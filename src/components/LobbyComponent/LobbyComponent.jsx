@@ -15,10 +15,6 @@ export default function LobbyComponent(UserColor){
         
         const copyImage = document.querySelector('.copy');
         copyImage.classList.add('animateOnClick');
-
-        // setTimeout(() => {
-        //     copyImage.classList.remove('animateOnClick');
-        // }, 200); // Remove the class after the same duration as the animation
     
     }
 
@@ -46,7 +42,6 @@ export default function LobbyComponent(UserColor){
                 }
                 else {
                     setStatus(ob.data.status); 
-                    console.log(status)
                 }
             })
         
@@ -65,13 +60,6 @@ export default function LobbyComponent(UserColor){
             fetchPlayers()
 
             if (status != "waiting" && status != null){
-
-                for (let i = 0; i < players.length; i++){
-                    // if (players[i].name === localStorage.getItem('player_id')){
-                    //     localStorage.setItem('player_color', players[i].color)
-                    // }
-                }
-
                 clearInterval(interval)
                 navigate('/game')
             }
@@ -147,20 +135,4 @@ export default function LobbyComponent(UserColor){
     }
 
 }
-
-/*
-<div class="lobbyContainer rounded container">
-                    <div class="row rowContainer" style={{textAlign:'center',color:'white',paddingTop:'10em'}}>
-                        <div style={{fontSize: "2rem", fontWeight: "bold", color: "#fefde8"}}>Waiting for other players...</div>
-                        <div style={{fontSize: "1.5rem", fontWeight: "bold", color: "#fefde8", marginBottom: "1rem"}}>G</div>
-                        <div style={{backgroundColor: "#035e7b", borderRadius: "15px", padding: "2rem"}}>
-                            {players.map((player) => {
-                                return(
-                                    <div key={player.name} style={{color: player.color, backgroundColor: "#fefde8", borderRadius: "10px", padding: "1rem", textAlign: "left", margin: "0.5rem", fontSize: "1.2rem"}}>{player.name}</div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                </div>
-*/ 
 

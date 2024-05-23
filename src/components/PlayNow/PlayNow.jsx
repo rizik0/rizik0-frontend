@@ -49,7 +49,6 @@ export default function PlayNow(){
             .then(res => res.json()
                 .then(data => ({data: data, status: res.status})))
             .then(ob => {
-                console.log(ob)
                 if (ob.data['error']) {
                     if (ob.data['error'] !== "Game not found") {
                         alert(ob.data['error'])

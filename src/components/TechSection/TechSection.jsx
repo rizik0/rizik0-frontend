@@ -1,4 +1,3 @@
-import { left } from '@popperjs/core'
 import './TechSection.scss'
 
 export default function TechSection(){

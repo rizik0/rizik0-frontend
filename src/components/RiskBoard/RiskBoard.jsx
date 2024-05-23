@@ -3764,18 +3764,3 @@ const RiskBoard = ({ maps, phase, setCountryName }) => {
 );
 }
 export default RiskBoard
-
-
-
-
-
-/*
-
-function handlePathClick(event) {
-   if (event.target) {
-    event.target.style.opacity= 0; // Change the stroke color to red
-  }
-}
-
-
-*/

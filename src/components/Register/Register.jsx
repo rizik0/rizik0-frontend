@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import './Register.scss'
 import {useNavigate} from "react-router-dom";
-import { Link } from 'react-scroll'
 import { Link as LinkRouter} from 'react-router-dom'
 import soldier from "../../assets/soldier.png";
 
@@ -23,8 +22,6 @@ export default function Register(){
             e.preventDefault()
             let status = {success: ''};
 
-            //console.log(player)
-
             fetch('http://localhost:3000/api/player/register', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
@@ -32,7 +29,6 @@ export default function Register(){
             })
                 .then(res => res.json())
                 .then(data => {
-                    // console.log('data', data)
                     if (data) {
                         status.success = true;
                     } else {
@@ -41,7 +37,6 @@ export default function Register(){
                 });
 
             setTimeout(() => {
-                // console.log(status)
                 if (status.success) {
                     navigate('/login')
                 } else {
@@ -77,11 +72,6 @@ export default function Register(){
                                     <input onChange={e => setPlayer({...player, password_hash: e.target.value})} required={true} type="password" id="form3Example4" className="form-control form-control-lg"
                                         placeholder="Enter password" />
                                 </div>
-    
-                                {/* <div data-mdb-input-init className="form-outline mb-4">
-                                <label className="form-label" htmlFor="form3Example3">Immagine profilo</label>
-                                    <input type="file" class="form-control" id="customFile"  accept="image/jpeg,image/png,image/jpg"/>
-                                </div> */}
     
                                 <div className="text-center text-lg-start mt-4 pt-2">
                                     <button id="registerButton" type="submit" data-mdb-button-init data-mdb-ripple-init className="btn btn-primary btn-lg">

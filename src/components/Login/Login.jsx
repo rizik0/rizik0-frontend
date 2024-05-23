@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import './Login.scss'
-import { Link } from 'react-scroll'
 import { Link as LinkRouter} from 'react-router-dom'
 import {useNavigate} from "react-router-dom";
 import soldier from "../../assets/soldier.png";
@@ -20,7 +19,6 @@ export default function Login(){
         const submit = e => {
             e.preventDefault()
 
-            console.log('player',player)
             fetch('http://localhost:3000/api/player/login', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },

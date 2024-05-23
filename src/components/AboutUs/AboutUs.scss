@@ -1,6 +1,5 @@
 @import '../../scss/stlyes.scss';
 
-//classe immagini
 .team-image {
     width: 400px !important;
     height: 400px !important;
@@ -15,7 +14,6 @@
 
 }
 
-//ridefinizione colore border di bootstrap per rispecchiare la navbar
 .border-primary {
     border-color: #FEFDE8 !important;
 }
@@ -61,10 +59,10 @@
 
 .teamCard {
     transition: all 0.3s ease-out;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Initial shadow
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .teamCard:hover {
     box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.7),
-        0 10px 20px -2px rgba(0, 0, 0, 0.2) !important; // Shadow on hover
+        0 10px 20px -2px rgba(0, 0, 0, 0.2) !important; 
 }

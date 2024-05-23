@@ -19,8 +19,6 @@ export default function Root(){
         potw: ''
     })
 
-    console.log(data)
-
     useEffect(() => {
         const abortController = new AbortController()
         const fetchData = async() => await fetch('http://localhost:3000/api/leaderboard', {

@@ -1,13 +1,10 @@
 import React, {useState} from 'react'
 import './Logout.scss'
-import { Link } from 'react-scroll'
 import { Link as LinkRouter} from 'react-router-dom'
-import {useNavigate} from "react-router-dom";
 import soldier from "../../assets/soldier.png";
 
 
 export default function Logout(){
-    // superimportante
     localStorage.removeItem('jwt')
 
     return (

@@ -1,7 +1,6 @@
 import './Navbar.scss'
-import { useEffect, useRef } from 'react'
 import { Link } from 'react-scroll'
-import { Link as LinkRouter, useLocation, useNavigate } from 'react-router-dom'
+import { Link as LinkRouter, useLocation } from 'react-router-dom'
 import logo from '../../assets/logo_circle.png'
 import profileLogo from '../../assets/avatarIcon.png'
 import { jwtDecode } from "jwt-decode"
@@ -81,31 +80,6 @@ export default function Navbar(){
                                         </li>
                                     </div>
                                 )}
-                            {/* <li className="nav-item dropdown">
-                            <a className="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Company
-                            </a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a className="dropdown-item" href="#">Blog</a></li>
-                                <li><a className="dropdown-item" href="#">About Us</a></li>
-                                <li><a className="dropdown-item" href="#">Contact us</a></li>
-                            </ul>
-                            </li>
-                            
-                            
-                            <div className="align-items-center" style={{position:'relative'}}>
-                                        <li className='nav-item' style={{color:'#FEFDE8'}}>ciao {decoded.sub.username}</li>
-                                        <li className='nav-item profileLogo'>
-                                            <LinkRouter className="nav-link mx-2" aria-selected='false' aria-controls='tab-contactus' to="/profile">
-                                                <img className='profilePic' src={profileLogo} />
-                                            </LinkRouter>
-                                        </li>
-                                    </div>
-                                    
-                            
-                            
-                            
-                            */}
                         </ul>
                     </div>
                 </div>

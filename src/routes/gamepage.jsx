@@ -177,9 +177,6 @@ export default function GamePage({UserColor}){
                                         <div className="modal-footer">
                                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             <button type="button" className="btn btn-primary" onClick={() => {
-                                                console.log('sending')
-                                                console.log(textTemp)
-                                                console.log('troops: ' + initialTroops)
                                                 const newTotalTroopsPlaced = initialTroops - parseInt(textTemp)
                                                 if(parseInt(textTemp) > 0 && parseInt(textTemp) <= initialTroops){
                                                     if (newTotalTroopsPlaced < 22) {
@@ -226,8 +223,6 @@ export default function GamePage({UserColor}){
                                         <div className="modal-footer">
                                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             <button type="button" className="btn btn-primary" onClick={() => {
-                                                console.log('sending')
-                                                console.log(textTemp)
                                                 const newReinforcementsPlaced = initialTroops - parseInt(textTemp)
                                                 if(parseInt(textTemp) > 0 && parseInt(textTemp) <= initialTroops){
                                                     if (newReinforcementsPlaced < 5) {
@@ -288,9 +283,6 @@ export default function GamePage({UserColor}){
                                         <div className="modal-footer">
                                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             <button type="button" className="btn btn-primary" onClick={() => {
-                                                console.log('sending')
-                                                // console.log(textTemp)
-                                                console.log({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
                                                 fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/attacking/`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
@@ -355,9 +347,6 @@ export default function GamePage({UserColor}){
                                         <div className="modal-footer">
                                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             <button type="button" className="btn btn-primary" onClick={() => {
-                                                console.log('sending')
-                                                // console.log(textTemp)
-                                                console.log({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
                                                 fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/movement/`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
@@ -404,8 +393,6 @@ export default function GamePage({UserColor}){
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" className="btn btn-primary" onClick={() => {
-                                console.log('sending')
-                                console.log(textTemp)
                                 fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/attacking/move`, {
                                     method: "POST",
                                     headers: { 'Content-Type': 'application/json' },

@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Navbar from './components/Navbar/Navbar.jsx'
 import '../src/scss/stlyes.scss'
 import Root from "./routes/root";
 import GamePage from "./routes/gamepage";
