@@ -4,6 +4,7 @@ import { Link } from 'react-scroll'
 import { Link as LinkRouter} from 'react-router-dom'
 import {useNavigate} from "react-router-dom";
 import soldier from "../../assets/soldier.png";
+import apiBaseUrl from '../../config.js'
 
 
 export default function Login(){
@@ -21,7 +22,7 @@ export default function Login(){
             e.preventDefault()
 
             console.log('player',player)
-            fetch('http://89.168.29.38/api/player/login', {
+            fetch('${apiBaseUrl}/api/player/login', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify([player.username, player.password_hash])

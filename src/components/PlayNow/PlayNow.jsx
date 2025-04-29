@@ -5,6 +5,7 @@ import logo_square from '../../assets/logo_full.png'
 import './PlayNow.scss'
 import { Modal } from 'bootstrap';
 import { jwtDecode } from 'jwt-decode'
+import apiBaseUrl from '../../config.js'
 
 export default function PlayNow(){
 
@@ -19,7 +20,7 @@ export default function PlayNow(){
         
         const abortController = new AbortController()
         console.log(name)
-        const fetchData = async() => await fetch('http://89.168.29.38/api/game/create', {
+        const fetchData = async() => await fetch('${apiBaseUrl}/api/game/create', {
             method: "POST",
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('jwt')}`},
         })
@@ -41,7 +42,7 @@ export default function PlayNow(){
         modalInstance.hide();
         const abortController = new AbortController()
         console.log(name)
-        const fetchData = async() => await fetch('http://89.168.29.38/api/game/join', {
+        const fetchData = async() => await fetch('${apiBaseUrl}/api/game/join', {
             method: "POST",
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('jwt')}` },
             body: JSON.stringify({game_id: game_id})

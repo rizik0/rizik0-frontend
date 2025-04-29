@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { useSpring, animated } from '@react-spring/web'
 import soldier from '../../assets/soldier.png'
 import { Link as LinkRouter } from 'react-router-dom'
+import apiBaseUrl from '../../config.js'
 
 function Matches({ numGames }){
     const { num } = useSpring({
@@ -61,7 +62,7 @@ export default function Profile(){
         if (localStorage.getItem('jwt') !== null) {
 
             const abortController = new AbortController()
-            const fetchData = async() => await fetch('http://89.168.29.38/api/player/profile', {
+            const fetchData = async() => await fetch('${apiBaseUrl}/api/player/profile', {
                 method: "GET",
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('jwt')}` }
             })
@@ -94,7 +95,7 @@ export default function Profile(){
         const winRate = numWins / numGames * 100
 
         useEffect(() => {
-            fetch('http://89.168.29.38/api/leaderboard')
+            fetch('${apiBaseUrl}/api/leaderboard')
             .then(response => response.json())
             .then(data => {
                 const standings = data.standings

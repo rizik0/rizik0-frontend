@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import { Link } from 'react-scroll'
 import { Link as LinkRouter} from 'react-router-dom'
 import soldier from "../../assets/soldier.png";
+import apiBaseUrl from '../../config.js'
 
 
 export default function Register(){
@@ -25,7 +26,7 @@ export default function Register(){
 
             //console.log(player)
 
-            fetch('http://89.168.29.38/api/player/register', {
+            fetch('${apiBaseUrl}/api/player/register', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify([ player.username, player.email, player.password_hash ])

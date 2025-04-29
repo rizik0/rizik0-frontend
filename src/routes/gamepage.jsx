@@ -4,6 +4,7 @@ import '../scss/stlyes.scss'
 import GameSection from '../components/GameSection/GameSection.jsx'
 import * as bootstrap from 'bootstrap'
 import { useNavigate } from 'react-router-dom'
+import apiBaseUrl from '../../config.js'
 
 export default function GamePage({UserColor}){
 
@@ -78,7 +79,7 @@ export default function GamePage({UserColor}){
 
     useEffect(() => {
         const abortController = new AbortController()
-        const fetchData = async() => await fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/status`, {
+        const fetchData = async() => await fetch(`${apiBaseUrl}/api/game/${localStorage.getItem("game_id")}/status`, {
             method: "GET",
             headers: { 'Content-Type': 'application/json' }
         })
@@ -101,7 +102,7 @@ export default function GamePage({UserColor}){
 
         if (data.status === localStorage.getItem('player_id')) {
             if (data.phase === 'initial') {
-                const fetchInitialGet = async() => await fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/play/initial/get`, {
+                const fetchInitialGet = async() => await fetch(`${apiBaseUrl}/api/game/${localStorage.getItem("game_id")}/play/initial/get`, {
                     method: "POST",
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({player_id: localStorage.getItem('player_id')})
@@ -122,7 +123,7 @@ export default function GamePage({UserColor}){
             }
 
             if (data.phase === 'positioning') {
-                const fetchPositioningGet = async() => await fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/play/positioning/get`, {
+                const fetchPositioningGet = async() => await fetch(`${apiBaseUrl}/api/game/${localStorage.getItem("game_id")}/play/positioning/get`, {
                     method: "POST",
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({player_id: localStorage.getItem('player_id')})
@@ -189,7 +190,7 @@ export default function GamePage({UserColor}){
                                                     }
                                                 }
                                                 
-                                                fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/play/initial/place`, {
+                                                fetch(`${apiBaseUrl}/api/game/${localStorage.getItem("game_id")}/play/initial/place`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
                                                     body: JSON.stringify({player_id: localStorage.getItem('player_id'), troops: textTemp, territory: map.name})
@@ -238,7 +239,7 @@ export default function GamePage({UserColor}){
                                                     }
                                                 }
                                                 
-                                                fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/play/positioning/place`, {
+                                                fetch(`${apiBaseUrl}/api/game/${localStorage.getItem("game_id")}/play/positioning/place`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
                                                     body: JSON.stringify({player_id: localStorage.getItem('player_id'), troops: textTemp, territory: map.name})
@@ -291,7 +292,7 @@ export default function GamePage({UserColor}){
                                                 console.log('sending')
                                                 // console.log(textTemp)
                                                 console.log({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
-                                                fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/play/attacking/`, {
+                                                fetch(`${apiBaseUrl}/api/game/${localStorage.getItem("game_id")}/play/attacking/`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
                                                     body: JSON.stringify({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
@@ -358,7 +359,7 @@ export default function GamePage({UserColor}){
                                                 console.log('sending')
                                                 // console.log(textTemp)
                                                 console.log({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
-                                                fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/play/movement/`, {
+                                                fetch(`${apiBaseUrl}/api/game/${localStorage.getItem("game_id")}/play/movement/`, {
                                                     method: "POST",
                                                     headers: { 'Content-Type': 'application/json' },
                                                     body: JSON.stringify({player_id: localStorage.getItem('player_id'), from_territory: map.name, to_territory: territoryTemp, troops: textTemp})
@@ -406,7 +407,7 @@ export default function GamePage({UserColor}){
                             <button type="button" className="btn btn-primary" onClick={() => {
                                 console.log('sending')
                                 console.log(textTemp)
-                                fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/play/attacking/move`, {
+                                fetch(`${apiBaseUrl}/api/game/${localStorage.getItem("game_id")}/play/attacking/move`, {
                                     method: "POST",
                                     headers: { 'Content-Type': 'application/json' },
                                     body: JSON.stringify({player_id: localStorage.getItem('player_id'), from_territory: fromTerritory, to_territory: territoryTemp, troops: textTemp})

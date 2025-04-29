@@ -5,6 +5,7 @@ import Footer from '../components/Footer/Footer.jsx'
 import Leaderboard from '../components/Leaderboard/Leaderboard.jsx'
 import PlayNow from '../components/PlayNow/PlayNow.jsx'
 import GameRules from '../components/GameRules/GameRules.jsx'
+import apiBaseUrl from '../../config.js'
 
 export default function Root(){
 
@@ -23,7 +24,7 @@ export default function Root(){
 
     useEffect(() => {
         const abortController = new AbortController()
-        const fetchData = async() => await fetch('http://89.168.29.38/api/leaderboard', {
+        const fetchData = async() => await fetch('${apiBaseUrl}/api/leaderboard', {
             method: "GET",
             headers: { 'Content-Type': 'application/json' }
         })

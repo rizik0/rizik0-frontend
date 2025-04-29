@@ -6,6 +6,7 @@ import avatar from '../../assets/avatar.png'
 import copy from '../../assets/copy.png'
 import tic from '../../assets/tic.png'
 import './LobbyComponent.scss'
+import apiBaseUrl from '../../config.js'
 
 
 export default function LobbyComponent(UserColor){
@@ -29,7 +30,7 @@ export default function LobbyComponent(UserColor){
 
     useEffect(() => {
         const abortController = new AbortController()
-        const fetchStatus = async() => await fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/status`, {
+        const fetchStatus = async() => await fetch(`${apiBaseUrl}/api/game/${localStorage.getItem("game_id")}/status`, {
             method: "GET",
             headers: { 'Content-Type': 'application/json' } 
         })
@@ -50,7 +51,7 @@ export default function LobbyComponent(UserColor){
                 }
             })
         
-        const fetchPlayers = async() => await fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/players`, {
+        const fetchPlayers = async() => await fetch(`${apiBaseUrl}/api/game/${localStorage.getItem("game_id")}/players`, {
             method: "GET",
             headers: { 'Content-Type': 'application/json' }
         })
