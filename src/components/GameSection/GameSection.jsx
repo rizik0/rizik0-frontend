@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import RiskBoard from '../RiskBoard/RiskBoard.jsx'
 import Clock from '../Clock/Clock.jsx'
 import './GameSection.scss'
-import apiBaseUrl from '../../config.js'
+import apiBaseUrl from '../../../config.js'
 
 export default function GameSection({ data, initialTroops, phase }){
     const userColor = localStorage.getItem('player_color')

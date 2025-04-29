@@ -5,7 +5,7 @@ import logo_square from '../../assets/logo_full.png'
 import './PlayNow.scss'
 import { Modal } from 'bootstrap';
 import { jwtDecode } from 'jwt-decode'
-import apiBaseUrl from '../../config.js'
+import apiBaseUrl from '../../../config.js'
 
 export default function PlayNow(){
 

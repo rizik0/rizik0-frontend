@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { useSpring, animated } from '@react-spring/web'
 import soldier from '../../assets/soldier.png'
 import { Link as LinkRouter } from 'react-router-dom'
-import apiBaseUrl from '../../config.js'
+import apiBaseUrl from '../../../config.js'
 
 function Matches({ numGames }){
     const { num } = useSpring({

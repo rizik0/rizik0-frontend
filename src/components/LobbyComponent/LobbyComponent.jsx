@@ -6,7 +6,7 @@ import avatar from '../../assets/avatar.png'
 import copy from '../../assets/copy.png'
 import tic from '../../assets/tic.png'
 import './LobbyComponent.scss'
-import apiBaseUrl from '../../config.js'
+import apiBaseUrl from '../../../config.js'
 
 
 export default function LobbyComponent(UserColor){

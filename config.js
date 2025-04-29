@@ -1,4 +1,3 @@
-// src/config.js
 const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
 
 if (!apiBaseUrl) {

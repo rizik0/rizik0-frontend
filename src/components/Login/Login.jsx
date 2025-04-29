@@ -4,7 +4,7 @@ import { Link } from 'react-scroll'
 import { Link as LinkRouter} from 'react-router-dom'
 import {useNavigate} from "react-router-dom";
 import soldier from "../../assets/soldier.png";
-import apiBaseUrl from '../../config.js'
+import apiBaseUrl from '../../../config.js'
 
 
 export default function Login(){
