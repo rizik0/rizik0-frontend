@@ -25,7 +25,7 @@ export default function Register(){
 
             //console.log(player)
 
-            fetch('http://localhost:3000/api/player/register', {
+            fetch('http://89.168.29.38/api/player/register', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify([ player.username, player.email, player.password_hash ])

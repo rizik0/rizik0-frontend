@@ -35,16 +35,16 @@
 }
 
 #leaderboard{
-    @media (min-width: 400px) and (max-width: 500px) {
-            position: relative;
-            left: -8% !important;
-        }
+    @media (min-width: 380px) and (max-width: 500px) {
+        position: relative;
+        left: -11% !important;
+    }
 }
 
 @media (max-width: 850px) {
     .icons {
-            text-align: center;
-        }
+        text-align: center;
+    }
     #soldier,#pole,#lead_pole,#lead_base{
         display: none;
         width: 100%;
@@ -61,10 +61,10 @@
     }
 }
 
-@media (min-width: 850px) and (max-width: 1200px) {
+@media (max-width: 1200px) and (orientation: landscape) {
     .icons {
-            text-align: center;
-        }
+        text-align: center;
+    }
     #soldier,#pole,#lead_pole,#lead_base{
         display: none;
         width: 100%;
@@ -78,5 +78,23 @@
         transform: scale(0.8);
         position: relative;
         top:-55px !important;
+    }
+    .firstLeader{
+        font-size: 3vh;
+    }
+
+    .secondLeader{
+        font-size: 3vh;
+    }
+
+    .thirdLeader{
+        font-size: 3vh;
+    }
+
+    .playerLeader{
+        font-size: 3vh;
+    }
+    .powName{
+        font-size: 3vh;
     }
 }

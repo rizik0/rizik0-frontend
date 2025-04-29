@@ -29,7 +29,7 @@ export default function LobbyComponent(UserColor){
 
     useEffect(() => {
         const abortController = new AbortController()
-        const fetchStatus = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/status`, {
+        const fetchStatus = async() => await fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/status`, {
             method: "GET",
             headers: { 'Content-Type': 'application/json' } 
         })
@@ -50,7 +50,7 @@ export default function LobbyComponent(UserColor){
                 }
             })
         
-        const fetchPlayers = async() => await fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/players`, {
+        const fetchPlayers = async() => await fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/players`, {
             method: "GET",
             headers: { 'Content-Type': 'application/json' }
         })

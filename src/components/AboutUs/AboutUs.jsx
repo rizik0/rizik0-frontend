@@ -30,7 +30,7 @@ export default function AboutUs(){
                                                 <img className="img-fluid team-image " loading="lazy" src={cristian} alt="cristian" />
                                                 <figcaption className="cardCaption m-0 p-4">
                                                     <h4 className="mb-1">Cristian Di Iorio</h4>
-                                                    <p className="text-secondary mb-1">Studente terzo anno ingegneria informatica</p>
+                                                    <p className="text-secondary mb-1"><a href="https://www.cristiandiiorio.ovh">personal website</a></p>
                                                 </figcaption>
                                             </figure>
                                         </div>
@@ -43,7 +43,7 @@ export default function AboutUs(){
                                             <img className="img-fluid team-image" loading="lazy" src={federico} alt="federico"/>
                                                 <figcaption className="cardCaption m-0 p-4">
                                                     <h4 className="mb-1">Federico Gerardi</h4>
-                                                    <p className="text-secondary mb-1">Studente terzo anno ingegneria informatica</p>
+                                                    <p className="text-secondary mb--1"><a href="https://www.federicogerardi.ovh">personal website</a></p>
                                                 </figcaption>
                                             </figure>
                                         </div>
@@ -56,7 +56,7 @@ export default function AboutUs(){
                                                 <img className="img-fluid team-image" loading="lazy" src={pietro} alt="pietro"/>
                                                 <figcaption className="cardCaption m-0 p-4">
                                                     <h4 className="mb-1">Pietro Costanzi Fantini</h4>
-                                                    <p className="text-secondary mb-1">Studente terzo anno ingegneria informatica</p>
+                                                    <p className="text-secondary mb-1"><a href="https://www.pietrocf.ovh">personal website</a></p>
                                                 </figcaption>
                                             </figure>
                                         </div>

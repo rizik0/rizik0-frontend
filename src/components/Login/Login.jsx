@@ -21,7 +21,7 @@ export default function Login(){
             e.preventDefault()
 
             console.log('player',player)
-            fetch('http://localhost:3000/api/player/login', {
+            fetch('http://89.168.29.38/api/player/login', {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify([player.username, player.password_hash])

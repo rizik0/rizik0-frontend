@@ -91,3 +91,10 @@
 .profilePic:hover{
 	border: solid 4px #FEFDE8;
 }
+
+#navbarLogo{
+	height: 80px;
+	@media (max-width: 1000px) and (orientation: landscape) {
+		height: 45px;
+	}
+}

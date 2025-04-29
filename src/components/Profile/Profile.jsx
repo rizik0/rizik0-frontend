@@ -61,7 +61,7 @@ export default function Profile(){
         if (localStorage.getItem('jwt') !== null) {
 
             const abortController = new AbortController()
-            const fetchData = async() => await fetch('http://localhost:3000/api/player/profile', {
+            const fetchData = async() => await fetch('http://89.168.29.38/api/player/profile', {
                 method: "GET",
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('jwt')}` }
             })
@@ -94,7 +94,7 @@ export default function Profile(){
         const winRate = numWins / numGames * 100
 
         useEffect(() => {
-            fetch('http://localhost:3000/api/leaderboard')
+            fetch('http://89.168.29.38/api/leaderboard')
             .then(response => response.json())
             .then(data => {
                 const standings = data.standings
@@ -108,7 +108,7 @@ export default function Profile(){
                 <div id='profileSoldier'>
                     <img src={soldier} alt="" />
                 </div>
-                <div style={{background:'#005E7A', paddingTop:'6vh'}}>  
+                <div style={{background:'#005E7A', paddingTop:'6vh',paddingBottom:'0.5vh'}}>  
                     <div id='statsTitle'>📈 STATS 📈</div>
                     <div className="profileContainer container">
                         <div className='row justify-content-md-center text-center'>
@@ -135,12 +135,12 @@ export default function Profile(){
                                 <div className='statsNumber'>
                                     <Rate winRate={winRate} />
                                 </div>
+                            </div>
+                        </div>
+                        <div className='logoutButton'>
+                            <LinkRouter style={{color:"#151F2B", textDecoration:"none"}} to='/logout'>Logout</LinkRouter> 
                         </div>
                     </div>
-                    <div className='logoutButton'>
-                        <LinkRouter style={{color:"#151F2B", textDecoration:"none"}} to='/logout'>Logout</LinkRouter> 
-                    </div>
-                </div>
                 
                 </div>
 

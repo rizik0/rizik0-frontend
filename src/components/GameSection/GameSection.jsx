@@ -84,7 +84,7 @@ export default function GameSection({ data, initialTroops, phase }){
                     }
                     <div className='endContainer col-2'>
                         <span onClick={() => {
-                            fetch(`http://localhost:3000/api/game/${localStorage.getItem("game_id")}/play/attacking/end`, {
+                            fetch(`http://89.168.29.38/api/game/${localStorage.getItem("game_id")}/play/attacking/end`, {
                                 method: "POST",
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({player_id: localStorage.getItem('player_id')})

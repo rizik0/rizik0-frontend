@@ -61,3 +61,17 @@
     margin: 13vh auto 0 auto;
     text-decoration: none !important;
 }
+
+@media (max-width: 500px) {
+    .statsNumber{
+        font-size: 5vh !important;
+    }
+    .statsTab{
+        margin: 0vh !important;
+        position: relative;
+        left: 10vh;
+    }
+    #profileSoldier{
+        height: 40%;
+    }
+}
