@@ -24,7 +24,7 @@ export default function Root(){
 
     useEffect(() => {
         const abortController = new AbortController()
-        const fetchData = async() => await fetch('${apiBaseUrl}/api/leaderboard', {
+        const fetchData = async() => await fetch(`${apiBaseUrl}/api/leaderboard`, {
             method: "GET",
             headers: { 'Content-Type': 'application/json' }
         })
