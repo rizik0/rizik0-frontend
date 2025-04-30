@@ -30,7 +30,7 @@ export default function AboutUs(){
                                                 <img className="img-fluid team-image " loading="lazy" src={cristian} alt="cristian" />
                                                 <figcaption className="cardCaption m-0 p-4">
                                                     <h4 className="mb-1">Cristian Di Iorio</h4>
-                                                    <p className="text-secondary mb-1"><a href="https://www.cristiandiiorio.ovh">personal website</a></p>
+                                                    <p className="text-secondary mb-1"><a href="https://www.cristiandiiorio.it">personal website</a></p>
                                                 </figcaption>
                                             </figure>
                                         </div>
