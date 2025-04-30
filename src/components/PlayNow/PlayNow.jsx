@@ -20,7 +20,7 @@ export default function PlayNow(){
         
         const abortController = new AbortController()
         console.log(name)
-        const fetchData = async() => await fetch('${apiBaseUrl}/api/game/create', {
+        const fetchData = async() => await fetch(`${apiBaseUrl}/api/game/create`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('jwt')}`},
         })
@@ -42,7 +42,7 @@ export default function PlayNow(){
         modalInstance.hide();
         const abortController = new AbortController()
         console.log(name)
-        const fetchData = async() => await fetch('${apiBaseUrl}/api/game/join', {
+        const fetchData = async() => await fetch(`${apiBaseUrl}/api/game/join`, {
             method: "POST",
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('jwt')}` },
             body: JSON.stringify({game_id: game_id})

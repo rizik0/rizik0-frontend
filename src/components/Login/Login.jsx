@@ -22,7 +22,7 @@ export default function Login(){
             e.preventDefault()
 
             console.log('player',player)
-            fetch('${apiBaseUrl}/api/player/login', {
+            fetch(`${apiBaseUrl}/api/player/login`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify([player.username, player.password_hash])

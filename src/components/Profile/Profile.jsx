@@ -62,7 +62,7 @@ export default function Profile(){
         if (localStorage.getItem('jwt') !== null) {
 
             const abortController = new AbortController()
-            const fetchData = async() => await fetch('${apiBaseUrl}/api/player/profile', {
+            const fetchData = async() => await fetch(`${apiBaseUrl}/api/player/profile`, {
                 method: "GET",
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('jwt')}` }
             })
@@ -95,7 +95,7 @@ export default function Profile(){
         const winRate = numWins / numGames * 100
 
         useEffect(() => {
-            fetch('${apiBaseUrl}/api/leaderboard')
+            fetch(`${apiBaseUrl}/api/leaderboard`)
             .then(response => response.json())
             .then(data => {
                 const standings = data.standings
