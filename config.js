@@ -1,4 +1,4 @@
-const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+const apiBaseUrl = "https://api.rizik0.ovh";
 
 if (!apiBaseUrl) {
   console.warn("Warning: VITE_API_BASE_URL is not defined. Using fallback or expecting failure.");
