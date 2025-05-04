@@ -18,6 +18,23 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+// GoatCounter analytics hook
+const useGoatCounter = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.async = true;
+    script.dataset.goatcounter = 'https://rizik0.goatcounter.com/count';
+    script.src = '//gc.zgo.at/count.js';
+    document.body.appendChild(script);
+    
+    return () => {
+      if (script && document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+};
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -66,8 +83,15 @@ const router = createBrowserRouter([
   }
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+// Wrapper component that includes GoatCounter
+function App() {
+  useGoatCounter();
+  
+  return (
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
