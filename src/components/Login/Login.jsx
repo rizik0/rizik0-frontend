@@ -16,7 +16,7 @@ export default function Login(){
     const navigate = useNavigate()
 
     if (localStorage.getItem('jwt') !== null) {
-        return alert('devi prima effettuare il logout')
+        return alert('You have to logout first.')
     } else {
         const submit = e => {
             e.preventDefault()
@@ -29,21 +29,24 @@ export default function Login(){
             })
                 .then(res => res.json())
                 .then(data => {
-                    if (data) {
-                        localStorage.setItem('jwt', data.jwt)
+                    if (data.jwt) {
+                        localStorage.setItem('jwt', data.jwt);
+                        setTimeout(() => {
+                            navigate('/profile');
+                        }, 500);
+                    } else if (data.error) {
+                        alert(`Login failed: ${data.error}`);
+                        localStorage.removeItem('jwt');
                     } else {
-                        localStorage.removeItem('jwt')
+                        alert("Login failed. Unexpected response from server.");
+                        localStorage.removeItem('jwt');
                     }
+                })
+                .catch(error => {
+                    console.error("Login error:", error);
+                    alert("Login error. Please try again later.");
+                    localStorage.removeItem('jwt');
                 });
-
-            setTimeout(() => {
-                if (localStorage.getItem('jwt') !== null) {
-                    navigate('/profile')
-                }
-                else {
-                    alert("Login failed. Try again.")
-                }
-            }, 1000)
         }
     return (
         <section className="Login">
